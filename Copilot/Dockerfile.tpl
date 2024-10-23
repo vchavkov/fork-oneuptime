@@ -3,7 +3,7 @@
 #
 
 # Pull base image nodejs image.
-FROM public.ecr.aws/docker/library/node:22.3.0
+FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/node:22
 RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 RUN npm config set fetch-retries 5
@@ -22,7 +22,7 @@ ENV APP_VERSION=${APP_VERSION}
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 
 
-# Install bash. 
+# Install bash.
 RUN apt-get install bash -y && apt-get install curl -y
 
 # Install python

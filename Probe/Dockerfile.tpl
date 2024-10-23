@@ -3,7 +3,7 @@
 #
 
 # Pull base image nodejs image.
-FROM public.ecr.aws/docker/library/node:22.9
+FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/node:22
 RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 RUN npm config set fetch-retries 5
@@ -18,7 +18,7 @@ ENV GIT_SHA=${GIT_SHA}
 ENV APP_VERSION=${APP_VERSION}
 ENV NODE_OPTIONS="--use-openssl-ca"
 
-## Add Intermediate Certs 
+## Add Intermediate Certs
 COPY ./SslCertificates /usr/local/share/ca-certificates
 RUN update-ca-certificates
 
@@ -29,7 +29,7 @@ RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 
 RUN apt-get update
 
-# Install bash. 
+# Install bash.
 RUN apt-get install bash -y && apt-get install curl -y && apt-get install iputils-ping -y
 
 # Install python
@@ -88,4 +88,3 @@ RUN npm run compile
 #Run the app
 CMD [ "npm", "start" ]
 {{ end }}
-
