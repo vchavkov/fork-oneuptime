@@ -1,8 +1,5 @@
-#
-# Tests Dockerfile
-#
-
-FROM node:22-alpine
+FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/node:22-alpine
+RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 # Update APK repositories to use the specified proxy
 RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /etc/apk/repositories
@@ -14,6 +11,7 @@ RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /
 # RUN npm config set fetch-retries 5
 # RUN npm config set fetch-retry-mintimeout 100000
 # RUN npm config set fetch-retry-maxtimeout 600000
+
 
 # Install bash.
 RUN apk add bash && apk add curl

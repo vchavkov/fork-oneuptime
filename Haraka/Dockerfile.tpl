@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/node:22-alpine
 
 # Update APK repositories to use the specified proxy
 RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /etc/apk/repositories
