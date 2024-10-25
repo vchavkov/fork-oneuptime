@@ -1,3 +1,8 @@
+#
+# OneUptime-App Dockerfile
+#
+
+# Pull base image nodejs image.
 FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/node:22-alpine
 RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
@@ -14,6 +19,7 @@ ENV APP_VERSION=${APP_VERSION}
 
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
+
 
 # Install bash.
 RUN apk add bash && apk add curl
