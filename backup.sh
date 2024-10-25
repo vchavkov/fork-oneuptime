@@ -6,8 +6,6 @@ export $(grep -v '^#' config.env | xargs)
 
 echo "Starting backup...."
 
-git pull
-
 # Backup as SQL, CANNOT be used with pg_restore.
 sudo docker run --net=host --rm \
 --env-file config.env \
