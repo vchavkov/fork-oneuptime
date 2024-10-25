@@ -5,7 +5,7 @@ import { JSONArray, JSONObject } from "Common/Types/JSON";
 import FormFieldSchemaType from "Common/UI/Components/Forms/Types/FormFieldSchemaType";
 import Link from "Common/UI/Components/Link/Link";
 import { DASHBOARD_URL, IDENTITY_URL } from "Common/UI/Config";
-import UptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
+import OneUptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
 import Navigation from "Common/UI/Utils/Navigation";
 import UserUtil from "Common/UI/Utils/User";
 import User from "Common/Models/DatabaseModels/User";
