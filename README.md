@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD033 -->
-<h1 align="center"><img alt="oneuptime logo" width=50% src="https://raw.githubusercontent.com/OneUptime/oneuptime/master/Home/Static/img/OneUptimePNG/7.png"/></h1>
+<h1 align="center"><img alt="oneuptime logo" width=50% src="https://raw.githubusercontent.com/OneUptime/oneuptime/master/Home/Static/img/PNG/7.png"/></h1>
 <!-- markdownlint-enable MD033 -->
 
 ### OneUptime: The Complete Open-Source Observability Platform
@@ -59,7 +59,7 @@ All under one platform.
 
 ## Get Started for Free with OneUptime Cloud
 
-OneUptime Cloud is the easiest and fastest way to monitor your website uptime and performance. You can sign up for free to [OneUptime Cloud](https://oneuptime.com) and enjoy the full benefits of OneUptime without any installation or maintenance hassle. 
+OneUptime Cloud is the easiest and fastest way to monitor your website uptime and performance. You can sign up for free to [OneUptime Cloud](https://oneuptime.com) and enjoy the full benefits of OneUptime without any installation or maintenance hassle.
 
 By using OneUptime Cloud, you also support the development of OneUptime open source project, which is a powerful and flexible tool for website monitoring. You can find more information about OneUptime open source project on [GitHub](##Philosophy). The code of OneUptime is completely open source, which means you can access, modify, and distribute it freely. You can also contribute to the project by reporting issues, suggesting features, or submitting pull requests.
 
@@ -74,7 +74,7 @@ If you need advanced features, such as API Access, Advanced Workflows, or Advanc
 
 ## Philosophy
 
-Our mission is to reduce downtime and increase the number of successful products in the world. To do that, we built a platform that helps you understand the causes of downtime, incidents and help reduce toil. Our product is open-source, free and available for everyone to use. 
+Our mission is to reduce downtime and increase the number of successful products in the world. To do that, we built a platform that helps you understand the causes of downtime, incidents and help reduce toil. Our product is open-source, free and available for everyone to use.
 
 ## Contributing
 
