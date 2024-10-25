@@ -4,7 +4,7 @@ import URL from "Common/Types/API/URL";
 import ModelForm, { FormType } from "Common/UI/Components/Forms/ModelForm";
 import FormFieldSchemaType from "Common/UI/Components/Forms/Types/FormFieldSchemaType";
 import Link from "Common/UI/Components/Link/Link";
-import OneUptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
+import OneUptimeLogo from "Common/UI/Images/logos/SVG/3.svg";
 import Navigation from "Common/UI/Utils/Navigation";
 import User from "Common/Models/DatabaseModels/User";
 import React, { useState } from "react";
