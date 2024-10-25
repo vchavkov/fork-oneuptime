@@ -10,7 +10,7 @@ import FormFieldSchemaType from "Common/UI/Components/Forms/Types/FormFieldSchem
 import Link from "Common/UI/Components/Link/Link";
 import PageLoader from "Common/UI/Components/Loader/PageLoader";
 import { BILLING_ENABLED, DASHBOARD_URL } from "Common/UI/Config";
-import UptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
+import OneUptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
 import BaseAPI from "Common/UI/Utils/API/API";
 import UiAnalytics from "Common/UI/Utils/Analytics";
 import LocalStorage from "Common/UI/Utils/LocalStorage";
