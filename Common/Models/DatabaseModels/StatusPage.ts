@@ -1551,8 +1551,8 @@ export default class StatusPage extends BaseModel {
   @TableColumn({
     isDefaultValueColumn: true,
     type: TableColumnType.Boolean,
-    title: "Hide Powered By OneUptime Branding",
-    description: "Hide Powered By OneUptime Branding?",
+    title: "Hide powered by CBS Uptime Branding",
+    description: "Hide powered by CBS Uptime Branding?",
   })
   @Column({
     type: ColumnType.Boolean,

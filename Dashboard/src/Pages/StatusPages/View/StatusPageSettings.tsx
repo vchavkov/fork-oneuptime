@@ -220,8 +220,8 @@ const StatusPageDelete: FunctionComponent<
       <CardModelDetail<StatusPage>
         name="Status Page > Settings"
         cardProps={{
-          title: "Powered By OneUptime Branding",
-          description: "Show or hide the Powered By OneUptime Branding",
+          title: "powered by CBS Uptime Branding",
+          description: "Show or hide the powered by CBS Uptime Branding",
         }}
         editButtonText="Edit Settings"
         isEditable={true}
@@ -230,7 +230,7 @@ const StatusPageDelete: FunctionComponent<
             field: {
               hidePoweredByOneUptimeBranding: true,
             },
-            title: "Hide Powered By OneUptime Branding",
+            title: "Hide powered by CBS Uptime Branding",
             fieldType: FormFieldSchemaType.Toggle,
             required: false,
             placeholder: "No",
@@ -246,7 +246,7 @@ const StatusPageDelete: FunctionComponent<
                 hidePoweredByOneUptimeBranding: true,
               },
               fieldType: FieldType.Boolean,
-              title: "Hide Powered By OneUptime Branding",
+              title: "Hide powered by CBS Uptime Branding",
             },
           ],
           modelId: modelId,
