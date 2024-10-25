@@ -3,7 +3,8 @@
 #
 
 # Pull base image nodejs image.
-FROM node:22
+FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/node:22.3.0
+RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 # RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 

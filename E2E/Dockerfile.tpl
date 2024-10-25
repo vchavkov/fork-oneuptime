@@ -61,5 +61,5 @@ COPY ./E2E /usr/src/app
 
 RUN npm run compile
 
-# Run the app
+#Run the app
 CMD [ "npm", "test" ]
