@@ -40,7 +40,7 @@ x-common-variables: &common-variables
     SERVER_API_REFERENCE_HOSTNAME: api-reference
     SERVER_DOCS_HOSTNAME: docs
 
-    #Ports. Usually they don't need to change. 
+    #Ports. Usually they don't need to change.
     APP_PORT: ${APP_PORT}
     HOME_PORT: ${HOME_PORT}
     INGESTOR_PORT: ${INGESTOR_PORT}
@@ -60,9 +60,9 @@ x-common-variables: &common-variables
     OPENTELEMETRY_EXPORTER_OTLP_HEADERS: ${OPENTELEMETRY_EXPORTER_OTLP_HEADERS}
 
 x-common-ui-variables: &common-ui-variables
-    <<: *common-variables   
+    <<: *common-variables
     IS_SERVER: "false"
-    
+
 x-common-server-variables: &common-server-variables
     <<: *common-variables
     ONEUPTIME_SECRET: ${ONEUPTIME_SECRET}
@@ -112,11 +112,12 @@ x-common-server-variables: &common-server-variables
 
 services:
 
-    
+
     haraka:
         networks:
-          - oneuptime
-        image:  oneuptime/haraka:${APP_TAG}
+          - uptime
+        # image: ${COMPOSE_PROJECT_NAME}/haraka:${APP_TAG}
+        # image: haraka:${APP_TAG}
         restart: always
         environment:
             SMTP_PASSWORD: ${INTERNAL_SMTP_PASSWORD}
@@ -130,14 +131,14 @@ services:
             options:
                 max-size: "1000m"
 
-    
+
     redis:
         image: redis:7.0.12
         restart: always
         networks:
-          - oneuptime
+          - uptime
         command: redis-server --requirepass "${REDIS_PASSWORD}" --save "" --appendonly no
-        environment: 
+        environment:
             REDIS_PASSWORD: ${REDIS_PASSWORD}
         logging:
             driver: "local"
@@ -153,7 +154,7 @@ services:
             CLICKHOUSE_DB: ${CLICKHOUSE_DATABASE}
             CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
         networks:
-          - oneuptime
+          - uptime
         volumes:
             - clickhouse:/var/lib/clickhouse/
         logging:
@@ -164,24 +165,24 @@ services:
     postgres:
         image: postgres:15
         restart: always
-        environment: 
+        environment:
             POSTGRES_USER: ${DATABASE_USERNAME}
             POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
             POSTGRES_DB: ${DATABASE_NAME}
         networks:
-          - oneuptime
-        volumes: 
+          - uptime
+        volumes:
             - postgres:/var/lib/postgresql/data
         logging:
             driver: "local"
             options:
                 max-size: "1000m"
-        
+
     accounts:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-ui-variables
             PORT: ${ACCOUNTS_PORT}
             DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_ACCOUNTS}
@@ -189,11 +190,11 @@ services:
             driver: "local"
             options:
                 max-size: "1000m"
-    
 
-    llm: 
+
+    llm:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             <<: *common-server-variables
@@ -209,7 +210,7 @@ services:
 
     admin-dashboard:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             <<: *common-ui-variables
@@ -222,7 +223,7 @@ services:
 
     dashboard:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             <<: *common-ui-variables
@@ -232,12 +233,12 @@ services:
             driver: "local"
             options:
                 max-size: "1000m"
-        
-    
+
+
 
     status-page:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             <<: *common-ui-variables
@@ -247,14 +248,14 @@ services:
             driver: "local"
             options:
                 max-size: "1000m"
-            
-        
+
+
 
     test-server:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-server-variables
             PORT: ${TEST_SERVER_PORT}
             DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_TEST_SERVER}
@@ -262,13 +263,13 @@ services:
             driver: "local"
             options:
                 max-size: "1000m"
-            
+
 
     app:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-server-variables
             PORT: ${APP_PORT}
             SMS_DEFAULT_COST_IN_CENTS: ${SMS_DEFAULT_COST_IN_CENTS}
@@ -286,9 +287,9 @@ services:
 
     home:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-server-variables
             PORT: ${HOME_PORT}
         logging:
@@ -298,9 +299,9 @@ services:
 
     worker:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-server-variables
             PORT: ${WORKER_PORT}
         logging:
@@ -310,9 +311,9 @@ services:
 
     docs:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-server-variables
             PORT: ${DOCS_PORT}
         logging:
@@ -322,9 +323,9 @@ services:
 
     api-reference:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-server-variables
             PORT: ${API_REFERENCE_PORT}
         logging:
@@ -334,9 +335,9 @@ services:
 
     workflow:
         networks:
-          - oneuptime
+          - uptime
         restart: always
-        environment: 
+        environment:
             <<: *common-server-variables
             PORT: ${WORKFLOW_PORT}
         logging:
@@ -344,9 +345,9 @@ services:
             options:
                 max-size: "1000m"
 
-    probe-1:   
+    probe-1:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             <<: *common-server-variables
@@ -365,9 +366,9 @@ services:
             options:
                 max-size: "1000m"
 
-    probe-2:   
+    probe-2:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             <<: *common-server-variables
@@ -385,11 +386,11 @@ services:
             driver: "local"
             options:
                 max-size: "1000m"
-       
+
 
     otel-collector:
         networks:
-          - oneuptime
+          - uptime
         environment:
             <<: *common-variables
         restart: always
@@ -400,7 +401,7 @@ services:
 
     fluentd:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         logging:
             driver: "local"
@@ -409,7 +410,7 @@ services:
 
     isolated-vm:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             PORT: ${ISOLATED_VM_PORT}
@@ -422,7 +423,7 @@ services:
 
     ingestor:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             <<: *common-server-variables
@@ -435,7 +436,7 @@ services:
 
     copilot:
         networks:
-          - oneuptime
+          - uptime
         restart: always
         environment:
             ONEUPTIME_URL: ${COPILOT_ONEUPTIME_URL}
@@ -449,11 +450,11 @@ services:
         logging:
             driver: "local"
             options:
-                max-size: "1000m"       
-    
+                max-size: "1000m"
+
     e2e:
         restart: "no"
-        network_mode: host # This is needed to access the host network, 
+        network_mode: host # This is needed to access the host network,
         environment:
             <<: *common-variables
             E2E_TEST_IS_USER_REGISTERED: ${E2E_TEST_IS_USER_REGISTERED}
@@ -469,7 +470,7 @@ services:
     ingress:
         restart: always
         networks:
-          - oneuptime
+          - uptime
         environment:
             <<: *common-server-variables
             ONEUPTIME_HTTP_PORT: ${ONEUPTIME_HTTP_PORT}
@@ -482,11 +483,11 @@ services:
             options:
                 max-size: "1000m"
 
-                
+
 volumes:
     postgres:
     clickhouse:
 
 networks:
-  oneuptime:
+  uptime:
     driver: bridge

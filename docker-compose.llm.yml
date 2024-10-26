@@ -6,7 +6,7 @@ services:
         file: ./docker-compose.base.yml
         service: redis
 
-  llm: 
+  llm:
     extends:
         file: ./docker-compose.base.yml
         service: llm
@@ -25,5 +25,5 @@ services:
               capabilities: [gpu]
 
 networks:
-  oneuptime:
+  uptime:
     driver: bridge

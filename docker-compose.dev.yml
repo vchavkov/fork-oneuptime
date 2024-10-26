@@ -1,7 +1,7 @@
 
 
 services:
-    
+
 
     haraka:
         extends:
@@ -13,14 +13,14 @@ services:
             dockerfile: ./Haraka/Dockerfile
 
     redis:
-        ports: 
+        ports:
             - '6310:6379'
         extends:
             file: ./docker-compose.base.yml
             service: redis
 
     clickhouse:
-        ports: 
+        ports:
             - '9034:9000'
             - '8189:8123'
         extends:
@@ -28,7 +28,7 @@ services:
             service: clickhouse
 
     postgres:
-        ports: 
+        ports:
             - '5400:5432'
         extends:
             file: ./docker-compose.base.yml
@@ -45,7 +45,7 @@ services:
             dockerfile: ./OTelCollector/Dockerfile
 
     accounts:
-        ports: 
+        ports:
             - '${ACCOUNTS_PORT}:${ACCOUNTS_PORT}' # ws port for webpack
         extends:
             file: ./docker-compose.base.yml
@@ -60,15 +60,15 @@ services:
 
             - /usr/src/Common/node_modules/
 
-            
+
         build:
             network: host
             context: .
             dockerfile: ./Accounts/Dockerfile
-       
+
 
     dashboard:
-        ports: 
+        ports:
             - '${DASHBOARD_PORT}:${DASHBOARD_PORT}' # ws port for webpack
         extends:
             file: ./docker-compose.base.yml
@@ -83,16 +83,16 @@ services:
 
             - /usr/src/Common/node_modules/
 
-            
+
         build:
             network: host
             context: .
             dockerfile: ./Dashboard/Dockerfile
-        
-    
+
+
 
     admin-dashboard:
-        ports: 
+        ports:
             - '${ADMIN_DASHBOARD_PORT}:${ADMIN_DASHBOARD_PORT}' # ws port for webpack
         extends:
             file: ./docker-compose.base.yml
@@ -107,7 +107,7 @@ services:
 
             - /usr/src/Common/node_modules/
 
-            
+
         build:
             network: host
             context: .
@@ -115,7 +115,7 @@ services:
 
 
     status-page:
-        ports: 
+        ports:
             - '${STATUS_PAGE_PORT}:${STATUS_PAGE_PORT}' # ws port for webpack
         extends:
             file: ./docker-compose.base.yml
@@ -130,13 +130,13 @@ services:
 
             - /usr/src/Common/node_modules/
 
-            
+
         build:
             network: host
             context: .
             dockerfile: ./StatusPage/Dockerfile
-            
-    
+
+
     test-server:
         volumes:
             - ./TestServer:/usr/src/app
@@ -147,7 +147,7 @@ services:
 
             - /usr/src/Common/node_modules/
 
-            
+
         extends:
             file: ./docker-compose.base.yml
             service: test-server
@@ -268,9 +268,9 @@ services:
             network: host
             context: .
             dockerfile: ./App/Dockerfile
-        
 
-    probe-1: 
+
+    probe-1:
         volumes:
             - ./Probe:/usr/src/app
             # Use node modules of the container and not host system.
@@ -280,7 +280,7 @@ services:
 
             - /usr/src/Common/node_modules/
 
-              
+
         extends:
             file: ./docker-compose.base.yml
             service: probe-1
@@ -291,7 +291,7 @@ services:
             context: .
             dockerfile: ./Probe/Dockerfile
 
-    probe-2: 
+    probe-2:
         volumes:
             - ./Probe:/usr/src/app
             # Use node modules of the container and not host system.
@@ -301,7 +301,7 @@ services:
 
             - /usr/src/Common/node_modules/
 
-              
+
         extends:
             file: ./docker-compose.base.yml
             service: probe-2
@@ -322,7 +322,7 @@ services:
 
             - /usr/src/Common/node_modules/
 
-            
+
         ports:
           - '9974:9229' # Debugging port.
         extends:
@@ -332,7 +332,7 @@ services:
             network: host
             context: .
             dockerfile: ./IsolatedVM/Dockerfile
-    
+
     ingestor:
         volumes:
             - ./Ingestor:/usr/src/app
@@ -343,7 +343,7 @@ services:
 
             - /usr/src/Common/node_modules/
 
-            
+
         ports:
           - '9932:9229' # Debugging port.
         extends:
@@ -356,7 +356,7 @@ services:
 
 
     # Fluentd. Required only for development. In  production its the responsibility of the customer to run fluentd and pipe logs to OneUptime.
-    # We run this container just for development, to see if logs are piped. 
+    # We run this container just for development, to see if logs are piped.
 
     fluentd:
         ports:
@@ -416,7 +416,7 @@ services:
 volumes:
     postgres:
     clickhouse:
-    
+
 networks:
-  oneuptime: 
+  uptime:
     driver: bridge
