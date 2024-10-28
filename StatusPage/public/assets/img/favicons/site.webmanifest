@@ -1,5 +1,5 @@
 {
-    "name": "OneUptime Account",
+    "name": "CBS Uptime account",
     "short_name": "OneUptime",
     "icons": [
         {
@@ -53,4 +53,3 @@
     "background_color": "#121212",
     "display": "standalone"
   }
-  

@@ -30,9 +30,9 @@ You can find the full list of supported sources [here](https://www.fluentd.org/d
 ## Prerequisites
 
 - **Step 1: Install Fluentd on your system** - You can install Fluentd using the instructions provided [here](https://docs.fluentd.org/installation)
-- **Step 2: Sign up for OneUptime account** -  You can sign up for a free account [here](https://oneuptime.com). Please note while the account is free, log ingestion is a paid feature. You can find more details about the pricing [here](https://uptime.cbsretail.net/pricing).
+- **Step 2: Sign up for CBS Uptime account** -  You can sign up for a free account [here](https://oneuptime.com). Please note while the account is free, log ingestion is a paid feature. You can find more details about the pricing [here](https://uptime.cbsretail.net/pricing).
 - **Step 3: Create OneUptime Project** - Once you have the account, you can create a project from the OneUptime dashboard. If you need any help with creating a project or have any questions, please reach out to us at support@oneuptime.com
-- **Step 4: Create Telemetry Ingestion Token** - Once you have created a OneUptime account, you can create a telemetry ingestion token to ingest logs, metrics and traces from your application.
+- **Step 4: Create Telemetry Ingestion Token** - Once you have created a CBS Uptime account, you can create a telemetry ingestion token to ingest logs, metrics and traces from your application.
 
 After you sign up to OneUptime and create a project. Click on "More" in the Navigation bar and click on "Project Settings".
 

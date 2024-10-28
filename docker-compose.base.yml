@@ -343,7 +343,6 @@ services:
                 max-size: "1000m"
 
     probe-1:
-        image: ${COMPOSE_PROJECT_NAME}-probe
         networks:
           - uptime
         restart: always
@@ -365,7 +364,6 @@ services:
                 max-size: "1000m"
 
     probe-2:
-        image: ${COMPOSE_PROJECT_NAME}-probe
         networks:
           - uptime
         restart: always
@@ -467,7 +465,7 @@ services:
                 max-size: "1000m"
 
     nginx:
-        image: nginx:latest
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/nginx:latest
         restart: always
         networks:
           - uptime

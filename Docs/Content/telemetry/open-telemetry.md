@@ -2,7 +2,7 @@
 
 ### Step 1 - Create Telemetry Ingestion Token.
 
-Once you have created a OneUptime account, you can create a telemetry ingestion token to ingest logs, metrics and traces from your application.
+Once you have created a CBS Uptime account, you can create a telemetry ingestion token to ingest logs, metrics and traces from your application.
 
 After you sign up to OneUptime and create a project. Click on "More" in the Navigation bar and click on "Project Settings".
 

@@ -3,26 +3,26 @@
 export $(grep -v '^#' config.env | xargs)
 
 IMAGE_ARRAY=(
-	"status-page"
-	"dashboard"
-	"admin-dashboard"
 	"accounts"
-	"haraka"
-	"probe"
-	"e2e"
-	"copilot"
+	"admin-dashboard"
 	"api-reference"
 	"app"
-	"workflow"
-	"test-server"
-	"home"
+	"copilot"
+	"dashboard"
 	"docs"
-	"worker"
+	"e2e"
+	"fluentd"
+	"haraka"
+	"home"
 	"ingestor"
 	"isolated-vm"
 	"nginx"
 	"otel-collector"
-	"fluentd"
+	"probe"
+	"status-page"
+	"test-server"
+	"worker"
+	"workflow"
 )
 
 BUILD_DATE=$(date +%s)

@@ -1,0 +1,96 @@
+    services:
+
+        haraka:
+            build:
+                context: .
+                dockerfile: Haraka/Dockerfile
+
+        otel-collector:
+            build:
+                context: .
+                dockerfile: OTelCollector/Dockerfile
+
+        accounts:
+            build:
+                context: .
+                dockerfile: Accounts/Dockerfile
+
+        dashboard:
+            build:
+                context: .
+                dockerfile: Dashboard/Dockerfile
+
+        admin-dashboard:
+            build:
+                context: .
+                dockerfile: AdminDashboard/Dockerfile
+
+        status-page:
+            build:
+                context: .
+                dockerfile: StatusPage/Dockerfile
+
+        app:
+            build:
+                context: .
+                dockerfile: App/Dockerfile
+
+        worker:
+            build:
+                context: .
+                dockerfile: Worker/Dockerfile
+
+        docs:
+            build:
+                context: .
+                dockerfile: Docs/Dockerfile
+
+        api-reference:
+            build:
+                context: .
+                dockerfile: APIReference/Dockerfile
+
+        workflow:
+            build:
+                context: .
+                dockerfile: Workflow/Dockerfile
+
+        home:
+            build:
+                context: .
+                dockerfile: Home/Dockerfile
+
+        probe:
+            build:
+                context: .
+                dockerfile: Probe/Dockerfile
+
+        ingestor:
+            build:
+                context: .
+                dockerfile: Ingestor/Dockerfile
+
+        isolated-vm:
+            build:
+                context: .
+                dockerfile: IsolatedVM/Dockerfile
+
+        nginx:
+            build:
+                context: .
+                dockerfile: Nginx/Dockerfile
+
+        copilot:
+            build:
+                context: .
+                dockerfile: Copilot/Dockerfile
+
+        fluentd:
+            build:
+                context: .
+                dockerfile: Fluentd/Dockerfile
+
+        test-server:
+            build:
+                context: .
+                dockerfile: TestServer/Dockerfile

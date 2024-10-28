@@ -4,7 +4,7 @@
 services:
 
     haraka:
-        image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
+        image: ${IMAGE_PREFIX}/haraka:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: haraka
@@ -28,97 +28,98 @@ services:
 
 
     otel-collector:
-        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
+        image: ${IMAGE_PREFIX}/otel-collector:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: otel-collector
 
     accounts:
-        image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
+        image: ${IMAGE_PREFIX}/accounts:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: accounts
 
+
     dashboard:
-        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
+        image: ${IMAGE_PREFIX}/dashboard:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: dashboard
 
     admin-dashboard:
-        image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
+        image: ${IMAGE_PREFIX}/admin-dashboard:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: admin-dashboard
 
     status-page:
-        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
+        image: ${IMAGE_PREFIX}/status-page:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: status-page
 
     app:
-        image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
+        image: ${IMAGE_PREFIX}/app:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: app
 
     worker:
-        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
+        image: ${IMAGE_PREFIX}/worker:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: worker
 
     docs:
-        image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
+        image: ${IMAGE_PREFIX}/docs:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: docs
 
     api-reference:
-        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
+        image: ${IMAGE_PREFIX}/api-reference:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: api-reference
 
     workflow:
-        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
+        image: ${IMAGE_PREFIX}/workflow:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: workflow
 
     home:
-        image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
+        image: ${IMAGE_PREFIX}/home:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: home
 
     probe-1:
-        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+        image: ${IMAGE_PREFIX}/probe:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: probe-1
 
     probe-2:
-        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+        image: ${IMAGE_PREFIX}/probe:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: probe-2
 
     ingestor:
-        image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
+        image: ${IMAGE_PREFIX}/ingestor:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: ingestor
 
     isolated-vm:
-        image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
+        image: ${IMAGE_PREFIX}/isolated-vm:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: isolated-vm
 
     nginx:
-       image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
+       image: ${IMAGE_PREFIX}/nginx:${APP_TAG}
        extends:
             file: ./docker-compose.base.yml
             service: nginx

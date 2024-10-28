@@ -43,7 +43,7 @@ Yes, if you choose to use OpenAI by setting `OPENAI_API_KEY`. We recommend you t
 
 Before you install Copilot, you need to make sure you have the following:
 
-- **OneUptime Account**: You need to have a OneUptime account to use Copilot. You can sign up for a free account at [OneUptime](https://oneuptime.com). You can either use OneUptime Cloud or deploy OneUptime on your infrastructure.
+- **CBS Uptime account**: You need to have a CBS Uptime account to use Copilot. You can sign up for a free account at [OneUptime](https://oneuptime.com). You can either use OneUptime Cloud or deploy OneUptime on your infrastructure.
 - **GitHub Account**: You need to have a GitHub account to use Copilot. You can sign up for a free account at [GitHub](https://github.com). You can also use GitLab, Bitbucket, etc.
 
 You also need either of the following:
