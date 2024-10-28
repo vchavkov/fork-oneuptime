@@ -32,6 +32,7 @@ BUILD_DATE=$(date +%s)
 IMAGE_TAGS=(
 	"latest"
 	"$APP_TAG"
+	"release"
 )
 
 AWS_ACCOUNT=401376717990
