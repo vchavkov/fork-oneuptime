@@ -6,9 +6,7 @@ export $(grep -v '^#' config.env | xargs)
 
 echo "Starting backup...."
 
-git pull
-
-IMAGE_NAME="401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/postgres:latest"
+IMAGE_NAME="401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/postgres:15"
 
 # Backup as SQL, CANNOT be used with pg_restore.
 sudo docker run --net=host --rm \
