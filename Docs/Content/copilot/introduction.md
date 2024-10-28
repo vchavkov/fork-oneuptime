@@ -137,4 +137,4 @@ docker run --rm \
 
 ### Support
 
-If you have any questions or need help, please contact us at support@uptime.cbsretail.net
+If you have any questions or need help, please contact us at support@oneuptime.com
