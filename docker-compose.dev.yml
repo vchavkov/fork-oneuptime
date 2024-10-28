@@ -1,22 +1,15 @@
 services:
 
 
-  admin-dashboard:
-    extends:
-      file: ./docker-compose.base.yml
-      service: admin-dashboard
-    build:
-      context: .
-      dockerfile: AdminDashboard/Dockerfile
-    ports:
-      - '${ADMIN_DASHBOARD_PORT}:${ADMIN_DASHBOARD_PORT}'
-      - '9230:9229' # Debug port
-    volumes:
-      - ./AdminDashboard:/usr/src/app
-      - /usr/src/app/dev-env
-      - /usr/src/app/node_modules/
-      - ./Common:/usr/src/Common
-      - /usr/src/Common/node_modules/
+    haraka:
+        image: ${COMPOSE_PROJECT_NAME}-haraka
+        extends:
+            file: ./docker-compose.base.yml
+            service: haraka
+        build:
+            network: host
+            context: .
+            dockerfile: ./Haraka/Dockerfile
 
     redis:
         ports:
@@ -474,7 +467,8 @@ services:
             context: ./Fluentd
             dockerfile: ./Dockerfile
 
-    ingress:
+    nginx:
+        image: ${COMPOSE_PROJECT_NAME}-nginx
         build:
             network: host
             context: .
