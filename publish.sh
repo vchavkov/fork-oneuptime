@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_VERSION='0.0.1'
+export $(grep -v '^#' config.env | xargs)
 
 IMAGE_ARRAY=(
 	"status-page"
@@ -25,17 +25,18 @@ IMAGE_ARRAY=(
 	"fluentd"
 )
 
+BUILD_DATE=$(date +%s)
+
 IMAGE_TAGS=(
 	"latest"
+	"$APP_TAG"
 	"release"
-	"$IMAGE_VERSION"
 )
 
 AWS_ACCOUNT=401376717990
 AWS_REGION="us-east-1"
 AWS_ECR_REGISTRY_COLLECTION_PREFIX="uptime"
 
-## 401376717990.dkr.ecr.us-east-1.amazonaws.com/cbs-its/automated-zone-config:latest
 AWS_ECR_REGISTRY=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_ECR_REGISTRY_COLLECTION_PREFIX}/${IMAGE_NAME}${AWS_ECR_REGISTRY_SUFFIX}
 
 IMAGE_TAGS_STR=""

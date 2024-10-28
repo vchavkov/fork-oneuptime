@@ -30,7 +30,7 @@
         "typescript-eslint": "^7.13.0"
     },
     "scripts": {
-        "config-to-dev": "node ./Scripts/Install/ReplaceValueInConfig.js ENVIRONMENT development",
+        "config-to-dev": "BUILD_DATE=$(date +%s); sed -i \"s|APP_TAG=.*|APP_TAG=$BUILD_DATE|\" config.env; sed -i \"s|APP_TAG=.*|APP_TAG=$BUILD_DATE|\" config.example.env;node ./Scripts/Install/ReplaceValueInConfig.js ENVIRONMENT development;",
         "config-to-ci": "node ./Scripts/Install/ReplaceValueInConfig.js ENVIRONMENT ci",
         "config-to-test": "node ./Scripts/Install/ReplaceValueInConfig.js ENVIRONMENT test && node ./Scripts/Install/ReplaceValueInConfig.js APP_TAG test",
         "config-to-production": "node ./Scripts/Install/ReplaceValueInConfig.js ENVIRONMENT production",

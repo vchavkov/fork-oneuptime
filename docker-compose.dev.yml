@@ -4,6 +4,7 @@ services:
 
 
     haraka:
+        image: ${COMPOSE_PROJECT_NAME}-haraka
         extends:
             file: ./docker-compose.base.yml
             service: haraka
@@ -374,6 +375,7 @@ services:
             dockerfile: ./Dockerfile
 
     nginx:
+        image: ${COMPOSE_PROJECT_NAME}-nginx
         build:
             network: host
             context: .

@@ -116,9 +116,6 @@ services:
     haraka:
         networks:
           - uptime
-        # image: ${IMAGE_PREFIX}/haraka:${APP_TAG}
-        # image: ${COMPOSE_PROJECT_NAME}/haraka:${APP_TAG}
-        image: ${COMPOSE_PROJECT_NAME}-haraka
         restart: always
         environment:
             SMTP_PASSWORD: ${INTERNAL_SMTP_PASSWORD}
@@ -131,7 +128,6 @@ services:
             driver: "local"
             options:
                 max-size: "1000m"
-
 
     redis:
         image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/redis:7.0.12
@@ -471,7 +467,7 @@ services:
                 max-size: "1000m"
 
     nginx:
-        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/uptime/nginx:latest
+        image: nginx:latest
         restart: always
         networks:
           - uptime
