@@ -116,8 +116,9 @@ services:
     haraka:
         networks:
           - uptime
+        # image: ${IMAGE_PREFIX}/haraka:${APP_TAG}
         # image: ${COMPOSE_PROJECT_NAME}/haraka:${APP_TAG}
-        # image: haraka:${APP_TAG}
+        image: ${COMPOSE_PROJECT_NAME}-haraka
         restart: always
         environment:
             SMTP_PASSWORD: ${INTERNAL_SMTP_PASSWORD}
@@ -346,6 +347,7 @@ services:
                 max-size: "1000m"
 
     probe-1:
+        image: ${COMPOSE_PROJECT_NAME}-probe
         networks:
           - uptime
         restart: always
@@ -367,6 +369,7 @@ services:
                 max-size: "1000m"
 
     probe-2:
+        image: ${COMPOSE_PROJECT_NAME}-probe
         networks:
           - uptime
         restart: always
@@ -467,7 +470,8 @@ services:
             options:
                 max-size: "1000m"
 
-    ingress:
+    nginx:
+        image: ${COMPOSE_PROJECT_NAME}-nginx
         restart: always
         networks:
           - uptime
@@ -482,7 +486,6 @@ services:
             driver: "local"
             options:
                 max-size: "1000m"
-
 
 volumes:
     postgres:

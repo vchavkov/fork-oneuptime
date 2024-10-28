@@ -373,14 +373,14 @@ services:
             context: ./Fluentd
             dockerfile: ./Dockerfile
 
-    ingress:
+    nginx:
         build:
             network: host
             context: .
             dockerfile: ./Nginx/Dockerfile
         extends:
             file: ./docker-compose.base.yml
-            service: ingress
+            service: nginx
 
     # e2e tests
     e2e:
