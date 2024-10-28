@@ -9,7 +9,7 @@ import ModelForm, { FormType } from "Common/UI/Components/Forms/ModelForm";
 import FormFieldSchemaType from "Common/UI/Components/Forms/Types/FormFieldSchemaType";
 import Link from "Common/UI/Components/Link/Link";
 import { DASHBOARD_URL } from "Common/UI/Config";
-import OneUptimeLogo from "Common/UI/Images/logos/OneUptimeSVG/3-transparent.svg";
+import UptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
 import UiAnalytics from "Common/UI/Utils/Analytics";
 import LoginUtil from "Common/UI/Utils/Login";
 import UserTwoFactorAuth from "Common/Models/DatabaseModels/UserTwoFactorAuth";
@@ -76,8 +76,8 @@ const LoginPage: () => JSX.Element = () => {
       <div className="">
         <img
           className="mx-auto h-12 w-auto"
-          src={OneUptimeLogo}
-          alt="OneUptime"
+          src={UptimeLogo}
+          alt="CBS Uptime"
         />
         {!showTwoFactorAuth && (
           <>

@@ -12,7 +12,7 @@
     "debug-tests": "playwright test --debug"
   },
   "keywords": [],
-  "author": "OneUptime <hello@oneuptime.com> (https://oneuptime.com/)",
+  "author": "OneUptime <hello@oneuptime.com> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^20.10.4"
@@ -20,7 +20,7 @@
   "dependencies": {
     "@playwright/test": "^1.43.1",
     "Common": "file:../Common",
-    
+
     "playwright": "^1.43.1",
     "typescript": "^5.4.5"
   }

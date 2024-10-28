@@ -1,9 +1,9 @@
-# Important: 
-# This script will setup MicroK8s and install OneUptime on it. 
+# Important:
+# This script will setup MicroK8s and install OneUptime on it.
 # This is used to install OneUptime on a standalone VM
-# This is usally used for CI/CD testing, and to update VM's on GCP, Azure and AWS. 
+# This is usally used for CI/CD testing, and to update VM's on GCP, Azure and AWS.
 
-# If this is the first install, then helm wont be found. 
+# If this is the first install, then helm wont be found.
 if [[ ! $(which helm) ]]
 then
     echo "RUNNING COMMAND:  sudo rm /etc/apt/sources.list  || echo 'File not found'"
@@ -108,7 +108,7 @@ then
     sudo microk8s.enable registry
     echo "RUNNING COMMAND: sudo microk8s.enable dns"
     sudo microk8s.enable dns
-    # If its a CI install, then do not enable storage. 
+    # If its a CI install, then do not enable storage.
     if [[ "$1" != "ci-install" ]]
     then
         echo "RUNNING COMMAND: sudo microk8s.enable storage"
@@ -143,10 +143,10 @@ then
 fi
 
 
-AVAILABLE_VERSION=$(curl https://oneuptime.com/api/version | jq '.server' | tr -d '"')
+AVAILABLE_VERSION=$(curl https://uptime.cbsretail.net/api/version | jq '.server' | tr -d '"')
 AVAILABLE_VERSION_BUILD=$(echo $AVAILABLE_VERSION | tr "." "0")
 
-IMAGE_VERSION=$(sudo k get deployment fi-accounts -o=jsonpath='{$.spec.template.spec.containers[:1].image}' || echo 0) 
+IMAGE_VERSION=$(sudo k get deployment fi-accounts -o=jsonpath='{$.spec.template.spec.containers[:1].image}' || echo 0)
 
 if [[ $IMAGE_VERSION -eq 0 ]]
 then
@@ -159,13 +159,13 @@ fi
 
 if [[ $AVAILABLE_VERSION_BUILD -le $DEPLOYED_VERSION_BUILD ]]
 then
-    # If no updates are found then exit. 
+    # If no updates are found then exit.
     echo "No Updates found"
     exit 0
 fi
 
 # Install cluster with Helm.
-sudo helm repo add oneuptime https://oneuptime.com/chart || echo "OneUptime already added"
+sudo helm repo add oneuptime https://uptime.cbsretail.net/chart || echo "OneUptime already added"
 sudo helm repo update
 
 
@@ -179,14 +179,14 @@ function updateinstallation {
 if [[ "$1" == "thirdPartyBillingEnabled" ]] #If thirdPartyBillingIsEnabled (for ex for Marketplace VM's)
 then
     if [[ $DEPLOYED_VERSION_BUILD -eq 0 ]]
-    then   
+    then
         if [[ "$2" == "aws-ec2" ]]
         then
             # 169.254.169.254 is a static AWS service which amazon uses to get instance id
             # https://forums.aws.amazon.com/thread.jspa?threadID=100982
             INSTANCEID=`wget -q -O - http://169.254.169.254/latest/meta-data/instance-id`
 
-            # Chart not deployed. Create a new deployment. Set service of type nodeport for VM's. 
+            # Chart not deployed. Create a new deployment. Set service of type nodeport for VM's.
             # Add Admin Email and Password on AWS.
             sudo helm install fi oneuptime/OneUptime \
             --set isThirdPartyBilling=true \
@@ -195,20 +195,20 @@ then
             --set image.tag=$AVAILABLE_VERSION \
             --set oneuptime.admin.email=admin@admin.com \
             --set disableSignup=true \
-            --set oneuptime.admin.password=$INSTANCEID 
-            
+            --set oneuptime.admin.password=$INSTANCEID
+
         else
             # Chart not deployed. Create a new deployment. Set service of type nodeport for VM's. This is used for Azure and AWS.
             sudo helm install fi oneuptime/OneUptime \
             --set isThirdPartyBilling=true \
             --set nginx-ingress-controller.service.type=NodePort \
             --set nginx-ingress-controller.hostNetwork=true \
-            --set image.tag=$AVAILABLE_VERSION 
+            --set image.tag=$AVAILABLE_VERSION
         fi
     else
         updateinstallation
     fi
-elif [[ "$1" == "ci-install" ]] # If its a local install, take local scripts. 
+elif [[ "$1" == "ci-install" ]] # If its a local install, take local scripts.
 then
     if [[ $DEPLOYED_VERSION_BUILD -eq 0 ]]
     then

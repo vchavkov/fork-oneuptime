@@ -14,13 +14,13 @@
     "coverage": "jest --detectOpenHandles --coverage",
     "debug:test": "node --inspect node_modules/.bin/jest --runInBand ./Tests --detectOpenHandles"
   },
-  "author": "OneUptime <hello@oneuptime.com> (https://oneuptime.com/)",
+  "author": "OneUptime <hello@oneuptime.com> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0",
   "dependencies": {
     "@types/ping": "^0.4.4",
     "axios": "^1.7.2",
     "Common": "file:../Common",
-    
+
 
     "ejs": "^3.1.10",
     "ping": "^0.4.4",

@@ -4,4 +4,4 @@ Disallow: /StatusPage/*
 Disallow: /admin/*
 Disallow: /haraka/*
 Disallow: /dashboard/*
-Sitemap: https://oneuptime.com/sitemap.xml
+Sitemap: https://uptime.cbsretail.net/sitemap.xml

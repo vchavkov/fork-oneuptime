@@ -1,4 +1,4 @@
-# Integrate OpenTelemetry (logging, metrics and traces) with OneUptime. 
+# Integrate OpenTelemetry (logging, metrics and traces) with OneUptime.
 
 ### Step 1 - Create Telemetry Ingestion Token.
 
@@ -6,7 +6,7 @@ Once you have created a OneUptime account, you can create a telemetry ingestion 
 
 After you sign up to OneUptime and create a project. Click on "More" in the Navigation bar and click on "Project Settings".
 
-On the Telemetry Ingestion Key page, click on "Create Ingestion Key" to create a token. 
+On the Telemetry Ingestion Key page, click on "Create Ingestion Key" to create a token.
 
 ![Create Service](/docs/static/images/TelemetryIngestionKeys.png)
 
@@ -15,7 +15,7 @@ Once you created a token, click on "View" to view the token.
 ![View Service](/docs/static/images/TelemetryIngestionKeyView.png)
 
 
-### Step 2 
+### Step 2
 
 #### Configure the telemetry service in your application.
 
@@ -62,7 +62,7 @@ Once you run your application, you should see the logs in the OneUptime telemetr
 
 #### Using OpenTelemetry Collector
 
-You can also use the OpenTelemetry collector instead of sending telemetry data directly from your application. 
+You can also use the OpenTelemetry collector instead of sending telemetry data directly from your application.
 If you are using OpenTelemetry Collector, you can configure the OneUptime exporter in the collector configuration file.
 
 Here is the example configuration for OpenTelemetry Collector.
@@ -80,7 +80,7 @@ exporters:
 
   # Export over HTTP
   otlphttp:
-    endpoint: "https://oneuptime.com/otlp"
+    endpoint: "https://uptime.cbsretail.net/otlp"
     # Requires use JSON encoder insted of default Proto(buf)
     encoding: json
     headers:

@@ -5,7 +5,7 @@ import { JSONArray, JSONObject } from "Common/Types/JSON";
 import FormFieldSchemaType from "Common/UI/Components/Forms/Types/FormFieldSchemaType";
 import Link from "Common/UI/Components/Link/Link";
 import { DASHBOARD_URL, IDENTITY_URL } from "Common/UI/Config";
-import OneUptimeLogo from "Common/UI/Images/logos/OneUptimeSVG/3-transparent.svg";
+import UptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
 import Navigation from "Common/UI/Utils/Navigation";
 import UserUtil from "Common/UI/Utils/User";
 import User from "Common/Models/DatabaseModels/User";
@@ -131,8 +131,8 @@ const LoginPage: () => JSX.Element = () => {
           <div className="">
             <img
               className="mx-auto h-12 w-auto"
-              src={OneUptimeLogo}
-              alt="OneUptime"
+              src={UptimeLogo}
+              alt="CBS Uptime"
             />
             <h2 className="mt-10 text-center text-xl tracking-tight text-gray-900">
               Select Project
@@ -168,8 +168,8 @@ const LoginPage: () => JSX.Element = () => {
       <div className="">
         <img
           className="mx-auto h-12 w-auto"
-          src={OneUptimeLogo}
-          alt="OneUptime"
+          src={UptimeLogo}
+          alt="CBS Uptime"
         />
         <h2 className="mt-6 text-center text-2xl  tracking-tight text-gray-900">
           Login with SSO

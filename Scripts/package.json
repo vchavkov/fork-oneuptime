@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "Common": "file:../Common",
-    
+
 
     "ejs": "^3.1.10",
     "ts-node": "^10.9.2"
@@ -19,6 +19,6 @@
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4"
   },
-  "author": "OneUptime <hello@oneuptime.com> (https://oneuptime.com/)",
+  "author": "OneUptime <hello@oneuptime.com> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0"
 }

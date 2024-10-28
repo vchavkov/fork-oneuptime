@@ -6,7 +6,7 @@ import ObjectID from "Common/Types/ObjectID";
 import { FormType } from "Common/UI/Components/Forms/ModelForm";
 import Link from "Common/UI/Components/Link/Link";
 import PageLoader from "Common/UI/Components/Loader/PageLoader";
-import OneUptimeLogo from "Common/UI/Images/logos/OneUptimeSVG/3-transparent.svg";
+import UptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
 import API from "Common/UI/Utils/API/API";
 import ModelAPI from "Common/UI/Utils/ModelAPI/ModelAPI";
 import Navigation from "Common/UI/Utils/Navigation";
@@ -74,7 +74,7 @@ const VerifyEmail: () => JSX.Element = () => {
                     >
                       <img
                         style={{ height: "50px" }}
-                        src={`${OneUptimeLogo}`}
+                        src={`${UptimeLogo}`}
                       />
                     </div>
                     {!error && (

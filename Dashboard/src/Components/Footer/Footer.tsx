@@ -68,15 +68,15 @@ const DashboardFooter: () => JSX.Element = () => {
     <>
       <Footer
         className="bg-white h-16 inset-x-0 bottom-0 px-8"
-        copyright="HackerBay, Inc."
+        copyright="Bosch, Inc."
         links={[
           {
             title: "Help and Support",
-            to: URL.fromString("https://oneuptime.com/support"),
+            to: URL.fromString("https://uptime.cbsretail.net/support"),
           },
           {
             title: "Legal",
-            to: URL.fromString("https://oneuptime.com/legal"),
+            to: URL.fromString("https://uptime.cbsretail.net/legal"),
           },
           {
             title: "Version",

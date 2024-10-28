@@ -5,13 +5,13 @@ The OneUptime Infrastructure Agent is a lightweight, open-source agent that coll
 ### Installation
 
 ```
-curl -s https://oneuptime.com/docs/static/scripts/infrastructure-agent/install.sh | bash
+curl -s https://uptime.cbsretail.net/docs/static/scripts/infrastructure-agent/install.sh | bash
 ```
 
 ### Configure the agent
 
 Configure the agent as a system service
-- You can change the host to your own host if you're self hosting the OneUptime platform. 
+- You can change the host to your own host if you're self hosting the OneUptime platform.
 - You can find the secret key on OneUptime Dashboard. Click on "View Monitor" and go to "Settings" tab.
 
 ```bash

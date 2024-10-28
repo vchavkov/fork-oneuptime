@@ -281,7 +281,7 @@ export default class BlogPostUtil {
       postDate,
       formattedPostDate,
       socialMediaImageUrl: `${GitHubRawUrl}/posts/${fileName}/social-media.png`,
-      blogUrl: `https://oneuptime.com/blog/post/${fileName}`, // this has to be oneuptime.com because its used in twitter cards and faceboomk cards. Please dont change this.
+      blogUrl: `https://uptime.cbsretail.net/blog/post/${fileName}`, // this has to be oneuptime.com because its used in twitter cards and faceboomk cards. Please dont change this.
     };
 
     return blogPost;

@@ -47,7 +47,7 @@ const Help: () => JSX.Element = (): ReactElement => {
               setIsDropdownVisible(false);
             }}
             openInNewTab={true}
-            url={URL.fromString("https://oneuptime.com/enterprise/demo")}
+            url={URL.fromString("https://uptime.cbsretail.net/enterprise/demo")}
           />
         </IconDropdownRow>
       </IconDropdownMenu>

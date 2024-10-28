@@ -13,12 +13,12 @@
     "test": "rm -rf build && jest --detectOpenHandles --passWithNoTests",
     "coverage": "jest --detectOpenHandles --coverage"
   },
-  "author": "OneUptime <hello@oneuptime.com> (https://oneuptime.com/)",
+  "author": "OneUptime <hello@oneuptime.com> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0",
   "dependencies": {
     "@sendgrid/mail": "^8.1.0",
     "Common": "file:../Common",
-    
+
 
     "ejs": "^3.1.9",
     "handlebars": "^4.7.8",

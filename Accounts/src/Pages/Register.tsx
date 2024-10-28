@@ -10,7 +10,7 @@ import FormFieldSchemaType from "Common/UI/Components/Forms/Types/FormFieldSchem
 import Link from "Common/UI/Components/Link/Link";
 import PageLoader from "Common/UI/Components/Loader/PageLoader";
 import { BILLING_ENABLED, DASHBOARD_URL } from "Common/UI/Config";
-import OneUptimeLogo from "Common/UI/Images/logos/OneUptimeSVG/3-transparent.svg";
+import UptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
 import BaseAPI from "Common/UI/Utils/API/API";
 import UiAnalytics from "Common/UI/Utils/Analytics";
 import LocalStorage from "Common/UI/Utils/LocalStorage";
@@ -191,8 +191,8 @@ const RegisterPage: () => JSX.Element = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <img
           className="mx-auto h-12 w-auto"
-          src={OneUptimeLogo}
-          alt="OneUptime"
+          src={UptimeLogo}
+          alt="CBS Uptime"
         />
         <h2 className="mt-6 text-center text-2xl  tracking-tight text-gray-900">
           Create your OneUptime account
