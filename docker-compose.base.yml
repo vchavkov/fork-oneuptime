@@ -134,7 +134,7 @@ services:
 
 
     redis:
-        image: redis:7.0.12
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/redis:7.0.12
         restart: always
         networks:
           - uptime
@@ -147,7 +147,7 @@ services:
                 max-size: "1000m"
 
     clickhouse:
-        image: clickhouse/clickhouse-server:23.7
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/clickhouse/clickhouse-server:23.7
         restart: always
         environment:
             CLICKHOUSE_USER: ${CLICKHOUSE_USER}
@@ -164,7 +164,7 @@ services:
                 max-size: "1000m"
 
     postgres:
-        image: postgres:15
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/postgres:15
         restart: always
         environment:
             POSTGRES_USER: ${DATABASE_USERNAME}
@@ -471,7 +471,7 @@ services:
                 max-size: "1000m"
 
     nginx:
-        image: ${COMPOSE_PROJECT_NAME}-nginx
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/uptime/nginx:latest
         restart: always
         networks:
           - uptime

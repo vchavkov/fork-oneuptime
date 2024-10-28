@@ -4,6 +4,7 @@
 services:
 
     haraka:
+        image: ${IMAGE_PREFIX}/haraka:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: haraka
