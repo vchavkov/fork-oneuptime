@@ -1,7 +1,7 @@
 // Tailwind
 import Route from "Common/Types/API/Route";
 import Image from "Common/UI/Components/Image/Image";
-import OneUptimeLogo from "Common/UI/Images/logos/SVG/3.svg";
+import UptimeLogo from "Common/UI/Images/logos/SVG/3-transparent.svg";
 import React, { FunctionComponent, ReactElement } from "react";
 
 export interface ComponentProps {
