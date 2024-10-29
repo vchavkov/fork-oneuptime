@@ -90,7 +90,7 @@ const DashboardFooter: () => JSX.Element = () => {
 
       {showAboutModal ? (
         <ConfirmModal
-          title={`OneUptime Version`}
+          title={`CBS Uptime Version`}
           description={
             <div>
               {Object.keys(versionText).map((key: string, i: number) => {

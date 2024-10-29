@@ -24,7 +24,7 @@ Create a values.yaml file and change the host.
 host: <ip-address-or-domain-of-server>
 
 # If hosted on non-ssl server then change this to http
-httpProtocol: https 
+httpProtocol: https
 ```
 
 #### Pick a Storage Class
@@ -40,7 +40,7 @@ kubectl get storageclass
 and add this to your values.yaml file
 
 ```yaml
-global: 
+global:
   storageClass: "your-storage-class"
 ```
 
@@ -55,7 +55,7 @@ helm install my-oneuptime oneuptime/oneuptime -f values.yaml
 
 ```console
 
-# Update the chart repo 
+# Update the chart repo
 helm repo update
 
 # Upgrade the helm chart
@@ -140,40 +140,40 @@ If you need to use SSL/TLS certificates, follow these steps:
 
 ### Postgres
 
-If you would like to use an external postgres database, please add these env vars to your values.yaml file. 
+If you would like to use an external postgres database, please add these env vars to your values.yaml file.
 
 ```yaml
 
 postgresql:
   # Set Internal Postgres enabled to false, so we dont install the postgres database in your cluster
-  enabled: false 
+  enabled: false
 
 # External Postgres Configuration
 # You need to set postgresql.enabled to false if you're using an external postgres database.
-externalPostgres: 
-  host: 
-  port: 
-  username: 
-  password: 
-  # If you're using an existing secret for the password, please use this instead of password. 
+externalPostgres:
+  host:
+  port:
+  username:
+  password:
+  # If you're using an existing secret for the password, please use this instead of password.
   existingSecret:
-    name: 
+    name:
     # This is the key in the secret where the password is stored.
-    passwordKey: 
+    passwordKey:
   database:
   ssl:
     enabled: false
     # If this is enabled, please set either "ca"
-    ca: 
+    ca:
 
     # Optional
-    cert: 
+    cert:
     key:
 ```
 
 ### Redis
 
-If you would like to use an external redis database, please add these env vars to your values.yaml file. 
+If you would like to use an external redis database, please add these env vars to your values.yaml file.
 
 ```yaml
 
@@ -182,61 +182,61 @@ redis:
   enabled: false
 
 
-externalRedis: 
-  host: 
-  port: 
-  password: 
-  # If you're using an existing secret for the password, please use this instead of password. 
+externalRedis:
+  host:
+  port:
+  password:
+  # If you're using an existing secret for the password, please use this instead of password.
   existingSecret:
-    name: 
+    name:
     # This is the key in the secret where the password is stored.
-    passwordKey: 
-  database: 
+    passwordKey:
+  database:
   tls:
     enabled: false
     # If this is enabled, please set "ca" certificate.
     ca:
 
     # (optional)
-    cert: 
+    cert:
     key:
 
 ```
 
-### Clickhouse 
+### Clickhouse
 
-If you would like to use an external clickhouse database, please add these env vars to your values.yaml file. 
+If you would like to use an external clickhouse database, please add these env vars to your values.yaml file.
 
 ```yaml
-clickhouse: 
+clickhouse:
   # Set Internal Clickhouse enabled to false, so we dont install the clickhouse database in your cluster
   enabled: false
 
 externalClickhouse:
-  host: 
+  host:
   # if you host is https then set this to true
-  isHostHttps: 
-  port: 
-  username: 
-  password: 
-  # If you're using an existing secret for the password, please use this instead of password. 
+  isHostHttps:
+  port:
+  username:
+  password:
+  # If you're using an existing secret for the password, please use this instead of password.
   existingSecret:
-    name: 
+    name:
     # This is the key in the secret where the password is stored.
-    passwordKey: 
+    passwordKey:
   database:
   tls:
     enabled: false
     # If this is enabled, please set either "ca"
-    ca: 
+    ca:
 
     # Optional
-    cert: 
+    cert:
     key:
 ```
 
 
-## If you would like to use a custom domain for your status page, please add these env vars 
+## If you would like to use a custom domain for your status page, please add these env vars
 
 
 | Parameter | Description | Default | Change Required |
@@ -249,7 +249,7 @@ externalClickhouse:
 
 **Step 1: Add a CNAME record to your DNS settings**
 
-If you would like to add a custom domain to your status page (something like status.yourcompany.com), you can do so by adding a CNAME record to your DNS settings. 
+If you would like to add a custom domain to your status page (something like status.yourcompany.com), you can do so by adding a CNAME record to your DNS settings.
 
 ```
 DNS Record Type: CNAME
@@ -261,12 +261,12 @@ Please make sure oneuptime is hosted on a server which is publicly accessible.
 
 **Step 2: Add Custom Domain to your Project**
 
-Please go to your project settings and add the custom domain to your project. You can find the project settings by clicking "More" in the nav bar and by clicking "Project Settings". Please go to "Custom Domain" page and add your custom domain there. You will need to verify the domain. You can find the verification code in the "Custom Domain" page in your project settings. 
+Please go to your project settings and add the custom domain to your project. You can find the project settings by clicking "More" in the nav bar and by clicking "Project Settings". Please go to "Custom Domain" page and add your custom domain there. You will need to verify the domain. You can find the verification code in the "Custom Domain" page in your project settings.
 
 
 **Step 3: Add custom domain to your status page.**
 
-Please go to your status page settings and add the custom domain to your status page. You can find the status page settings by clicking on "View Status Page" in "Status Pages" page. You can add the custom domain in the "Custom Domain" page in your status page settings. 
+Please go to your status page settings and add the custom domain to your status page. You can find the status page settings by clicking on "View Status Page" in "Status Pages" page. You can add the custom domain in the "Custom Domain" page in your status page settings.
 
 Once you have added the custom domain, you can access your status page using the custom domain.
 
@@ -274,7 +274,7 @@ Once you have added the custom domain, you can access your status page using the
 
 Please go through the following checklist to make sure your OneUptime installation is production ready.
 
-- [ ] Please pin OneUptime version to a specific version. This will prevent any breaking changes from affecting your installation.
+- [ ] Please pin CBS Uptime Version to a specific version. This will prevent any breaking changes from affecting your installation.
 
 When you install, you can check the latest version from the github releases page https://github.com/OneUptime/oneuptime/releases. You can pin the version in your values.yaml file.
 
@@ -285,13 +285,13 @@ image:
 
 - [ ] Please pin Postgresql, Redis and Clickhouse versions to a specific version. This will prevent any breaking changes from affecting your installation.
 
-When you install, you can check the version installed by describing the pods. 
+When you install, you can check the version installed by describing the pods.
 
 ```
 kubectl describe pod <pod-name>
 ```
 
-For example: 
+For example:
 
 ```
 kubectl describe pod my-oneuptime-postgresql-0
@@ -308,12 +308,12 @@ postgresql:
 Please do the same for Redis and Clickhouse.
 
 - [ ] Please make sure you have a backups enabled for your PVCs. This is outside the scope of this chart. Please refer to your cloud provider's documentation on how to enable backups for PVCs.
-- [ ] Please make sure you have static passwords for your database passswords (for redis, clickhouse and postgres). You can refer to Bitnami documentation on how to set static passwords for these databases. 
+- [ ] Please make sure you have static passwords for your database passswords (for redis, clickhouse and postgres). You can refer to Bitnami documentation on how to set static passwords for these databases.
 - [ ] Please set `oneuptimeSecret` and `encryptionSecret` (or setup in `externalSecrets` section) to a long random string. You can use a password generator to generate these strings.
 - [ ] Please set `probes.<key>.key` to a long random string. This is used to secure your probes.
-- [ ] Please regularly update OneUptime. We release updates every day. We recommend you to update the software aleast once a week if you're running OneUptime production. 
+- [ ] Please regularly update OneUptime. We release updates every day. We recommend you to update the software aleast once a week if you're running OneUptime production.
 
-## Releases 
+## Releases
 
 We release frequently, sometimes multiple times a day. It's usually safe to upgrade to the latest version. Any breaking changes will be documented in the release notes. Please make sure you read the release notes before upgrading.
 
@@ -321,13 +321,13 @@ We release frequently, sometimes multiple times a day. It's usually safe to upgr
 
 We use these charts as dependencies. You dont need to install them separately. Please read the readme for these individual charts to understand the configuration options.
 
-| Chart | Description | Repository | 
-| ----- | ----------- | ---------- | 
+| Chart | Description | Repository |
+| ----- | ----------- | ---------- |
 | `postgresql` | PostgreSQL database | https://charts.bitnami.com/bitnami |
 | `redis` | Redis database | https://charts.bitnami.com/bitnami |
 | `clickhouse` | Clickhouse database | https://charts.bitnami.com/bitnami |
 
 ## Contributing
 
-We <3 contributions big and small. 
+We <3 contributions big and small.
 https://github.com/OneUptime/helm-chart is the read only release repository. Please direct your contributions here: https://github.com/OneUptime/oneuptime
