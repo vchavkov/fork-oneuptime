@@ -1,5 +1,5 @@
 #
-# OneUptime-App Dockerfile
+# CBSUptime-App Dockerfile
 #
 
 # Pull base image nodejs image.
