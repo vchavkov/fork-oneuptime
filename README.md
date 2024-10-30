@@ -59,7 +59,7 @@ All under one platform.
 
 ## Get Started for Free with CBSUptime Cloud
 
-CBSUptime Cloud is the easiest and fastest way to monitor your website uptime and performance. You can sign up for free to [CBSUptime Cloud](https://oneuptime.com) and enjoy the full benefits of CBSUptime without any installation or maintenance hassle.
+CBSUptime Cloud is the easiest and fastest way to monitor your website uptime and performance. You can sign up for free to [CBSUptime Cloud](https://uptime.cbsretail.net) and enjoy the full benefits of CBSUptime without any installation or maintenance hassle.
 
 By using CBSUptime Cloud, you also support the development of CBSUptime open source project, which is a powerful and flexible tool for website monitoring. You can find more information about CBSUptime open source project on [GitHub](##Philosophy). The code of CBSUptime is completely open source, which means you can access, modify, and distribute it freely. You can also contribute to the project by reporting issues, suggesting features, or submitting pull requests.
 

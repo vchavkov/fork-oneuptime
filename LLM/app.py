@@ -19,14 +19,14 @@ if not HF_MODEL_NAME:
     print(f"HF_MODEL_NAME not set. Using default model: {HF_MODEL_NAME}")
 
 if not ONEUPTIME_URL:
-    ONEUPTIME_URL = "https://oneuptime.com"
+    ONEUPTIME_URL = "https://uptime.cbsretail.net"
 
 if not HF_TOKEN:
     # Print error and exit
     print("HF_TOKEN env var is required. This is the Hugging Face API token. You can get it from https://huggingface.co/account/overview. Exiting..")
     exit()
 
-# TODO: Store this in redis down the line. 
+# TODO: Store this in redis down the line.
 items_pending = {}
 items_processed = {}
 errors = {}
@@ -34,7 +34,7 @@ errors = {}
 async def validateSecretKey(secretKey):
     try:
 
-        # If no secret key then return false 
+        # If no secret key then return false
         if not secretKey:
             return False
 
@@ -47,7 +47,7 @@ async def validateSecretKey(secretKey):
                     return True
                 else:
                     return False
-                
+
     except Exception as e:
         print(repr(e))
         return False
@@ -65,13 +65,13 @@ async def job(queue):
     model_path = HF_MODEL_NAME
 
     pipe = transformers.pipeline(
-        "text-generation", 
+        "text-generation",
         model=model_path,
         # use gpu if available
         device="cuda" if torch.cuda.is_available() else "cpu",
         # max_new_tokens=8096
         )
-    
+
 
     print("Model downloaded.")
 
@@ -99,7 +99,7 @@ async def job(queue):
                 del items_pending[random_id]
             print(e)
 
-       
+
 
 
 @asynccontextmanager
@@ -136,14 +136,14 @@ async def create_item(prompt: Prompt):
         # If not prompt then return bad request error
         if not prompt:
             return {"error": "Prompt is required"}
-        
+
         # Validate the secret key
         # is_valid = await validateSecretKey(prompt.secretkey)
 
         # if not is_valid:
         #     print("Invalid secret key")
         #     return {"error": "Invalid secret key"}
-        
+
         # messages are in str format. We need to convert them fron json [] to list
         messages = prompt.messages
 
@@ -170,7 +170,7 @@ async def create_item(prompt: Prompt):
 # Disable this API in production
 @app.get("/queue-status/")
 async def queue_status():
-    try: 
+    try:
         return {"pending": items_pending, "processed": items_processed, "queue": app.model_queue.qsize(), "errors": errors}
     except Exception as e:
         print(e)
@@ -188,15 +188,15 @@ async def prompt_status(prompt_status: PromptResult):
         # if not is_valid:
         #     print("Invalid secret key")
         #     return {"error": "Invalid secret key"}
-        
+
         # If not prompt status then return bad request error
         if not prompt_status:
             return {"error": "Prompt status is required"}
-    
-        # check if item is processed. 
+
+        # check if item is processed.
         if prompt_status.id in items_processed:
 
-           
+
             return_value =  {
                 "id": prompt_status.id,
                 "status": "processed",
@@ -209,7 +209,7 @@ async def prompt_status(prompt_status: PromptResult):
             return return_value
         else:
 
-            status = "not found" 
+            status = "not found"
 
             if prompt_status.id in items_pending:
                 status = "pending"
@@ -221,7 +221,3 @@ async def prompt_status(prompt_status: PromptResult):
     except Exception as e:
         print(e)
         return {"error": repr(e)}
-
-
-
-

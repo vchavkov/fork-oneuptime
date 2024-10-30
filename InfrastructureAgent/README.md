@@ -15,7 +15,7 @@ Configure the agent as a system service
 - You can find the secret key on CBSUptime Dashboard. Click on "View Monitor" and go to "Settings" tab.
 
 ```bash
-oneuptime-infrastructure-agent configure --secret-key=YOUR_SECRET_KEY --oneuptime-url=https://oneuptime.com
+oneuptime-infrastructure-agent configure --secret-key=YOUR_SECRET_KEY --oneuptime-url=https://uptime.cbsretail.net
 ```
 
 ### Starting the agent

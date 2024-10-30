@@ -376,7 +376,7 @@ export default class GreenlockUtil {
           }
 
           throw new ServerException(
-            `Unable to order certificate for ${data.domain}. Please contact support at support@oneuptime.com for more information.`,
+            `Unable to order certificate for ${data.domain}. Please contact support at support@uptime.cbsretail.net for more information.`,
           );
         }
       },

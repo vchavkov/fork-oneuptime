@@ -24,7 +24,7 @@ jobs:
     - name: Run Copilot
       run: |
         docker run --rm \
-          -e ONEUPTIME_URL="https://test.oneuptime.com" \
+          -e ONEUPTIME_URL="https://test.uptime.cbsretail.net" \
           -e ONEUPTIME_REPOSITORY_SECRET_KEY="${{ secrets.COPILOT_ONEUPTIME_REPOSITORY_SECRET_KEY }}" \
           -e CODE_REPOSITORY_PASSWORD="${{ github.token }}" \
           -e CODE_REPOSITORY_USERNAME="simlarsen" \

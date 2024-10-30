@@ -89,7 +89,7 @@ BNE/LDMSADNpTL/o0jQnOzH9KP47iCI8lzdboHtegXuAnlCLj3uSYFy/W4KPm1FZHjZFkmmZz0SH
 		</ds:Signature>
 		<saml2:Subject
 			xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
-			<saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">simon.larsen@oneuptime.com</saml2:NameID>
+			<saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">simon.larsen@uptime.cbsretail.net</saml2:NameID>
 			<saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
 				<saml2:SubjectConfirmationData NotOnOrAfter="2023-03-05T19:39:15.185Z" Recipient="http://localhost/identity/idp-login/19462af5-a3c5-414d-bef8-20681c708579/56489843-5440-4305-a46a-c64215451b65"/>
 			</saml2:SubjectConfirmation>

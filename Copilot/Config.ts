@@ -14,7 +14,7 @@ export const GetIsCopilotDisabled: () => boolean = () => {
 
 export const GetOneUptimeURL: GetURLFunction = () => {
   return URL.fromString(
-    process.env["ONEUPTIME_URL"] || "https://oneuptime.com",
+    process.env["ONEUPTIME_URL"] || "https://uptime.cbsretail.net",
   );
 };
 

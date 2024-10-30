@@ -23,7 +23,7 @@ export const InternalSmtpPort: Port = new Port(2525);
 export const InternalSmtpSecure: boolean = false;
 
 export const InternalSmtpEmail: Email = new Email(
-  process.env["INTERNAL_SMTP_EMAIL"] || "noreply@oneuptime.com",
+  process.env["INTERNAL_SMTP_EMAIL"] || "noreply@uptime.cbsretail.net",
 );
 
 export const InternalSmtpFromName: string =

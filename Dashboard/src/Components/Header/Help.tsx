@@ -24,7 +24,7 @@ const Help: () => JSX.Element = (): ReactElement => {
             title="Support Email"
             icon={IconProp.Email}
             openInNewTab={true}
-            url={URL.fromString("mailto:support@oneuptime.com")}
+            url={URL.fromString("mailto:support@uptime.cbsretail.net")}
             onClick={() => {
               setIsDropdownVisible(false);
             }}

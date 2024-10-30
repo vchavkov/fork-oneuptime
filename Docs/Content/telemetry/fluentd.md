@@ -30,8 +30,8 @@ You can find the full list of supported sources [here](https://www.fluentd.org/d
 ## Prerequisites
 
 - **Step 1: Install Fluentd on your system** - You can install Fluentd using the instructions provided [here](https://docs.fluentd.org/installation)
-- **Step 2: Sign up for CBS Uptime account** -  You can sign up for a free account [here](https://oneuptime.com). Please note while the account is free, log ingestion is a paid feature. You can find more details about the pricing [here](https://uptime.cbsretail.net/pricing).
-- **Step 3: Create CBSUptime Project** - Once you have the account, you can create a project from the CBSUptime dashboard. If you need any help with creating a project or have any questions, please reach out to us at support@oneuptime.com
+- **Step 2: Sign up for CBS Uptime account** -  You can sign up for a free account [here](https://uptime.cbsretail.net). Please note while the account is free, log ingestion is a paid feature. You can find more details about the pricing [here](https://uptime.cbsretail.net/pricing).
+- **Step 3: Create CBSUptime Project** - Once you have the account, you can create a project from the CBSUptime dashboard. If you need any help with creating a project or have any questions, please reach out to us at support@uptime.cbsretail.net
 - **Step 4: Create Telemetry Ingestion Token** - Once you have created a CBS Uptime account, you can create a telemetry ingestion token to ingest logs, metrics and traces from your application.
 
 After you sign up to CBSUptime and create a project. Click on "More" in the Navigation bar and click on "Project Settings".
@@ -113,4 +113,4 @@ An example of full configuration file is shown below:
 
 ## Usage
 
-Once you have added the configuration to the fluentd configuration file, you can restart the fluentd service. Once the service is restarted, the telemetry data will be sent to the CBSUptime HTTP Source. You can now start seeing the telemetry data in the CBSUptime dashboard. If you have any questions or need help with the configuration, please reach out to us at support@oneuptime.com
+Once you have added the configuration to the fluentd configuration file, you can restart the fluentd service. Once the service is restarted, the telemetry data will be sent to the CBSUptime HTTP Source. You can now start seeing the telemetry data in the CBSUptime dashboard. If you have any questions or need help with the configuration, please reach out to us at support@uptime.cbsretail.net

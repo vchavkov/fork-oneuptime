@@ -14,7 +14,7 @@ touch ~/.npmrc
 
 # Add Auth Token to npmrc file
 echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" >> ~/.npmrc
-echo "//registry.npmjs.org/:email=npm@oneuptime.com" >> ~/.npmrc
+echo "//registry.npmjs.org/:email=npm@uptime.cbsretail.net" >> ~/.npmrc
 
 # Show content of npmrc file
 cat ~/.npmrc

@@ -18,7 +18,7 @@ const StatusPageFooter: FunctionComponent<ComponentProps> = (
   if (!props.hidePoweredByOneUptimeBranding) {
     links.push({
       title: "Powered by CBSUptime",
-      to: URL.fromString("https://oneuptime.com"),
+      to: URL.fromString("https://uptime.cbsretail.net"),
       openInNewTab: true,
     });
   }

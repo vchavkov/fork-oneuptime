@@ -13,7 +13,7 @@ describe("Email()", () => {
   });
 
   test("should be a business email", () => {
-    const email: Email = new Email("dev@oneuptime.com");
+    const email: Email = new Email("dev@uptime.cbsretail.net");
     expect(email.isBusinessEmail()).toBeTruthy();
   });
 
@@ -23,8 +23,8 @@ describe("Email()", () => {
   });
 
   test("should return the domain of the email address", () => {
-    expect(new Email("hello@oneuptime.com").getEmailDomain().hostname).toBe(
-      "oneuptime.com",
+    expect(new Email("hello@uptime.cbsretail.net").getEmailDomain().hostname).toBe(
+      "uptime.cbsretail.net",
     );
   });
 

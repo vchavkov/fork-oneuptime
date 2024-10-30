@@ -6,7 +6,7 @@
 
 CBSUptime is a comprehensive solution for monitoring and managing your online services. Whether you need to check the availability of your website, dashboard, API, or any other online resource, CBSUptime can alert your team when downtime happens and keep your customers informed with a status page. CBSUptime also helps you handle incidents, set up on-call rotations, run tests, secure your services, analyze logs, track performance, and debug errors.
 
-[Overview of CBSUptime](http://www.oneuptime.com)
+[Overview of CBSUptime](http://www.uptime.cbsretail.net)
 
 
 ## Yotube Tutorial
@@ -46,7 +46,7 @@ global:
 
 
 ```console
-helm repo add oneuptime https://helm-chart.oneuptime.com/
+helm repo add oneuptime https://helm-chart.uptime.cbsretail.net/
 helm install my-oneuptime oneuptime/oneuptime -f values.yaml
 ```
 

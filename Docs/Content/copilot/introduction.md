@@ -15,7 +15,7 @@ Copilot can be installed as a CI/CD tool and can be run on every merge to master
 
 There are three services when running copilot:
 
-- **CBSUptime**: You need to deploy or use CBSUptime Cloud (https://oneuptime.com) to run Copilot. When you deploy CBSUptime, url should be publicily accessible.
+- **CBSUptime**: You need to deploy or use CBSUptime Cloud (https://uptime.cbsretail.net) to run Copilot. When you deploy CBSUptime, url should be publicily accessible.
 - **Copilot**: Copilot is the main service that runs the Copilot engine. Copilot engine is responsible for analyzing the codebase and fixing issues.
 - **LLM Server** (Optional): Copilot sends your code to LLM Server to analyze and fix issues. The source-code and docker-image is [open-source](https://github.com/CBSUptime/oneuptime/tree/master/LLM) and can be found at [Docker Hub](https://hub.docker.com/r/oneuptime/llm). This can be self-deployed if you want to run Copilot on-premises or you can use the hosted version.
 
@@ -43,7 +43,7 @@ Yes, if you choose to use OpenAI by setting `OPENAI_API_KEY`. We recommend you t
 
 Before you install Copilot, you need to make sure you have the following:
 
-- **CBS Uptime account**: You need to have a CBS Uptime account to use Copilot. You can sign up for a free account at [CBSUptime](https://oneuptime.com). You can either use CBSUptime Cloud or deploy CBSUptime on your infrastructure.
+- **CBS Uptime account**: You need to have a CBS Uptime account to use Copilot. You can sign up for a free account at [CBSUptime](https://uptime.cbsretail.net). You can either use CBSUptime Cloud or deploy CBSUptime on your infrastructure.
 - **GitHub Account**: You need to have a GitHub account to use Copilot. You can sign up for a free account at [GitHub](https://github.com). You can also use GitLab, Bitbucket, etc.
 
 You also need either of the following:
@@ -73,7 +73,7 @@ You need to set the following environment variables to run Copilot:
 
 **Optional Environment Variables**:
 
-- **ONEUPTIME_URL**: The URL of CBSUptime Cloud. If left empty, Copilot will default to `https://oneuptime.com`.
+- **ONEUPTIME_URL**: The URL of CBSUptime Cloud. If left empty, Copilot will default to `https://uptime.cbsretail.net`.
 
 If you are using LLM Server, you need to set the following environment variables:
 
@@ -113,7 +113,7 @@ jobs:
         docker run --rm  \
           -e CODE_REPOSITORY_PASSWORD='<YOUR_GITHUB_PASSWORD>' \ # Required. Please make sure to use GitHub secrets.
           -e CODE_REPOSITORY_USERNAME='<YOUR_GITHUB_USERNAME>' \ # Required.
-          -e ONEUPTIME_URL='https://oneuptime.com' \ # Optional. Leave empty to use CBSUptime Cloud.
+          -e ONEUPTIME_URL='https://uptime.cbsretail.net' \ # Optional. Leave empty to use CBSUptime Cloud.
           -e ONEUPTIME_REPOSITORY_SECRET_KEY='<ONEUPTIME_REPOSITORY_SECRET_KEY>' \ # Required. Please make sure to use GitHub secrets.
           -e ONEUPTIME_LLM_SERVER_URL='<YOUR_ONEUPTIME_LLM_SERVER>' \ # Optional. Leave empty to use CBSUptime LLM Server.
           -e OPENAI_API_KEY='<YOUR_OPENAI_API_KEY>' \ # Optional. Leave empty to not use OpenAI.
@@ -128,7 +128,7 @@ You can also run Copilot using docker. You can run this in any CI/CD of your cho
 docker run --rm \
     -e CODE_REPOSITORY_PASSWORD='<YOUR_GITHUB_PASSWORD>' \ # Required. Please make sure to use GitHub secrets.
     -e CODE_REPOSITORY_USERNAME='<YOUR_GITHUB_USERNAME>' \ # Required.
-    -e ONEUPTIME_URL='https://oneuptime.com' \ # Optional. Leave empty to use CBSUptime Cloud.
+    -e ONEUPTIME_URL='https://uptime.cbsretail.net' \ # Optional. Leave empty to use CBSUptime Cloud.
     -e ONEUPTIME_REPOSITORY_SECRET_KEY='<ONEUPTIME_REPOSITORY_SECRET_KEY>' \ # Required. Please make sure to use GitHub secrets.
     -e ONEUPTIME_LLM_SERVER_URL='<YOUR_ONEUPTIME_LLM_SERVER>' \ # Optional. Leave empty to use CBSUptime LLM Server.
     -e OPENAI_API_KEY='<YOUR_OPENAI_API_KEY>' \ # Optional. Leave empty to not use OpenAI.
@@ -137,4 +137,4 @@ docker run --rm \
 
 ### Support
 
-If you have any questions or need help, please contact us at support@oneuptime.com
+If you have any questions or need help, please contact us at support@uptime.cbsretail.net

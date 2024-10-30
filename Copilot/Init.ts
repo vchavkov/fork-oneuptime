@@ -36,7 +36,7 @@ const init: PromiseVoidFunction = async (): Promise<void> => {
   logger.info(`Using ${GetLlmType()} as the AI model.`);
 
   await CodeRepositoryUtil.setAuthorIdentity({
-    email: "copilot@oneuptime.com",
+    email: "copilot@uptime.cbsretail.net",
     name: "CBSUptime Copilot",
   });
 

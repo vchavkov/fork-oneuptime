@@ -17,7 +17,7 @@ export default {
     ONE_MEMBER_REQUIRED:
       "This team should have at least 1 member who has accepted the invitation.",
     LIMIT_REACHED:
-      "You have reached the user limit. You cannot invite any more users to this project. Please contact billing@oneuptime.com to increase your user limit.",
+      "You have reached the user limit. You cannot invite any more users to this project. Please contact billing@uptime.cbsretail.net to increase your user limit.",
     LIMIT_REACHED_FOR_FREE_PLAN:
       "You have reached the user limit for the free plan. Please upgrade your plan to Growth to invite more users.",
   },

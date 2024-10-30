@@ -203,6 +203,6 @@ exit                                            # This is important.
 kubectl exec -it fi-mongodb-0 mongo
 use oneuptimedb
 db.auth('oneuptime','password')
-db.users.find({email: 'admin@oneuptime.com'}) # Master admin user. Should be already signed up.
-db.users.update({email: 'admin@oneuptime.com'}, {$set:{ role: 'master-admin'}}) # Update the user
+db.users.find({email: 'admin@uptime.cbsretail.net'}) # Master admin user. Should be already signed up.
+db.users.update({email: 'admin@uptime.cbsretail.net'}, {$set:{ role: 'master-admin'}}) # Update the user
 ```

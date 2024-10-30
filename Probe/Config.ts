@@ -10,7 +10,7 @@ if (!process.env["INGESTOR_URL"] && !process.env["ONEUPTIME_URL"]) {
 export let INGESTOR_URL: URL = URL.fromString(
   process.env["ONEUPTIME_URL"] ||
     process.env["INGESTOR_URL"] ||
-    "https://oneuptime.com",
+    "https://uptime.cbsretail.net",
 );
 
 // If probe api does not have the path. Add it.

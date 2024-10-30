@@ -11,7 +11,7 @@ To begin with you need to create a custom probe in your Project Settings > Probe
 To run a probe, please make sure you have docker installed. You can run custom probe by:
 
 ```
-docker run --name oneuptime-probe --network host -e PROBE_KEY=<probe-key> -e PROBE_ID=<probe-id> -e ONEUPTIME_URL=https://oneuptime.com -d oneuptime/probe:release
+docker run --name oneuptime-probe --network host -e PROBE_KEY=<probe-key> -e PROBE_ID=<probe-id> -e ONEUPTIME_URL=https://uptime.cbsretail.net -d oneuptime/probe:release
 ```
 
 If you are self hosting CBSUptime, you can change `ONEUPTIME_URL` to your custom self hosted instance.
@@ -30,7 +30,7 @@ services:
     environment:
       - PROBE_KEY=<probe-key>
       - PROBE_ID=<probe-id>
-      - ONEUPTIME_URL=https://oneuptime.com
+      - ONEUPTIME_URL=https://uptime.cbsretail.net
     network_mode: host
     restart: always
 ```
@@ -69,7 +69,7 @@ spec:
               - name: PROBE_ID
                 value: "<probe-id>"
               - name: ONEUPTIME_URL
-                value: "https://oneuptime.com"
+                value: "https://uptime.cbsretail.net"
 ```
 
 Then run the following command:
