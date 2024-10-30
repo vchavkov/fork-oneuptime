@@ -3,11 +3,11 @@ global:
   clusterDomain: &global-cluster-domain cluster.local
 
 
-# Please change this to the domain name / IP where OneUptime server is hosted on.
+# Please change this to the domain name / IP where CBSUptime server is hosted on.
 host: localhost
 httpProtocol: http
 
-# Important: You do need to set this to a long random values if you're using OneUptime in production.
+# Important: You do need to set this to a long random values if you're using CBSUptime in production.
 oneuptimeSecret:
 encryptionSecret:
 
@@ -248,7 +248,7 @@ cronJobs:
     failedWebhookUrl:
 
 
-# Please add this information if you want to generate SSL certificates for your status page custom domains. 
+# Please add this information if you want to generate SSL certificates for your status page custom domains.
 # This is only required if you're using custom domains for status pages.
 letsEncrypt:
   # Generate a random private key via openssl, encode it to base64

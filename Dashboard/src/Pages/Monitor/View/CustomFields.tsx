@@ -18,7 +18,7 @@ const MonitorCustomFields: FunctionComponent<
       <DisabledWarning monitorId={modelId} />
       <CustomFieldsDetail
         title="Monitor Custom Fields"
-        description="Custom fields help you add new fields to your resources in OneUptime."
+        description="Custom fields help you add new fields to your resources in CBSUptime."
         modelType={Monitor}
         customFieldType={MonitorCustomField}
         name="Monitor Custom Fields"

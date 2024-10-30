@@ -1855,7 +1855,7 @@ const BaseModelTable: <TBaseModel extends BaseModel | AnalyticsBaseModel>(
               <span>
                 You can use this ID to interact with{" "}
                 {props.singularName || model.singularName || ""} via the
-                OneUptime API. Click the button below to go to API Reference.
+                CBSUptime API. Click the button below to go to API Reference.
               </span>
             </div>
           }

@@ -146,7 +146,7 @@ export default class StatusPage extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your OneUptime Project in which this object belongs",
+    description: "ID of your CBSUptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -1551,8 +1551,8 @@ export default class StatusPage extends BaseModel {
   @TableColumn({
     isDefaultValueColumn: true,
     type: TableColumnType.Boolean,
-    title: "Hide Powered By OneUptime Branding",
-    description: "Hide Powered By OneUptime Branding?",
+    title: "Hide Powered By CBSUptime Branding",
+    description: "Hide Powered By CBSUptime Branding?",
   })
   @Column({
     type: ColumnType.Boolean,

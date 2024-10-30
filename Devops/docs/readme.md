@@ -1,4 +1,4 @@
-# OneUptime Database Backup/Restore
+# CBSUptime Database Backup/Restore
 
 ## Backing up the database
 

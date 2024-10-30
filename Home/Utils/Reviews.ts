@@ -17,7 +17,7 @@ const reviews: Review[] = [
   },
   {
     name: "Ethan",
-    text: "OneUptime's dashboard is very user-friendly and intuitive.",
+    text: "CBSUptime's dashboard is very user-friendly and intuitive.",
     title: "User-friendly dashboard",
   },
   {
@@ -42,7 +42,7 @@ const reviews: Review[] = [
   },
   {
     name: "Jenna",
-    text: "OneUptime has improved our incident response time dramatically.",
+    text: "CBSUptime has improved our incident response time dramatically.",
     title: "Improved response time",
   },
   {
@@ -67,17 +67,17 @@ const reviews: Review[] = [
   },
   {
     name: "Anderson, GK2 Cloud",
-    text: "Thanks for building OneUptime, it really is fantastic. We are getting more excited every day!",
-    title: "OneUptime is fantastic!",
+    text: "Thanks for building CBSUptime, it really is fantastic. We are getting more excited every day!",
+    title: "CBSUptime is fantastic!",
   },
   {
     name: "Reg, Skillable",
-    text: "We use OneUptime to reliably monitor endpoint availability globally, and it delivers.",
-    title: "OneUptime delivers!",
+    text: "We use CBSUptime to reliably monitor endpoint availability globally, and it delivers.",
+    title: "CBSUptime delivers!",
   },
   {
     name: "Oscar",
-    text: "OneUptime has made our monitoring process much more efficient.",
+    text: "CBSUptime has made our monitoring process much more efficient.",
     title: "Efficient monitoring",
   },
   {
@@ -152,7 +152,7 @@ const reviews: Review[] = [
   },
   {
     name: "Daisy",
-    text: "OneUptime has made our monitoring and management tasks much easier.",
+    text: "CBSUptime has made our monitoring and management tasks much easier.",
     title: "Easier management",
   },
   {
@@ -187,7 +187,7 @@ const reviews: Review[] = [
   },
   {
     name: "Kyle",
-    text: "OneUptime has made our monitoring process much more streamlined.",
+    text: "CBSUptime has made our monitoring process much more streamlined.",
     title: "Streamlined monitoring",
   },
   {
@@ -222,7 +222,7 @@ const reviews: Review[] = [
   },
   {
     name: "Riley",
-    text: "OneUptime has made our incident management process much smoother.",
+    text: "CBSUptime has made our incident management process much smoother.",
     title: "Smoother process",
   },
   {

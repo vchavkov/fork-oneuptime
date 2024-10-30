@@ -27,7 +27,7 @@ import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
   singularName: "Reseller",
   pluralName: "Resellers",
   icon: IconProp.Billing,
-  tableDescription: "List of Resellers that sell OneUptime to their customers",
+  tableDescription: "List of Resellers that sell CBSUptime to their customers",
 })
 @Entity({
   name: "Reseller",
@@ -43,7 +43,7 @@ export default class Reseller extends BaseModel {
     type: TableColumnType.ShortText,
     canReadOnRelationQuery: true,
     title: "Resller ID",
-    description: "ID that is shared between resller and OneUptime.",
+    description: "ID that is shared between resller and CBSUptime.",
   })
   @Column({
     nullable: false,

@@ -1,4 +1,4 @@
-# Backup OneUptime Database
+# Backup CBSUptime Database
 
 ## Setting up Backup Service
 
@@ -58,7 +58,7 @@ Run:
 bash backup.sh
 ```
 
-# Restore OneUptime Database
+# Restore CBSUptime Database
 
 **Step 1**: Copy restore.sh to root directory.
 

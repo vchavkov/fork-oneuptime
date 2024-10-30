@@ -80,7 +80,7 @@ import {
   singularName: "Team Permission",
   pluralName: "Team Permissions",
   icon: IconProp.Lock,
-  tableDescription: "Permissions for your OneUptime team",
+  tableDescription: "Permissions for your CBSUptime team",
 })
 export default class TeamPermission extends BaseModel {
   @ColumnAccessControl({
@@ -140,7 +140,7 @@ export default class TeamPermission extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your OneUptime Project in which this object belongs",
+    description: "ID of your CBSUptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

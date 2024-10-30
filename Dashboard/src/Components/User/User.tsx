@@ -49,7 +49,7 @@ const UserElement: FunctionComponent<ComponentProps> = (
             <span
               className={props.usernameClassName ? props.usernameClassName : ""}
             >
-              {"OneUptime"}
+              {"CBSUptime"}
             </span>{" "}
           </div>
         </div>

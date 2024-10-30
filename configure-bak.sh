@@ -3,7 +3,7 @@
 set -a
 
 # Talk to the user
-echo "Welcome to the OneUptime 🟢 Runner"
+echo "Welcome to the CBSUptime 🟢 Runner"
 echo ""
 echo ""
 echo ""
@@ -39,7 +39,7 @@ fi
 
 
 # clone oneuptime
-echo "Installing OneUptime 🟢"
+echo "Installing CBSUptime 🟢"
 if [[ ! $(which git) ]]; then
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
       DISTRIB=$(awk -F= '/^ID/{print $2}' /etc/os-release)
@@ -63,7 +63,7 @@ else
 
     if [[ $GIT_REPO_URL != *oneuptime* ]] # * is used for pattern matching
     then
-        git clone https://github.com/OneUptime/oneuptime.git || true
+        git clone https://github.com/CBSUptime/oneuptime.git || true
         cd oneuptime
     fi
 fi
@@ -115,14 +115,14 @@ fi
 
 if [[ ! $(which docker) && ! $(docker --version) ]]; then
   echo "Setting up Docker"
-  sudo curl -sSL https://get.docker.com/ | sh  
+  sudo curl -sSL https://get.docker.com/ | sh
 fi
 
 
-# If docker still fails to install, then quit. 
+# If docker still fails to install, then quit.
 if [[ ! $(which docker) && ! $(docker --version) ]]; then
   echo -e "Failed to install docker. Please install Docker manually here: https://docs.docker.com/install."
-  echo -e "Exiting the OneUptime installer."
+  echo -e "Exiting the CBSUptime installer."
   exit
 fi
 
@@ -163,7 +163,7 @@ fi
 
 cd oneuptime
 
-# Create .env file if it does not exist. 
+# Create .env file if it does not exist.
 touch config.env
 
 # Reload terminal with newly installed packages.
@@ -176,7 +176,7 @@ node ./Scripts/Install/MergeEnvTemplate.js
 # Load env values from config.env
 export $(grep -v '^#' config.env | xargs)
 
-# Write env vars in config files. 
+# Write env vars in config files.
 for directory_name in $(find . -maxdepth 1 -type d) ; do
     if [ -f "$directory_name/Dockerfile.tpl" ]; then
         cat $directory_name/Dockerfile.tpl | gomplate > $directory_name/Dockerfile

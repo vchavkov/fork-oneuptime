@@ -20,7 +20,7 @@ export default class TwoFactorAuth {
   public static getTotp(data: { secret: string; email: Email }): OTPAuth.TOTP {
     const totp: OTPAuth.TOTP = new OTPAuth.TOTP({
       // Provider or service the account is associated with.
-      issuer: "OneUptime",
+      issuer: "CBSUptime",
       // Account identifier.
       label: this.getLabel({
         email: data.email,

@@ -46,7 +46,7 @@ import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
   singularName: "User",
   pluralName: "Users",
   icon: IconProp.User,
-  tableDescription: "A signed up or invited OneUptime user.",
+  tableDescription: "A signed up or invited CBSUptime user.",
 })
 @CurrentUserCanAccessRecordBy("_id")
 class User extends UserModel {

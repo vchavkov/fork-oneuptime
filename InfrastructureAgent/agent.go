@@ -28,9 +28,9 @@ func NewAgent(secretKey string, url string) *Agent {
 	slog.Info("Starting agent...")
 	slog.Info("Agent configuration:")
 	slog.Info("Secret key: " + ag.SecretKey)
-	slog.Info("OneUptime URL: " + ag.OneUptimeURL)
+	slog.Info("CBSUptime URL: " + ag.OneUptimeURL)
 	if ag.SecretKey == "" || ag.OneUptimeURL == "" {
-		slog.Error("Secret key and OneUptime URL are required")
+		slog.Error("Secret key and CBSUptime URL are required")
 		os.Exit(1)
 		return ag
 	}
@@ -129,7 +129,7 @@ func collectMetricsJob(secretKey string, oneuptimeURL string) {
 		respJson, _ := json.Marshal(resp)
 		slog.Error("Response: ", string(respJson))
 	}
-	slog.Info("1 minute metrics have been sent to OneUptime.")
+	slog.Info("1 minute metrics have been sent to CBSUptime.")
 }
 
 func checkIfSecretKeyIsValid(secretKey string, baseUrl string) bool {

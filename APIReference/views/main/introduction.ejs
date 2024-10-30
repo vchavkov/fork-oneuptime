@@ -30,13 +30,13 @@
           </div>
        </div>
        <h1 class="font-bold text-xl">API Reference</h1>
-       <p class="lead">Use the OneUptime API to access any resource in your projects, create automated
+       <p class="lead">Use the CBSUptime API to access any resource in your projects, create automated
           workflows, and more
           and
           seamlessly integrate your project into the other tools and services you use in your
           organization.</p>
-       
-       
+
+
        <div class="my-16 xl:max-w-none">
           <h2 id="guides" class="scroll-mt-24 font-bold">
              <span class="group text-inherit no-underline hover:text-inherit">
@@ -131,7 +131,7 @@
           </h2>
           <div
              class="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-10  sm:grid-cols-2 xl:grid-cols-4">
-             
+
              <% for(var i=0; i<pageData.featuredResources.length; i++) {%>
              <div
                 class="cursor-pointer group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5  ">
@@ -182,7 +182,7 @@
                    class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/7.5 group-hover:ring-zinc-900/10  ">
                 </div>
                 <div class="relative rounded-2xl px-4 pt-16 pb-4">
-                   
+
                    <h3 class="mt-4 text-sm font-semibold leading-7 text-zinc-900 "><a
                          href="/reference/<%= pageData.featuredResources[i].path -%>"><span
                             class="absolute inset-0 rounded-2xl"></span>  <%= pageData.featuredResources[i].name -%></a>

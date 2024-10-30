@@ -1,5 +1,5 @@
 #
-# OneUptime-App Dockerfile
+# CBSUptime-App Dockerfile
 #
 
 # Pull base image nodejs image.
@@ -50,7 +50,7 @@ RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/app/
 RUN npm install
 
 # Expose ports.
-#   - 3099: OneUptime-workflow
+#   - 3099: CBSUptime-workflow
 EXPOSE 3099
 
 {{ if eq .Env.ENVIRONMENT "development" }}

@@ -118,7 +118,7 @@ export default class ServiceHandler {
       page: "data-types",
       pageTitle: "Data Types",
       pageDescription:
-        "Data Types that can be used to interact with OneUptime API",
+        "Data Types that can be used to interact with CBSUptime API",
       resources: Resources,
       pageData: pageData,
     });

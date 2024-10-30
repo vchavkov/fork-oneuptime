@@ -1,6 +1,6 @@
 {{- if $.Values.internalSmtp.enabled -}}
 
-# OneUptime haraka Deployment
+# CBSUptime haraka Deployment
 {{- $harakaQueue := dict "SizeLimit" "1Gi" "MountPath" "/harakaapp/queue" -}}
 {{- $harakaVolumes := dict "haraka-queue" $harakaQueue -}}
 {{- $harakaPorts := dict "port" $.Values.port.haraka -}}
@@ -75,7 +75,7 @@ spec:
   {{- end}}
 ---
 
-# OneUptime haraka autoscaler
+# CBSUptime haraka autoscaler
 {{- $harakaAutoScalerArgs := dict "ServiceName" "haraka" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $harakaAutoScalerArgs }}
 ---

@@ -401,7 +401,7 @@ const TeamView: FunctionComponent<PageComponentProps> = (
       <Banner
         openInNewTab={true}
         title="Questions about Team Permissions?"
-        description="Watch this 5 minute video to learn how team permissions work in OneUptime."
+        description="Watch this 5 minute video to learn how team permissions work in CBSUptime."
         link={URL.fromString("https://youtu.be/TzmaTe4sbCI")}
       />
 

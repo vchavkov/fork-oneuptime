@@ -1,5 +1,5 @@
 #
-# OneUptime-Probe Dockerfile
+# CBSUptime-Probe Dockerfile
 #
 
 # Pull base image nodejs image.
@@ -74,7 +74,7 @@ COPY ./Probe/package*.json /usr/src/app/
 RUN npm install
 
 # Expose ports.
-#   - 3087: OneUptime-backend
+#   - 3087: CBSUptime-backend
 EXPOSE 3087
 
 {{ if eq .Env.ENVIRONMENT "development" }}

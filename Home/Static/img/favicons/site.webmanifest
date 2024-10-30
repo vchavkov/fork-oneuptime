@@ -1,6 +1,6 @@
 {
-    "name": "OneUptime Home",
-    "short_name": "OneUptime",
+    "name": "CBSUptime Home",
+    "short_name": "CBSUptime",
     "icons": [
         {
             "src": "/dashboard/assets/img/favicons/android-chrome-36x36.png",
@@ -54,4 +54,3 @@
     "background_color": "#121212",
     "display": "standalone"
   }
-  

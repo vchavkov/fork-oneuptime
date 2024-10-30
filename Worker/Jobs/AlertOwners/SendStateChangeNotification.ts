@@ -162,19 +162,19 @@ RunCron(
         };
 
         const sms: SMSMessage = {
-          message: `This is a message from OneUptime. Alert: ${
+          message: `This is a message from CBSUptime. Alert: ${
             alert.title
           } - state changed to ${alertState!
-            .name!}. To unsubscribe from this notification go to User Settings in OneUptime Dashboard.`,
+            .name!}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard.`,
         };
 
         const callMessage: CallRequestMessage = {
           data: [
             {
-              sayMessage: `This is a message from OneUptime. Alert ${
+              sayMessage: `This is a message from CBSUptime. Alert ${
                 alert.title
               }       state changed to ${alertState!
-                .name!}. To unsubscribe from this notification go to User Settings in OneUptime Dashboard. Good bye.`,
+                .name!}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard. Good bye.`,
             },
           ],
         };

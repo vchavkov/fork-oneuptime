@@ -35,17 +35,17 @@ screenshots['screenshot-name'] = await page.screenshot(); // you can save multip
 
 return {
     data: 'Hello World',
-    screenshots: screenshots 
+    screenshots: screenshots
 };
 ```
 
 ### Use of Playwright
 
-We use Playwright to simulate user interactions. You can use Playwright `page` object to interact with the browser and perform actions like clicking buttons, filling forms, and taking screenshots. 
+We use Playwright to simulate user interactions. You can use Playwright `page` object to interact with the browser and perform actions like clicking buttons, filling forms, and taking screenshots.
 
 ### Screenshots
 
-You can take screenshots of the page at any point in the script. You can take multiple screenshots and return them in the screenshots array. These screenshots will be available in the OneUptime Dashboard for that specific monitor.
+You can take screenshots of the page at any point in the script. You can take multiple screenshots and return them in the screenshots array. These screenshots will be available in the CBSUptime Dashboard for that specific monitor.
 
 ```javascript
 
@@ -57,7 +57,7 @@ screenshots['screenshot-name'] = await page.screenshot();
 
 return {
     data: 'Hello World',
-    screenshots: screenshots 
+    screenshots: screenshots
 };
 
 ```
@@ -67,8 +67,8 @@ return {
 - You only have `page` object available in the context of the script. This is from Playwright Page class. You can use it to run all the interactions with the browser.
 - You can use `console.log` to log the data in the console. This will be available in the logs section of the monitor.
 - You can return the data from the script using the `return` statement. You can also return screenshots in the screenshots array.
-- You can use `browserType` and `screenSizeType` variables to get the browser type and screen size type in the current run context. Feel free to use them in your script if you like. 
+- You can use `browserType` and `screenSizeType` variables to get the browser type and screen size type in the current run context. Feel free to use them in your script if you like.
 - This is a JavaScript script, so you can use all the JavaScript features in the script.
 - You can use `axios` module to make HTTP requests in the script. You can use it to make API calls from the script.
-- If you are using oneuptime.com, you will always have the latest version of Playwright & browsers available in the context of the script. If you're self-hosting, please make sure you update the probes to have the latest version of Playwright and the browsers. 
+- If you are using oneuptime.com, you will always have the latest version of Playwright & browsers available in the context of the script. If you're self-hosting, please make sure you update the probes to have the latest version of Playwright and the browsers.
 - Timeout for the script is 2 minutes. If the script takes more than 2 mins, it will be terminated.

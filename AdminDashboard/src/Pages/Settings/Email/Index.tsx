@@ -261,7 +261,7 @@ const Settings: FunctionComponent = (): ReactElement => {
               fieldType: FormFieldSchemaType.Text,
               required: true,
               description:
-                "This is the display name your team and customers see, when they receive emails from OneUptime.",
+                "This is the display name your team and customers see, when they receive emails from CBSUptime.",
               placeholder: "Company, Inc.",
             },
           ]}

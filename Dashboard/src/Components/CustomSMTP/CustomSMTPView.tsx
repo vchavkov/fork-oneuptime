@@ -14,7 +14,7 @@ const CustomSMTPElement: FunctionComponent<ComponentProps> = (
   props: ComponentProps,
 ): ReactElement => {
   if (!props.smtp) {
-    return <span>OneUptime Mail Server</span>;
+    return <span>CBSUptime Mail Server</span>;
   }
 
   if (props.smtp._id) {

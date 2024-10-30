@@ -81,15 +81,14 @@ spec:
             - name: PROBE_MONITOR_FETCH_LIMIT
               value: {{ $val.monitorFetchLimit | squote }}
             {{- include "oneuptime.env.oneuptimeSecret" $ | nindent 12 }}
-          
+
       restartPolicy: {{ $.Values.image.restartPolicy }}
 ---
 
 
-# OneUptime probe autoscaler
+# CBSUptime probe autoscaler
 {{- $probeAutoScalerArgs := dict "ServiceName" (printf "probe-%s" $key) "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $probeAutoScalerArgs }}
 ---
 
 {{- end }}
-

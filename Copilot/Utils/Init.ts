@@ -27,7 +27,7 @@ export default class InitUtil {
 
       if (result instanceof HTTPErrorResponse) {
         throw new BadDataException(
-          "OneUptime LLM server is not reachable. Please check the server URL in the environment variables.",
+          "CBSUptime LLM server is not reachable. Please check the server URL in the environment variables.",
         );
       }
     }
@@ -40,7 +40,7 @@ export default class InitUtil {
 
     if (result instanceof HTTPErrorResponse) {
       throw new BadDataException(
-        `OneUptime ${GetOneUptimeURL().toString()} is not reachable.  Please check the server URL in the environment variables.`,
+        `CBSUptime ${GetOneUptimeURL().toString()} is not reachable.  Please check the server URL in the environment variables.`,
       );
     }
 
@@ -55,11 +55,11 @@ export default class InitUtil {
 
     if (codeRepositoryResult.serviceRepositories.length === 0) {
       logger.error(
-        "No services found in the repository. Please add services to the repository in OneUptime Dashboard.",
+        "No services found in the repository. Please add services to the repository in CBSUptime Dashboard.",
       );
 
       throw new BadDataException(
-        "No services found in the repository. Please add services to the repository in OneUptime Dashboard.",
+        "No services found in the repository. Please add services to the repository in CBSUptime Dashboard.",
       );
     }
 

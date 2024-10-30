@@ -16,7 +16,7 @@ const StatusPageCustomFields: FunctionComponent<
     <Fragment>
       <CustomFieldsDetail
         title="Status Page Custom Fields"
-        description="Custom fields help you add new fields to your resources in OneUptime."
+        description="Custom fields help you add new fields to your resources in CBSUptime."
         modelType={StatusPage}
         customFieldType={StatusPageCustomField}
         name="Status Page Custom Fields"

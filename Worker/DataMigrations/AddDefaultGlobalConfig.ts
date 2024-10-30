@@ -16,8 +16,8 @@ export default class AddDefaultGlobalConfig extends DataMigrationBase {
     const globalConfig: GlobalConfig = new GlobalConfig();
     globalConfig.id = ObjectID.getZeroObjectID();
     globalConfig.emailServerType = EmailServerType.Internal;
-    globalConfig.sendgridFromName = "OneUptime";
-    globalConfig.smtpFromName = "OneUptime";
+    globalConfig.sendgridFromName = "CBSUptime";
+    globalConfig.smtpFromName = "CBSUptime";
 
     await GlobalConfigService.create({
       data: globalConfig,

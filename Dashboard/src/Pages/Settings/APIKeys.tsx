@@ -25,7 +25,7 @@ const APIKeys: FunctionComponent<PageComponentProps> = (): ReactElement => {
         cardProps={{
           title: "API Keys",
           description:
-            "Everything you can do on the dashboard can also be done via the OneUptime API- use it to automate repetitive work or integrate with other platforms.",
+            "Everything you can do on the dashboard can also be done via the CBSUptime API- use it to automate repetitive work or integrate with other platforms.",
         }}
         noItemsMessage={"No API Keys found."}
         formFields={[

@@ -1,4 +1,4 @@
-# OneUptime workflow Deployment
+# CBSUptime workflow Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -75,13 +75,13 @@ spec:
 
 ---
 
-# OneUptime app Service
+# CBSUptime app Service
 {{- $workflowPorts := dict "port" $.Values.port.workflow -}}
 {{- $workflowServiceArgs := dict "ServiceName" "workflow" "Ports" $workflowPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $workflowServiceArgs }}
 ---
 
-# OneUptime app autoscaler
+# CBSUptime app autoscaler
 {{- $workflowAutoScalerArgs := dict "ServiceName" "workflow" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $workflowAutoScalerArgs }}
 ---

@@ -1,4 +1,4 @@
-# OneUptime worker Deployment
+# CBSUptime worker Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -75,13 +75,13 @@ spec:
 
 ---
 
-# OneUptime app Service
+# CBSUptime app Service
 {{- $workerPorts := dict "port" $.Values.port.worker -}}
 {{- $workerServiceArgs := dict "ServiceName" "worker" "Ports" $workerPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $workerServiceArgs }}
 ---
 
-# OneUptime app autoscaler
+# CBSUptime app autoscaler
 {{- $workerAutoScalerArgs := dict "ServiceName" "worker" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $workerAutoScalerArgs }}
 ---

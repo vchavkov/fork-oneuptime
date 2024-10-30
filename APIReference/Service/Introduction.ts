@@ -26,7 +26,7 @@ export default class ServiceHandler {
 
     // Set page title and description
     pageTitle = "Introduction";
-    pageDescription = "API Reference for OneUptime";
+    pageDescription = "API Reference for CBSUptime";
 
     // Render the index page with the required data
     return res.render(`${ViewsPath}/pages/index`, {

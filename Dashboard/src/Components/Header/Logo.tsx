@@ -20,7 +20,7 @@ const Logo: FunctionComponent<ComponentProps> = (
             props.onClick && props.onClick();
           }}
           imageUrl={Route.fromString(`${UptimeLogo}`)}
-          alt={"OneUptime"}
+          alt={"CBSUptime"}
         />
       </div>
     </div>

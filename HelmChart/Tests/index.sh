@@ -13,18 +13,18 @@ sudo microk8s enable dashboard
 sudo microk8s enable dns
 sudo microk8s enable hostpath-storage
 
-echo "MicroK8s is ready. Installing OneUptime"
-# Get pods 
+echo "MicroK8s is ready. Installing CBSUptime"
+# Get pods
 sudo microk8s kubectl get pods
 
-# Install OneUptime 
+# Install CBSUptime
 sudo microk8s helm install oneuptime ../../HelmChart/Public/oneuptime -f ../../HelmChart/Public/oneuptime/values.yaml -f ./ci-values.yaml
 
 
-# echo "OneUptime is installed. Waiting for it to be ready. Checking status in 20 mins once things settle down..."
+# echo "CBSUptime is installed. Waiting for it to be ready. Checking status in 20 mins once things settle down..."
 # sleep 20m
 
-# # Wait for OneUptime to be ready
+# # Wait for CBSUptime to be ready
 # timeout 30m bash -c '
 #     endtime=$((SECONDS+600))
 #     while [ $SECONDS -lt $endtime ]; do
@@ -40,5 +40,5 @@ sudo microk8s helm install oneuptime ../../HelmChart/Public/oneuptime -f ../../H
 #     exit 1
 # '
 
-# Once it's ready. Run helm test. 
+# Once it's ready. Run helm test.
 # sudo microk8s helm test oneuptime

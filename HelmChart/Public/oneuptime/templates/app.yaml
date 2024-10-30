@@ -1,4 +1,4 @@
-# OneUptime app Deployment
+# CBSUptime app Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -84,8 +84,8 @@ spec:
             - name: INTERNAL_SMTP_EMAIL
               value: {{ $.Values.internalSmtp.email | quote }}
             - name: INTERNAL_SMTP_PASSWORD
-              value: "internal_smtp_password"  
-        
+              value: "internal_smtp_password"
+
           ports:
             - containerPort: {{ $.Values.port.app }}
               protocol: TCP
@@ -94,13 +94,13 @@ spec:
 
 ---
 
-# OneUptime app Service
+# CBSUptime app Service
 {{- $appPorts := dict "port" $.Values.port.app -}}
 {{- $appServiceArgs := dict "ServiceName" "app" "Ports" $appPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $appServiceArgs }}
 ---
 
-# OneUptime app autoscaler
+# CBSUptime app autoscaler
 {{- $appAutoScalerArgs := dict "ServiceName" "app" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $appAutoScalerArgs }}
 ---

@@ -1,6 +1,6 @@
-# OneUptime Infrastructure Agent
+# CBSUptime Infrastructure Agent
 
-The OneUptime Infrastructure Agent is a lightweight, open-source agent that collects system metrics and sends them to the OneUptime platform. It is designed to be easy to install and use, and to be extensible.
+The CBSUptime Infrastructure Agent is a lightweight, open-source agent that collects system metrics and sends them to the CBSUptime platform. It is designed to be easy to install and use, and to be extensible.
 
 ### Installation
 
@@ -11,8 +11,8 @@ curl -s https://uptime.cbsretail.net/docs/static/scripts/infrastructure-agent/in
 ### Configure the agent
 
 Configure the agent as a system service
-- You can change the host to your own host if you're self hosting the OneUptime platform.
-- You can find the secret key on OneUptime Dashboard. Click on "View Monitor" and go to "Settings" tab.
+- You can change the host to your own host if you're self hosting the CBSUptime platform.
+- You can find the secret key on CBSUptime Dashboard. Click on "View Monitor" and go to "Settings" tab.
 
 ```bash
 oneuptime-infrastructure-agent configure --secret-key=YOUR_SECRET_KEY --oneuptime-url=https://oneuptime.com
@@ -24,7 +24,7 @@ oneuptime-infrastructure-agent configure --secret-key=YOUR_SECRET_KEY --oneuptim
 oneuptime-infrastructure-agent start
 ```
 
-Once its up and running you should see the metrics on the OneUptime Dashboard.
+Once its up and running you should see the metrics on the CBSUptime Dashboard.
 
 ### Stopping the agent
 

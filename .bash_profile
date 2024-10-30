@@ -1,6 +1,6 @@
-# These are aliases that will make your life simple when you're building OneUptime
+# These are aliases that will make your life simple when you're building CBSUptime
 
-# Make directory and change directory at the same time. 
+# Make directory and change directory at the same time.
 mkcdir ()
 {
     mkdir -p -- "$1" &&
@@ -51,7 +51,7 @@ alias c="cargo"
 alias cb="cargo build"
 alias cr="cargo run"
 
-# OneUptime Specific Aliases
+# CBSUptime Specific Aliases
 # --------------------------
 
 alias nrd="npm run dev"
@@ -60,9 +60,8 @@ alias nrb="npm run build"
 alias nrfb="npm run force-build"
 alias nrps="npm run ps-dev"
 
-# OneUptime LLM Server
+# CBSUptime LLM Server
 alias nrfbl="npm run force-build-llm"
 alias nrdl="npm run dev-llm"
 alias nrll="npm run logs-llm"
 alias nrbl="npm run build-llm"
-

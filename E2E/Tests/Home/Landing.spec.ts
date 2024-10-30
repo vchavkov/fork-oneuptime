@@ -16,7 +16,7 @@ test.describe("check if pages loades with its title", () => {
     }
 
     await expect(page).toHaveTitle(
-      /OneUptime | One Complete SRE and DevOps platform./,
+      /CBSUptime | One Complete SRE and DevOps platform./,
     );
   });
   test("oneUptime link navigate to homepage", async ({
@@ -28,7 +28,7 @@ test.describe("check if pages loades with its title", () => {
       return;
     }
 
-    await page.getByRole("link", { name: "OneUptime", exact: true }).click();
+    await page.getByRole("link", { name: "CBSUptime", exact: true }).click();
 
     await expect(page).toHaveURL(
       URL.fromString(BASE_URL.toString()).toString(),

@@ -155,7 +155,7 @@ const DashboardNavbar: FunctionComponent<ComponentProps> = (
                 description:
                   "We embrace open source! Please report any issue you find and make feature requests on GitHub.",
                 link: URL.fromString(
-                  "https://github.com/OneUptime/oneuptime/issues/new/choose",
+                  "https://github.com/CBSUptime/oneuptime/issues/new/choose",
                 ),
               }}
             >
@@ -209,7 +209,7 @@ const DashboardNavbar: FunctionComponent<ComponentProps> = (
 
               <NavBarMenuItem
                 title="Workflows"
-                description="Integrate OneUptime with the rest of your ecosystem."
+                description="Integrate CBSUptime with the rest of your ecosystem."
                 route={RouteUtil.populateRouteParams(
                   RouteMap[PageMap.WORKFLOWS] as Route,
                 )}

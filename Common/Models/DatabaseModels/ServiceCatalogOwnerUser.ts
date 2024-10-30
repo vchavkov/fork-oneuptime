@@ -129,7 +129,7 @@ export default class ServiceCatalogOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your OneUptime Project in which this object belongs",
+    description: "ID of your CBSUptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -196,7 +196,7 @@ export default class ServiceCatalogOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "User ID",
-    description: "ID of your OneUptime User in which this object belongs",
+    description: "ID of your CBSUptime User in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -264,7 +264,7 @@ export default class ServiceCatalogOwnerUser extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Service Catalog ID",
     description:
-      "ID of your OneUptime Service Catalog in which this object belongs",
+      "ID of your CBSUptime Service Catalog in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

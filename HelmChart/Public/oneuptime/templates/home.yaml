@@ -1,4 +1,4 @@
-# OneUptime Home Deployment
+# CBSUptime Home Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -75,13 +75,13 @@ spec:
 
 ---
 
-# OneUptime app Service
+# CBSUptime app Service
 {{- $homePorts := dict "port" $.Values.port.home -}}
 {{- $homeServiceArgs := dict "ServiceName" "home" "Ports" $homePorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $homeServiceArgs }}
 ---
 
-# OneUptime app autoscaler
+# CBSUptime app autoscaler
 {{- $homeAutoScalerArgs := dict "ServiceName" "home" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $homeAutoScalerArgs }}
 ---

@@ -76,7 +76,7 @@ const ChangeIncidentState: FunctionComponent<ComponentProps> = (
             {props.incidentType === IncidentType.Ack
               ? "Acknowledged"
               : "Resolved"}{" "}
-            by OneUptime
+            by CBSUptime
           </p>
         )}
         {OneUptimeDate.getDateAsLocalFormattedString(

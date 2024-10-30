@@ -31,7 +31,7 @@ enum Permission {
 
   CurrentUser = "CurrentUser", // Current logged in user.
 
-  CustomerSupport = "CustomerSupport", // Customer Support for OneUptime.
+  CustomerSupport = "CustomerSupport", // Customer Support for CBSUptime.
 
   Public = "Public", // non-registered user. Everyone has this permission.
 
@@ -766,7 +766,7 @@ export class PermissionHelper {
       {
         permission: Permission.CustomerSupport,
         title: "Customer Support",
-        description: "Customer Support Resource of OneUptime.",
+        description: "Customer Support Resource of CBSUptime.",
         isAssignableToTenant: false,
         isAccessControlPermission: false,
       },

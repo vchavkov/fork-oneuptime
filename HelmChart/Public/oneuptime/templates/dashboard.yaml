@@ -1,17 +1,17 @@
-# OneUptime dashboard Deployment
+# CBSUptime dashboard Deployment
 {{- $dashboardPorts := dict "port" $.Values.port.dashboard -}}
 {{- $dashboardEnv := dict "OPENTELEMETRY_EXPORTER_OTLP_HEADERS" $.Values.openTelemetryExporter.headers "PORT"  $.Values.port.dashboard -}}
 {{- $dashboardDeploymentArgs :=dict "IsUI" true "ServiceName" "dashboard" "Ports" $dashboardPorts "Release" $.Release "Values" $.Values "Env" $dashboardEnv -}}
 {{- include "oneuptime.deployment" $dashboardDeploymentArgs }}
 ---
 
-# OneUptime dashboard Service
+# CBSUptime dashboard Service
 {{- $dashboardPorts := dict "port" $.Values.port.dashboard -}}
 {{- $dashboardServiceArgs := dict "ServiceName" "dashboard" "Ports" $dashboardPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $dashboardServiceArgs }}
 ---
 
-# OneUptime dashboard autoscaler
+# CBSUptime dashboard autoscaler
 {{- $dashboardAutoScalerArgs := dict "ServiceName" "dashboard" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $dashboardAutoScalerArgs }}
 ---

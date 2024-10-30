@@ -1,7 +1,7 @@
 # For most projects, this workflow file will not need changing; you simply need
 # to commit it to your repository.
 #
-name: "OneUptime Reliability Copilot"
+name: "CBSUptime Reliability Copilot"
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
+
     # Run Reliability Copilot in Docker Container
     - name: Run Copilot
       run: |

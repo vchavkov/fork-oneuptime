@@ -19,7 +19,7 @@ export default class ServiceHandler {
 
     // Set default page title and description for the authentication page
     pageTitle = "Authentication";
-    pageDescription = "Learn how to authenticate requests with OneUptime API";
+    pageDescription = "Learn how to authenticate requests with CBSUptime API";
 
     // Render the index page with the specified parameters
     return res.render(`${ViewsPath}/pages/index`, {

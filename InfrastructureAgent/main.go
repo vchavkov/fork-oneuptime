@@ -65,8 +65,8 @@ func main() {
 	// Set up the service
 	svcConfig := &service.Config{
 		Name:        "oneuptime-infrastructure-agent",
-		DisplayName: "OneUptime Infrastructure Agent",
-		Description: "The OneUptime Infrastructure Agent is a lightweight, open-source agent that collects system metrics and sends them to the OneUptime platform. It is designed to be easy to configure and use, and to be extensible.",
+		DisplayName: "CBSUptime Infrastructure Agent",
+		Description: "The CBSUptime Infrastructure Agent is a lightweight, open-source agent that collects system metrics and sends them to the CBSUptime platform. It is designed to be easy to configure and use, and to be extensible.",
 		Arguments:   []string{"run"},
 	}
 
@@ -138,7 +138,7 @@ func main() {
 				slog.Error(err.Error())
 				os.Exit(1)
 			}
-			slog.Info("OneUptime Infrastructure Agent Started")
+			slog.Info("CBSUptime Infrastructure Agent Started")
 
 		case "run":
 			err := prg.config.loadConfig()

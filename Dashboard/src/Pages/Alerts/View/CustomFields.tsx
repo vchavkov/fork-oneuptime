@@ -15,7 +15,7 @@ const AlertCustomFields: FunctionComponent<
   return (
     <CustomFieldsDetail
       title="Alert Custom Fields"
-      description="Custom fields help you add new fields to your resources in OneUptime."
+      description="Custom fields help you add new fields to your resources in CBSUptime."
       modelType={Alert}
       customFieldType={AlertCustomField}
       name="Alert Custom Fields"

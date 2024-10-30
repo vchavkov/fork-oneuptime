@@ -255,13 +255,13 @@ export class Service extends DatabaseService<Model> {
         };
 
         const sms: SMSMessage = {
-          message: `This is a message from OneUptime. Probe ${probe.name} is ${connectionStatus}. To unsubscribe from this notification go to User Settings in OneUptime Dashboard.`,
+          message: `This is a message from CBSUptime. Probe ${probe.name} is ${connectionStatus}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard.`,
         };
 
         const callMessage: CallRequestMessage = {
           data: [
             {
-              sayMessage: `This is a message from OneUptime. Probe ${probe.name} is ${connectionStatus}. To unsubscribe from this notification go to User Settings in OneUptime Dashboard. Good bye.`,
+              sayMessage: `This is a message from CBSUptime. Probe ${probe.name} is ${connectionStatus}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard. Good bye.`,
             },
           ],
         };

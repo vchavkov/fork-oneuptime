@@ -37,7 +37,7 @@ export default class StatusPageDomainAPI extends BaseAPI<
               res,
               new BadDataException(
                 `Custom Domains not enabled for this
-                                OneUptime installation. Please contact
+                                CBSUptime installation. Please contact
                                 your server admin to enable this
                                 feature.`,
               ),
@@ -132,7 +132,7 @@ export default class StatusPageDomainAPI extends BaseAPI<
               res,
               new BadDataException(
                 `Custom Domains not enabled for this
-                                OneUptime installation. Please contact
+                                CBSUptime installation. Please contact
                                 your server admin to enable this
                                 feature.`,
               ),

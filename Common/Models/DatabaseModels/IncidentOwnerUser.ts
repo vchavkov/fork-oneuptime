@@ -121,7 +121,7 @@ export default class IncidentOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your OneUptime Project in which this object belongs",
+    description: "ID of your CBSUptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -188,7 +188,7 @@ export default class IncidentOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "User ID",
-    description: "ID of your OneUptime User in which this object belongs",
+    description: "ID of your CBSUptime User in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -254,7 +254,7 @@ export default class IncidentOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Incident ID",
-    description: "ID of your OneUptime Incident in which this object belongs",
+    description: "ID of your CBSUptime Incident in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

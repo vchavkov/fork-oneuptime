@@ -24,7 +24,7 @@ ENVIRONMENT='Staging'
 
 function HELP() {
 	echo ""
-	echo "OneUptime DB restore command line documentation."
+	echo "CBSUptime DB restore command line documentation."
 	echo ""
 	echo "all arguments are optional and have a default value when not set"
 	echo ""

@@ -1,5 +1,5 @@
 #
-# OneUptime-ingestor Dockerfile
+# CBSUptime-ingestor Dockerfile
 #
 
 # Pull base image nodejs image.
@@ -64,7 +64,7 @@ RUN npm install
 ENV NODE_OPTIONS="--max-old-space-size=8192"
 
 # Expose ports.
-#   - 3400: OneUptime-ingestor
+#   - 3400: CBSUptime-ingestor
 EXPOSE 3400
 
 {{ if eq .Env.ENVIRONMENT "development" }}

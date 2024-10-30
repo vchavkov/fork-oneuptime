@@ -35,7 +35,7 @@ const Users: FunctionComponent = (): ReactElement => {
         isViewable={true}
         cardProps={{
           title: "Users",
-          description: "Here is a list of users in OneUptime.",
+          description: "Here is a list of users in CBSUptime.",
         }}
         noItemsMessage={"No users found."}
         formFields={[

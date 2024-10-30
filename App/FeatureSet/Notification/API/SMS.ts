@@ -112,7 +112,7 @@ router.post("/test", async (req: ExpressRequest, res: ExpressResponse) => {
       throw new BadDataException("twilioConfig is undefined");
     }
 
-    await SmsService.sendSms(toPhone, "This is a test SMS from OneUptime.", {
+    await SmsService.sendSms(toPhone, "This is a test SMS from CBSUptime.", {
       projectId: config.projectId,
       customTwilioConfig: twilioConfig,
     });

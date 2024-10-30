@@ -23,7 +23,7 @@ const ServerMonitorDocumentation: FunctionComponent<ComponentProps> = (
               language="bash"
               code={`
 # Install the agent
-curl -s ${HTTP_PROTOCOL}${HOST.toString()}/docs/static/scripts/infrastructure-agent/install.sh | sudo bash 
+curl -s ${HTTP_PROTOCOL}${HOST.toString()}/docs/static/scripts/infrastructure-agent/install.sh | sudo bash
 
 # Configure the agent
 sudo oneuptime-infrastructure-agent configure --secret-key=${props.secretKey.toString()} ${
@@ -51,9 +51,9 @@ sudo oneuptime-infrastructure-agent uninstall
             <CodeBlock
               language="bash"
               code={`
-# Step 1: Download the agent from GitHub https://github.com/OneUptime/oneuptime/releases/latest
+# Step 1: Download the agent from GitHub https://github.com/CBSUptime/oneuptime/releases/latest
 # You should see a file named oneuptime-infrastructure-agent_windows_amd64.zip (if you're using x64) or oneuptime-infrastructure-agent_windows_arm64.zip (if you're using arm64)
-# Extract the zip file, and you should see a file named oneuptime-infrastructure-agent.exe 
+# Extract the zip file, and you should see a file named oneuptime-infrastructure-agent.exe
 
 # Command Line: Configure the agent in cmd (Run as Administrator)
 oneuptime-infrastructure-agent configure --secret-key=${props.secretKey.toString()} ${

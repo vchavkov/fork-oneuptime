@@ -29,7 +29,7 @@ const Workflows: FunctionComponent<PageComponentProps> = (): ReactElement => {
         <Banner
           openInNewTab={true}
           title="Need a demo of workflows?"
-          description="Watch this 10 minute video which will help you connect Slack with OneUptime using workflows"
+          description="Watch this 10 minute video which will help you connect Slack with CBSUptime using workflows"
           link={URL.fromString("https://youtu.be/z-b7_KQcUDY")}
         />
 

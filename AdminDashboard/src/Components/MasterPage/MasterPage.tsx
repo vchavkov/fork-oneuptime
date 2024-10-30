@@ -15,8 +15,8 @@ const DashboardMasterPage: FunctionComponent<ComponentProps> = (
   return (
     <div>
       <TopAlert
-        title="OneUptime Admin Dashboard"
-        description="You can perform your OneUptime server related tasks on this dashboard."
+        title="CBSUptime Admin Dashboard"
+        description="You can perform your CBSUptime server related tasks on this dashboard."
       />
       <MasterPage
         footer={<Footer />}

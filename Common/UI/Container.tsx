@@ -7,7 +7,7 @@ type Props = {
 
 const Container: FunctionComponent<Props> = ({ children, title }: Props) => {
   useEffect(() => {
-    document.title = `OneUptime | ${title}`;
+    document.title = `CBSUptime | ${title}`;
   }, []);
 
   return <div>{children}</div>;

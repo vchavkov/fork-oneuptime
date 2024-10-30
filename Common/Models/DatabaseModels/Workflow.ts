@@ -78,7 +78,7 @@ import {
   pluralName: "Workflows",
   icon: IconProp.Workflow,
   tableDescription:
-    "Integrate your OneUptime project with rest of your software stack.",
+    "Integrate your CBSUptime project with rest of your software stack.",
 })
 export default class Workflow extends BaseModel {
   @ColumnAccessControl({
@@ -138,7 +138,7 @@ export default class Workflow extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your OneUptime Project in which this object belongs",
+    description: "ID of your CBSUptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
