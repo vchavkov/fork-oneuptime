@@ -449,7 +449,7 @@ services:
             dockerfile: ./Ingestor/Dockerfile
 
 
-    # Fluentd. Required only for development. In  production its the responsibility of the customer to run fluentd and pipe logs to OneUptime.
+    # Fluentd. Required only for development. In  production its the responsibility of the customer to run fluentd and pipe logs to CBSUptime.
     # We run this container just for development, to see if logs are piped.
 
     fluentd:
