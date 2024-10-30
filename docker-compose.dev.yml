@@ -4,6 +4,7 @@ services:
 
 
     haraka:
+        image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: haraka
@@ -36,6 +37,7 @@ services:
 
 
     otel-collector:
+        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: otel-collector
@@ -45,6 +47,7 @@ services:
             dockerfile: ./OTelCollector/Dockerfile
 
     accounts:
+        image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
         ports:
             - '${ACCOUNTS_PORT}:${ACCOUNTS_PORT}' # ws port for webpack
         extends:
@@ -57,17 +60,14 @@ services:
             - /usr/src/app/dev-env
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
-
             - /usr/src/Common/node_modules/
-
-
         build:
             network: host
             context: .
             dockerfile: ./Accounts/Dockerfile
 
-
     dashboard:
+        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
         ports:
             - '${DASHBOARD_PORT}:${DASHBOARD_PORT}' # ws port for webpack
         extends:
@@ -80,10 +80,7 @@ services:
             - /usr/src/app/dev-env
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
-
             - /usr/src/Common/node_modules/
-
-
         build:
             network: host
             context: .
@@ -92,6 +89,7 @@ services:
 
 
     admin-dashboard:
+        image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
         ports:
             - '${ADMIN_DASHBOARD_PORT}:${ADMIN_DASHBOARD_PORT}' # ws port for webpack
         extends:
@@ -104,10 +102,7 @@ services:
             - /usr/src/app/dev-env
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
-
             - /usr/src/Common/node_modules/
-
-
         build:
             network: host
             context: .
@@ -115,6 +110,7 @@ services:
 
 
     status-page:
+        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
         ports:
             - '${STATUS_PAGE_PORT}:${STATUS_PAGE_PORT}' # ws port for webpack
         extends:
@@ -127,27 +123,21 @@ services:
             - /usr/src/app/dev-env
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
-
             - /usr/src/Common/node_modules/
-
-
         build:
             network: host
             context: .
             dockerfile: ./StatusPage/Dockerfile
 
-
     test-server:
+        image: ${COMPOSE_PROJECT_NAME}-test-server:${APP_TAG}
         volumes:
             - ./TestServer:/usr/src/app
             # Use node modules of the container and not host system.
             # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
-
             - /usr/src/Common/node_modules/
-
-
         extends:
             file: ./docker-compose.base.yml
             service: test-server
@@ -161,6 +151,7 @@ services:
 
 
     home:
+        image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
         volumes:
             - ./Home:/usr/src/app
             # Use node modules of the container and not host system.
@@ -179,6 +170,7 @@ services:
             dockerfile: ./Home/Dockerfile
 
     worker:
+        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
         volumes:
             - ./Worker:/usr/src/app
             # Use node modules of the container and not host system.
@@ -196,8 +188,8 @@ services:
             context: .
             dockerfile: ./Worker/Dockerfile
 
-
     workflow:
+        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
         volumes:
             - ./Workflow:/usr/src/app
             # Use node modules of the container and not host system.
@@ -216,6 +208,7 @@ services:
             dockerfile: ./Workflow/Dockerfile
 
     api-reference:
+        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
         volumes:
             - ./APIReference:/usr/src/app
             # Use node modules of the container and not host system.
@@ -234,6 +227,7 @@ services:
             dockerfile: ./APIReference/Dockerfile
 
     docs:
+        image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
         volumes:
             - ./Docs:/usr/src/app
             # Use node modules of the container and not host system.
@@ -252,6 +246,7 @@ services:
             dockerfile: ./Docs/Dockerfile
 
     app:
+        image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
         volumes:
             - ./App:/usr/src/app
             # Use node modules of the container and not host system.
@@ -279,8 +274,6 @@ services:
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
             - /usr/src/Common/node_modules/
-
-
         extends:
             file: ./docker-compose.base.yml
             service: probe-1
@@ -312,16 +305,14 @@ services:
             dockerfile: ./Probe/Dockerfile
 
     isolated-vm:
+        image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
         volumes:
             - ./IsolatedVM:/usr/src/app
             # Use node modules of the container and not host system.
             # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
-
             - /usr/src/Common/node_modules/
-
-
         ports:
           - '9974:9229' # Debugging port.
         extends:
@@ -333,16 +324,14 @@ services:
             dockerfile: ./IsolatedVM/Dockerfile
 
     ingestor:
+        image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
         volumes:
             - ./Ingestor:/usr/src/app
             # Use node modules of the container and not host system.
             # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
             - /usr/src/app/node_modules/
             - ./Common:/usr/src/Common
-
             - /usr/src/Common/node_modules/
-
-
         ports:
           - '9932:9229' # Debugging port.
         extends:
@@ -356,8 +345,8 @@ services:
 
     # Fluentd. Required only for development. In  production its the responsibility of the customer to run fluentd and pipe logs to OneUptime.
     # We run this container just for development, to see if logs are piped.
-
     fluentd:
+        image: ${COMPOSE_PROJECT_NAME}-fluentd:${APP_TAG}
         ports:
             - 24224:24224
             - 24224:24224/udp
@@ -384,6 +373,7 @@ services:
 
     # e2e tests
     e2e:
+        image: ${COMPOSE_PROJECT_NAME}-e2e
         extends:
             file: ./docker-compose.base.yml
             service: e2e
@@ -396,6 +386,7 @@ services:
             dockerfile: ./E2E/Dockerfile
 
     copilot:
+        image: ${COMPOSE_PROJECT_NAME}-copilot
         volumes:
             - ./Copilot:/usr/src/app
             # Use node modules of the container and not host system.

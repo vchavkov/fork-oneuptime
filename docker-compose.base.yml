@@ -189,21 +189,21 @@ services:
                 max-size: "1000m"
 
 
-    llm:
-        networks:
-          - uptime
-        restart: always
-        environment:
-            <<: *common-server-variables
-            PORT: 8547
-            HF_TOKEN: ${LLM_SERVER_HUGGINGFACE_TOKEN}
-            HF_MODEL_NAME: ${LLM_SERVER_HUGGINGFACE_MODEL_NAME}
-        volumes:
-            - ./LLM/Models:/app/Models
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
+    # llm:
+    #     networks:
+    #       - uptime
+    #     restart: always
+    #     environment:
+    #         <<: *common-server-variables
+    #         PORT: 8547
+    #         HF_TOKEN: ${LLM_SERVER_HUGGINGFACE_TOKEN}
+    #         HF_MODEL_NAME: ${LLM_SERVER_HUGGINGFACE_MODEL_NAME}
+    #     volumes:
+    #         - ./LLM/Models:/app/Models
+    #     logging:
+    #         driver: "local"
+    #         options:
+    #             max-size: "1000m"
 
     admin-dashboard:
         networks:
@@ -465,7 +465,6 @@ services:
                 max-size: "1000m"
 
     nginx:
-        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/nginx:latest
         restart: always
         networks:
           - uptime

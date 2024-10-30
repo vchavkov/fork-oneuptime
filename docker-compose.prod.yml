@@ -3,125 +3,153 @@
 
 services:
 
+    e2e:
+        image:  ${IMAGE_PREFIX}/e2e:${APP_TAG}
+        extends:
+            file: ./docker-compose.build.yml
+            service: e2e
+
+    # llm:
+    #     image:  ${IMAGE_PREFIX}/llm:${APP_TAG}
+    #     extends:
+    #         file: ./docker-compose.build.yml
+    #         service: LLM
+
+    # copilot:
+    #     image: ${IMAGE_PREFIX}/copilot:${APP_TAG}
+    #     extends:
+    #         file: ./docker-compose.build.yml
+    #         service: copilot
+
+    test-server:
+        image: ${IMAGE_PREFIX}/test-server:${APP_TAG}
+        extends:
+            file: ./docker-compose.build.yml
+            service: test-server
+
+    fluentd:
+        image: ${IMAGE_PREFIX}/fluentd:${APP_TAG}
+        extends:
+            file: ./docker-compose.build.yml
+            service: fluentd
+
     haraka:
         image: ${IMAGE_PREFIX}/haraka:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: haraka
 
     redis:
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: redis
 
     clickhouse:
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: clickhouse
 
     postgres:
         ports:
-          - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
+            - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: postgres
-
 
     otel-collector:
         image: ${IMAGE_PREFIX}/otel-collector:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: otel-collector
 
     accounts:
         image: ${IMAGE_PREFIX}/accounts:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: accounts
-
 
     dashboard:
         image: ${IMAGE_PREFIX}/dashboard:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: dashboard
 
     admin-dashboard:
         image: ${IMAGE_PREFIX}/admin-dashboard:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: admin-dashboard
 
     status-page:
         image: ${IMAGE_PREFIX}/status-page:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: status-page
 
     app:
         image: ${IMAGE_PREFIX}/app:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: app
 
     worker:
         image: ${IMAGE_PREFIX}/worker:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: worker
 
     docs:
         image: ${IMAGE_PREFIX}/docs:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: docs
 
     api-reference:
         image: ${IMAGE_PREFIX}/api-reference:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: api-reference
 
     workflow:
         image: ${IMAGE_PREFIX}/workflow:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: workflow
 
     home:
         image: ${IMAGE_PREFIX}/home:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: home
 
     probe-1:
         image: ${IMAGE_PREFIX}/probe:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: probe-1
 
     probe-2:
         image: ${IMAGE_PREFIX}/probe:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: probe-2
 
     ingestor:
         image: ${IMAGE_PREFIX}/ingestor:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: ingestor
 
     isolated-vm:
         image: ${IMAGE_PREFIX}/isolated-vm:${APP_TAG}
         extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: isolated-vm
 
     nginx:
        image: ${IMAGE_PREFIX}/nginx:${APP_TAG}
        extends:
-            file: ./docker-compose.base.yml
+            file: ./docker-compose.build.yml
             service: nginx
 
 volumes:

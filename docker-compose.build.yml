@@ -1,96 +1,224 @@
-    services:
+# Images are pushed to both Docker Hub and Github Container Registry. If you're using Github Container Registry, you can change the image tag to use the Github Container Registry.
+# For example, if you want to use the image from Github Container Registry, you can change the image tag from oneuptime/dashboard:latest to ghcr.io/oneuptime/dashboard:latest
 
-        haraka:
-            build:
-                context: .
-                dockerfile: Haraka/Dockerfile
+services:
 
-        otel-collector:
-            build:
-                context: .
-                dockerfile: OTelCollector/Dockerfile
+    e2e:
+        image: ${COMPOSE_PROJECT_NAME}-e2e:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: e2e
 
-        accounts:
-            build:
-                context: .
-                dockerfile: Accounts/Dockerfile
+    haraka:
+        image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: haraka
+        build:
+            context: .
+            dockerfile: Haraka/Dockerfile
 
-        dashboard:
-            build:
-                context: .
-                dockerfile: Dashboard/Dockerfile
+    redis:
+        extends:
+            file: ./docker-compose.base.yml
+            service: redis
 
-        admin-dashboard:
-            build:
-                context: .
-                dockerfile: AdminDashboard/Dockerfile
+    clickhouse:
+        extends:
+            file: ./docker-compose.base.yml
+            service: clickhouse
 
-        status-page:
-            build:
-                context: .
-                dockerfile: StatusPage/Dockerfile
+    postgres:
+        ports:
+          - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
+        extends:
+            file: ./docker-compose.base.yml
+            service: postgres
 
-        app:
-            build:
-                context: .
-                dockerfile: App/Dockerfile
+    otel-collector:
+        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: otel-collector
+        build:
+            context: .
+            dockerfile: OTelCollector/Dockerfile
 
-        worker:
-            build:
-                context: .
-                dockerfile: Worker/Dockerfile
+    accounts:
+        image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: accounts
+        build:
+            context: .
+            dockerfile: Accounts/Dockerfile
 
-        docs:
-            build:
-                context: .
-                dockerfile: Docs/Dockerfile
+    dashboard:
+        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: dashboard
+        build:
+            context: .
+            dockerfile: Dashboard/Dockerfile
 
-        api-reference:
-            build:
-                context: .
-                dockerfile: APIReference/Dockerfile
+    admin-dashboard:
+        image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: admin-dashboard
+        build:
+            context: .
+            dockerfile: AdminDashboard/Dockerfile
 
-        workflow:
-            build:
-                context: .
-                dockerfile: Workflow/Dockerfile
+    status-page:
+        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: status-page
+        build:
+            context: .
+            dockerfile: StatusPage/Dockerfile
 
-        home:
-            build:
-                context: .
-                dockerfile: Home/Dockerfile
+    app:
+        image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: app
+        build:
+            context: .
+            dockerfile: App/Dockerfile
 
-        probe:
-            build:
-                context: .
-                dockerfile: Probe/Dockerfile
+    worker:
+        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: worker
+        build:
+            context: .
+            dockerfile: Worker/Dockerfile
 
-        ingestor:
-            build:
-                context: .
-                dockerfile: Ingestor/Dockerfile
+    docs:
+        image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: docs
+        build:
+            context: .
+            dockerfile: Docs/Dockerfile
 
-        isolated-vm:
-            build:
-                context: .
-                dockerfile: IsolatedVM/Dockerfile
+    api-reference:
+        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: api-reference
+        build:
+            context: .
+            dockerfile: APIReference/Dockerfile
 
-        nginx:
-            build:
-                context: .
-                dockerfile: Nginx/Dockerfile
+    workflow:
+        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: workflow
+        build:
+            context: .
+            dockerfile: Workflow/Dockerfile
 
-        copilot:
-            build:
-                context: .
-                dockerfile: Copilot/Dockerfile
+    home:
+        image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: home
+        build:
+            context: .
+            dockerfile: Home/Dockerfile
 
-        fluentd:
-            build:
-                context: .
-                dockerfile: Fluentd/Dockerfile
+    probe-1:
+        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: probe-1
+        build:
+            context: .
+            dockerfile: Probe/Dockerfile
 
-        test-server:
-            build:
-                context: .
-                dockerfile: TestServer/Dockerfile
+    probe-2:
+        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: probe-2
+        build:
+            context: .
+            dockerfile: Probe/Dockerfile
+
+    ingestor:
+        image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: ingestor
+        build:
+            context: .
+            dockerfile: Ingestor/Dockerfile
+
+    isolated-vm:
+        image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: isolated-vm
+        build:
+            context: .
+            dockerfile: IsolatedVM/Dockerfile
+
+    nginx:
+        image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: nginx
+        build:
+            context: .
+            dockerfile: Nginx/Dockerfile
+
+    # copilot:
+    #     image: ${COMPOSE_PROJECT_NAME}-copilot:${APP_TAG}
+    #     extends:
+    #         file: ./docker-compose.base.yml
+    #         service: copilot
+    #     build:
+    #         context: .
+    #         dockerfile: Copilot/Dockerfile
+
+    fluentd:
+        image: ${COMPOSE_PROJECT_NAME}-fluentd:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: fluentd
+        build:
+            context: .
+            dockerfile: Fluentd/Dockerfile
+
+    test-server:
+        image: ${COMPOSE_PROJECT_NAME}-test-server:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: test-server
+        build:
+            context: .
+            dockerfile: TestServer/Dockerfile
+
+    # llm:
+    #     image: ${COMPOSE_PROJECT_NAME}-llm:${APP_TAG}
+    #     extends:
+    #         file: ./docker-compose.base.yml
+    #         service: llm
+    #     build:
+    #         context: .
+    #         dockerfile: LLM/Dockerfile
+
+volumes:
+    postgres:
+    clickhouse:
+
+networks:
+  uptime:
+    driver: bridge

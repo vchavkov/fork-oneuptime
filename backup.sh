@@ -1,7 +1,3 @@
-# This file takes last 30 days backup. Make sure you run this file at least once/day.
-# The backup will be in the format of db-(date of the month).backup
-# Before the backup, please make sure DATABASE_BACKUP_* ENV vars in config.env is set properly.
-
 export $(grep -v '^#' config.env | xargs)
 
 echo "Starting backup...."
