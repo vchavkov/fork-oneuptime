@@ -1,49 +1,9 @@
-# Images are pushed to both Docker Hub and Github Container Registry. If you're using Github Container Registry, you can change the image tag to use the Github Container Registry.
-# For example, if you want to use the image from Github Container Registry, you can change the image tag from oneuptime/dashboard:latest to ghcr.io/oneuptime/dashboard:latest
-
 services:
-
-    haraka:
-        image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: haraka
-
-    redis:
-        extends:
-            file: ./docker-compose.base.yml
-            service: redis
-
-    clickhouse:
-        extends:
-            file: ./docker-compose.base.yml
-            service: clickhouse
-
-    postgres:
-        ports:
-          - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
-        extends:
-            file: ./docker-compose.base.yml
-            service: postgres
-
-
-    otel-collector:
-        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: otel-collector
-
     accounts:
         image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: accounts
-
-    dashboard:
-        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: dashboard
 
     admin-dashboard:
         image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
@@ -51,11 +11,11 @@ services:
             file: ./docker-compose.base.yml
             service: admin-dashboard
 
-    status-page:
-        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
+    api-reference:
+        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: status-page
+            service: api-reference
 
     app:
         image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
@@ -63,11 +23,16 @@ services:
             file: ./docker-compose.base.yml
             service: app
 
-    worker:
-        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
+    clickhouse:
         extends:
             file: ./docker-compose.base.yml
-            service: worker
+            service: clickhouse
+
+    dashboard:
+        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: dashboard
 
     docs:
         image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
@@ -75,35 +40,17 @@ services:
             file: ./docker-compose.base.yml
             service: docs
 
-    api-reference:
-        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
+    haraka:
+        image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: api-reference
-
-    workflow:
-        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: workflow
+            service: haraka
 
     home:
         image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: home
-
-    probe-1:
-        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: probe-1
-
-    probe-2:
-        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: probe-2
 
     ingestor:
         image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
@@ -118,15 +65,63 @@ services:
             service: isolated-vm
 
     nginx:
-       image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
-       extends:
+        image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
+        extends:
             file: ./docker-compose.base.yml
             service: nginx
+
+    otel-collector:
+        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: otel-collector
+
+    postgres:
+        ports:
+            - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
+        extends:
+            file: ./docker-compose.base.yml
+            service: postgres
+
+    probe-1:
+        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: probe-1
+
+    probe-2:
+        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: probe-2
+
+    redis:
+        extends:
+            file: ./docker-compose.base.yml
+            service: redis
+
+    status-page:
+        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: status-page
+
+    worker:
+        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: worker
+
+    workflow:
+        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: workflow
 
 volumes:
     postgres:
     clickhouse:
 
 networks:
-  uptime:
-    driver: bridge
+    uptime:
+        driver: bridge

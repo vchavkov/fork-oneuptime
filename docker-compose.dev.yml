@@ -1,7 +1,86 @@
-
-
 services:
+    accounts:
+        image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: accounts
+        build:
+            context: .
+            dockerfile: Accounts/Dockerfile
 
+    admin-dashboard:
+        image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: admin-dashboard
+        build:
+            context: .
+            dockerfile: AdminDashboard/Dockerfile
+
+    api-reference:
+        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: api-reference
+        build:
+            context: .
+            dockerfile: APIReference/Dockerfile
+
+    app:
+        image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: app
+        build:
+            context: .
+            dockerfile: App/Dockerfile
+
+    clickhouse:
+        extends:
+            file: ./docker-compose.base.yml
+            service: clickhouse
+
+    copilot:
+        image: ${COMPOSE_PROJECT_NAME}-copilot:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: copilot
+        build:
+            context: .
+            dockerfile: Copilot/Dockerfile
+
+    dashboard:
+        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: dashboard
+        build:
+            context: .
+            dockerfile: Dashboard/Dockerfile
+
+    docs:
+        image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: docs
+        build:
+            context: .
+            dockerfile: Docs/Dockerfile
+
+    e2e:
+        image: ${COMPOSE_PROJECT_NAME}-e2e:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: e2e
+
+    fluentd:
+        image: ${COMPOSE_PROJECT_NAME}-fluentd:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: fluentd
+        build:
+            context: .
+            dockerfile: Fluentd/Dockerfile
 
     haraka:
         image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
@@ -9,24 +88,53 @@ services:
             file: ./docker-compose.base.yml
             service: haraka
         build:
-            network: host
             context: .
-            dockerfile: ./Haraka/Dockerfile
+            dockerfile: Haraka/Dockerfile
 
-    redis:
-        ports:
-            - '6310:6379'
+    home:
+        image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: redis
+            service: home
+        build:
+            context: .
+            dockerfile: Home/Dockerfile
 
-    clickhouse:
-        ports:
-            - '9034:9000'
-            - '8189:8123'
+    ingestor:
+        image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: clickhouse
+            service: ingestor
+        build:
+            context: .
+            dockerfile: Ingestor/Dockerfile
+
+    isolated-vm:
+        image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: isolated-vm
+        build:
+            context: .
+            dockerfile: IsolatedVM/Dockerfile
+
+    nginx:
+        image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: nginx
+        build:
+            context: .
+            dockerfile: Nginx/Dockerfile
+
+    otel-collector:
+        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: otel-collector
+        build:
+            context: .
+            dockerfile: OTelCollector/Dockerfile
 
     postgres:
         ports:
@@ -35,379 +143,69 @@ services:
             file: ./docker-compose.base.yml
             service: postgres
 
-
-    otel-collector:
-        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: otel-collector
-        build:
-            network: host
-            context: .
-            dockerfile: ./OTelCollector/Dockerfile
-
-    accounts:
-        image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
-        ports:
-            - '${ACCOUNTS_PORT}:${ACCOUNTS_PORT}' # ws port for webpack
-        extends:
-            file: ./docker-compose.base.yml
-            service: accounts
-        volumes:
-            - ./Accounts:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/dev-env
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        build:
-            network: host
-            context: .
-            dockerfile: ./Accounts/Dockerfile
-
-    dashboard:
-        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
-        ports:
-            - '${DASHBOARD_PORT}:${DASHBOARD_PORT}' # ws port for webpack
-        extends:
-            file: ./docker-compose.base.yml
-            service: dashboard
-        volumes:
-            - ./Dashboard:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/dev-env
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        build:
-            network: host
-            context: .
-            dockerfile: ./Dashboard/Dockerfile
-
-
-
-    admin-dashboard:
-        image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
-        ports:
-            - '${ADMIN_DASHBOARD_PORT}:${ADMIN_DASHBOARD_PORT}' # ws port for webpack
-        extends:
-            file: ./docker-compose.base.yml
-            service: admin-dashboard
-        volumes:
-            - ./AdminDashboard:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/dev-env
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        build:
-            network: host
-            context: .
-            dockerfile: ./AdminDashboard/Dockerfile
-
-
-    status-page:
-        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
-        ports:
-            - '${STATUS_PAGE_PORT}:${STATUS_PAGE_PORT}' # ws port for webpack
-        extends:
-            file: ./docker-compose.base.yml
-            service: status-page
-        volumes:
-            - ./StatusPage:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/dev-env
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        build:
-            network: host
-            context: .
-            dockerfile: ./StatusPage/Dockerfile
-
-    test-server:
-        image: ${COMPOSE_PROJECT_NAME}-test-server:${APP_TAG}
-        volumes:
-            - ./TestServer:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        extends:
-            file: ./docker-compose.base.yml
-            service: test-server
-        ports:
-            - '9141:9229' # Debugging port.
-            - '3800:3800'
-        build:
-            network: host
-            context: .
-            dockerfile: ./TestServer/Dockerfile
-
-
-    home:
-        image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
-        volumes:
-            - ./Home:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        extends:
-            file: ./docker-compose.base.yml
-            service: home
-        ports:
-            - '9212:9229' # Debugging port.
-        build:
-            network: host
-            context: .
-            dockerfile: ./Home/Dockerfile
-
-    worker:
-        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
-        volumes:
-            - ./Worker:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        extends:
-            file: ./docker-compose.base.yml
-            service: worker
-        ports:
-            - '8734:9229' # Debugging port.
-        build:
-            network: host
-            context: .
-            dockerfile: ./Worker/Dockerfile
-
-    workflow:
-        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
-        volumes:
-            - ./Workflow:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        extends:
-            file: ./docker-compose.base.yml
-            service: workflow
-        ports:
-            - '8735:9229' # Debugging port.
-        build:
-            network: host
-            context: .
-            dockerfile: ./Workflow/Dockerfile
-
-    api-reference:
-        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
-        volumes:
-            - ./APIReference:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        extends:
-            file: ./docker-compose.base.yml
-            service: api-reference
-        ports:
-            - '8737:9229' # Debugging port.
-        build:
-            network: host
-            context: .
-            dockerfile: ./APIReference/Dockerfile
-
-    docs:
-        image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
-        volumes:
-            - ./Docs:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        extends:
-            file: ./docker-compose.base.yml
-            service: docs
-        ports:
-            - '8738:9229' # Debugging port.
-        build:
-            network: host
-            context: .
-            dockerfile: ./Docs/Dockerfile
-
-    app:
-        image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
-        volumes:
-            - ./App:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        extends:
-            file: ./docker-compose.base.yml
-            service: app
-        ports:
-            - '9232:9229' # Debugging port.
-        build:
-            network: host
-            context: .
-            dockerfile: ./App/Dockerfile
-
-
     probe-1:
-        image: ${COMPOSE_PROJECT_NAME}-probe
-        volumes:
-            - ./Probe:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
+        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: probe-1
-        ports:
-          - '9655:9229' # Debugging port.
         build:
-            network: host
             context: .
-            dockerfile: ./Probe/Dockerfile
+            dockerfile: Probe/Dockerfile
 
     probe-2:
-        image: ${COMPOSE_PROJECT_NAME}-probe
-        volumes:
-            - ./Probe:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-
+        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
             service: probe-2
-        ports:
-          - '9656:9229' # Debugging port.
         build:
-            network: host
             context: .
-            dockerfile: ./Probe/Dockerfile
+            dockerfile: Probe/Dockerfile
 
-    isolated-vm:
-        image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
-        volumes:
-            - ./IsolatedVM:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        ports:
-          - '9974:9229' # Debugging port.
+    redis:
         extends:
             file: ./docker-compose.base.yml
-            service: isolated-vm
-        build:
-            network: host
-            context: .
-            dockerfile: ./IsolatedVM/Dockerfile
+            service: redis
 
-    ingestor:
-        image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
-        volumes:
-            - ./Ingestor:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        ports:
-          - '9932:9229' # Debugging port.
+    status-page:
+        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: ingestor
+            service: status-page
         build:
-            network: host
             context: .
-            dockerfile: ./Ingestor/Dockerfile
+            dockerfile: StatusPage/Dockerfile
 
-
-    # Fluentd. Required only for development. In  production its the responsibility of the customer to run fluentd and pipe logs to CBSUptime.
-    # We run this container just for development, to see if logs are piped.
-    fluentd:
-        image: ${COMPOSE_PROJECT_NAME}-fluentd:${APP_TAG}
-        ports:
-            - 24224:24224
-            - 24224:24224/udp
-        user: fluent
+    test-server:
+        image: ${COMPOSE_PROJECT_NAME}-test-server:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: fluentd
-        volumes:
-            - ./Fluentd/fluent.conf:/fluentd/etc/fluent.conf
+            service: test-server
         build:
-            network: host
-            context: ./Fluentd
-            dockerfile: ./Dockerfile
-
-    nginx:
-        image: ${COMPOSE_PROJECT_NAME}-nginx
-        build:
-            network: host
             context: .
-            dockerfile: ./Nginx/Dockerfile
+            dockerfile: TestServer/Dockerfile
+
+    worker:
+        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: nginx
+            service: worker
+        build:
+            context: .
+            dockerfile: Worker/Dockerfile
 
-    # e2e tests
-    e2e:
-        image: ${COMPOSE_PROJECT_NAME}-e2e
+    workflow:
+        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
         extends:
             file: ./docker-compose.base.yml
-            service: e2e
-        volumes:
-            - ./E2E/playwright-report:/usr/src/app/playwright-report
-            - ./E2E/test-results:/usr/src/app/test-results
+            service: workflow
         build:
-            network: host
             context: .
-            dockerfile: ./E2E/Dockerfile
-
-    copilot:
-        image: ${COMPOSE_PROJECT_NAME}-copilot
-        volumes:
-            - ./Copilot:/usr/src/app
-            # Use node modules of the container and not host system.
-            # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-            - /usr/src/app/node_modules/
-            - ./Common:/usr/src/Common
-            - /usr/src/Common/node_modules/
-        ports:
-            - '9985:9229' # Debugging port.
-        extends:
-            file: ./docker-compose.base.yml
-            service: copilot
-        build:
-            network: host
-            context: .
-            dockerfile: ./Copilot/Dockerfile
+            dockerfile: Workflow/Dockerfile
 
 volumes:
     postgres:
     clickhouse:
 
 networks:
-  uptime:
-    driver: bridge
+    uptime:
+        driver: bridge
