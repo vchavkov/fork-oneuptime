@@ -30,7 +30,7 @@ RUN apk add bash && apk add curl
 # Install python
 RUN apk update && apk add --no-cache --virtual .gyp python3 make g++
 
-#Use bash shell by default
+# Use bash shell by default
 SHELL ["/bin/bash", "-c"]
 
 
@@ -58,13 +58,13 @@ RUN npm install
 EXPOSE 3002
 
 {{ if eq .Env.ENVIRONMENT "development" }}
-#Run the app
+# Run the app
 CMD [ "npm", "run", "dev" ]
 {{ else }}
 # Copy app source
 COPY ./App /usr/src/app
 # Bundle app source
 RUN npm run compile
-#Run the app
+# Run the app
 CMD [ "npm", "start" ]
 {{ end }}

@@ -72,6 +72,9 @@ services:
         extends:
             file: ./docker-compose.base.yml
             service: e2e
+        build:
+            context: .
+            dockerfile: E2E/Dockerfile
 
     fluentd:
         image: ${COMPOSE_PROJECT_NAME}-fluentd:${APP_TAG}

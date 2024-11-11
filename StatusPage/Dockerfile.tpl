@@ -26,7 +26,7 @@ RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 # Install bash.
 RUN apk add bash && apk add curl
 
-#Use bash shell by default
+# Use bash shell by default
 SHELL ["/bin/bash", "-c"]
 
 RUN npm install http-server -g
@@ -74,13 +74,13 @@ RUN npm i -D webpack-cli
 RUN mkdir /usr/src/app/dev-env
 RUN touch /usr/src/app/dev-env/.env
 RUN npm i -D webpack-dev-server
-#Run the app
+# Run the app
 CMD [ "npm", "run", "dev" ]
 {{ else }}
 # Copy app source
 COPY ./StatusPage /usr/src/app
 # Bundle app source
 RUN npm run build
-#Run the app
+# Run the app
 CMD [ "npm", "start" ]
 {{ end }}

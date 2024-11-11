@@ -299,6 +299,18 @@ services:
             options:
                 max-size: "1000m"
 
+    monitor:
+        networks:
+          - uptime
+        restart: always
+        environment:
+            <<: *common-server-variables
+            PORT: 3010
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
     nginx:
         restart: always
         networks:

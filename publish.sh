@@ -36,24 +36,22 @@ AWS_ACCOUNT=401376717990
 AWS_REGION="us-east-1"
 AWS_ECR_REGISTRY_COLLECTION_PREFIX="uptime"
 
-AWS_ECR_REGISTRY=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_ECR_REGISTRY_COLLECTION_PREFIX}/${IMAGE_NAME}${AWS_ECR_REGISTRY_SUFFIX}
-
-IMAGE_TAGS_STR=""
-for IMAGE_TAG in ${IMAGE_TAGS[@]}; do
-	IMAGE_TAGS_STR+=" -t ${AWS_ECR_REGISTRY}:$IMAGE_TAG"
-done
-
+## tag images
 for IMAGE_NAME in ${IMAGE_ARRAY[@]}; do
+	AWS_ECR_REGISTRY=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_ECR_REGISTRY_COLLECTION_PREFIX}/${IMAGE_NAME}${AWS_ECR_REGISTRY_SUFFIX}
 	for IMAGE_TAG in ${IMAGE_TAGS[@]}; do
-		CMD="docker tag \"${AWS_ECR_REGISTRY_COLLECTION_PREFIX}-${IMAGE_NAME}:$APP_TAG\" \"${AWS_ECR_REGISTRY}${IMAGE_NAME}:${IMAGE_TAG}\""
-		printf "\n$CMD\n"
-		eval "$CMD"
+		if [ "$IMAGE_TAG" != "$APP_TAG" ]; then
+			CMD="docker tag ${AWS_ECR_REGISTRY}:${APP_TAG} ${AWS_ECR_REGISTRY}:${IMAGE_TAG}"
+			printf "\n$CMD\n"
+			eval "$CMD"
+		fi
 	done
 done
 
+## push images
 for IMAGE_NAME in ${IMAGE_ARRAY[@]}; do
 	for IMAGE_TAG in ${IMAGE_TAGS[@]}; do
-		CMD="docker push \"${AWS_ECR_REGISTRY}${IMAGE_NAME}:${IMAGE_TAG}\""
+		CMD="docker push \"${AWS_ECR_REGISTRY}:${IMAGE_TAG}\""
 		printf "\n$CMD\n"
 		eval "$CMD"
 	done

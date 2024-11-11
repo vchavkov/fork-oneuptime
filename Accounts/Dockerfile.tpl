@@ -45,7 +45,7 @@ COPY ./Accounts/package*.json /usr/src/app/
 RUN npm install
 
 # Expose ports.
-#   - 3003:  accounts
+# - 3003: accounts
 EXPOSE 3003
 
 RUN npm i -D webpack-cli
@@ -55,7 +55,7 @@ RUN mkdir /usr/src/app/dev-env
 RUN touch /usr/src/app/dev-env/.env
 RUN npm i -D webpack-dev-server
 
-#Run the app
+# Run the app
 CMD [ "npm", "run", "dev" ]
 {{ else }}
 # Copy app source
@@ -63,6 +63,6 @@ COPY ./Accounts /usr/src/app
 # Bundle app source
 
 RUN npm run build
-#Run the app
+# Run the app
 CMD [ "npm", "start" ]
 {{ end }}

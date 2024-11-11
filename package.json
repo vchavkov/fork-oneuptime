@@ -57,7 +57,7 @@
         "release": "npm run config-to-prod && export $(grep -v '^#' config.env | xargs) && npm run prerun && docker compose -f docker-compose.build.yml -f docker-compose.prod.yml build --no-cache $npm_config_services",
         "release-preview": "export $(grep -v '^#' config.env | xargs) && npm run prerun && docker compose -f docker-compose.prod.yml build $npm_config_services",
         "kill": "npm run stop",
-        "dev": "npm run config-to-dev && npm run prerun && export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.dev.yml up  --remove-orphans  -d $npm_config_services",
+        "dev": "npm run config-to-dev && npm run prerun && export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.dev.yml up --remove-orphans -d $npm_config_services",
         "stop": "export $(grep -v '^#' config.env | xargs) && docker compose down --remove-orphans",
         "down": "npm run stop",
         "exec": "export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.yml exec -it",

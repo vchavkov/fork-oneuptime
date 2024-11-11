@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y .gyp python3 make g++
 # Install playwright dependencies
 RUN apt-get install -y libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libgtk-3-0 libpango-1.0-0 libcairo2 libgdk-pixbuf2.0-0 libasound2 libatspi2.0-0
 
-#Use bash shell by default
+# Use bash shell by default
 SHELL ["/bin/bash", "-c"]
 
 # Install iputils
@@ -75,13 +75,13 @@ RUN npm install
 EXPOSE 3087
 
 {{ if eq .Env.ENVIRONMENT "development" }}
-#Run the app
+# Run the app
 CMD [ "npm", "run", "dev" ]
 {{ else }}
 # Copy app source
 COPY ./Probe /usr/src/app
 # Bundle app source
 RUN npm run compile
-#Run the app
+# Run the app
 CMD [ "npm", "start" ]
 {{ end }}
