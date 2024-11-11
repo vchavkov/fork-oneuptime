@@ -53,102 +53,40 @@ x-common-ui-variables: &common-ui-variables
 
 x-common-server-variables: &common-server-variables
     <<: *common-variables
-    ONEUPTIME_SECRET: ${ONEUPTIME_SECRET}
-    DATABASE_PORT: ${DATABASE_PORT}
-    DATABASE_USERNAME: ${DATABASE_USERNAME}
-    DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-    DATABASE_NAME: ${DATABASE_NAME}
-    DATABASE_HOST: ${DATABASE_HOST}
-    DATABASE_SSL_CA: ${DATABASE_SSL_CA}
-    DATABASE_SSL_KEY: ${DATABASE_SSL_KEY}
-    DATABASE_SSL_CERT: ${DATABASE_SSL_CERT}
-    DATABASE_SSL_REJECT_UNAUTHORIZED: ${DATABASE_SSL_REJECT_UNAUTHORIZED}
-    LETS_ENCRYPT_NOTIFICATION_EMAIL: ${LETS_ENCRYPT_NOTIFICATION_EMAIL}
-    LETS_ENCRYPT_ACCOUNT_KEY: ${LETS_ENCRYPT_ACCOUNT_KEY}
-    REDIS_USERNAME: ${REDIS_USERNAME}
-    REDIS_PASSWORD: ${REDIS_PASSWORD}
-    REDIS_HOST: ${REDIS_HOST}
-    REDIS_PORT: ${REDIS_PORT}
-    REDIS_DB: ${REDIS_DB}
-    REDIS_TLS_CA: ${REDIS_TLS_CA}
-    REDIS_TLS_SENTINEL_MODE: ${REDIS_TLS_SENTINEL_MODE}
-    ENCRYPTION_SECRET: ${ENCRYPTION_SECRET}
+    BILLING_ENABLED: ${BILLING_ENABLED}
     BILLING_PRIVATE_KEY: ${BILLING_PRIVATE_KEY}
     BILLING_PUBLIC_KEY: ${BILLING_PUBLIC_KEY}
-    BILLING_ENABLED: ${BILLING_ENABLED}
-    CLICKHOUSE_USER: ${CLICKHOUSE_USER}
-    CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
     CLICKHOUSE_DATABASE: ${CLICKHOUSE_DATABASE}
     CLICKHOUSE_HOST: ${CLICKHOUSE_HOST}
+    CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
     CLICKHOUSE_PORT: ${CLICKHOUSE_PORT}
-    IS_SERVER: "true"
-    WORKFLOW_SCRIPT_TIMEOUT_IN_MS: ${WORKFLOW_SCRIPT_TIMEOUT_IN_MS}
+    CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+    DATABASE_HOST: ${DATABASE_HOST}
+    DATABASE_NAME: ${DATABASE_NAME}
+    DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    DATABASE_PORT: ${DATABASE_PORT}
+    DATABASE_SSL_CA: ${DATABASE_SSL_CA}
+    DATABASE_SSL_CERT: ${DATABASE_SSL_CERT}
+    DATABASE_SSL_KEY: ${DATABASE_SSL_KEY}
+    DATABASE_SSL_REJECT_UNAUTHORIZED: ${DATABASE_SSL_REJECT_UNAUTHORIZED}
+    DATABASE_USERNAME: ${DATABASE_USERNAME}
     DISABLE_AUTOMATIC_INCIDENT_CREATION: ${DISABLE_AUTOMATIC_INCIDENT_CREATION}
+    ENCRYPTION_SECRET: ${ENCRYPTION_SECRET}
+    IS_SERVER: "true"
+    LETS_ENCRYPT_ACCOUNT_KEY: ${LETS_ENCRYPT_ACCOUNT_KEY}
+    LETS_ENCRYPT_NOTIFICATION_EMAIL: ${LETS_ENCRYPT_NOTIFICATION_EMAIL}
     NOTIFICATION_WEBHOOK_ON_CREATED_USER: ${NOTIFICATION_WEBHOOK_ON_CREATED_USER}
+    ONEUPTIME_SECRET: ${ONEUPTIME_SECRET}
+    REDIS_DB: ${REDIS_DB}
+    REDIS_HOST: ${REDIS_HOST}
+    REDIS_PASSWORD: ${REDIS_PASSWORD}
+    REDIS_PORT: ${REDIS_PORT}
+    REDIS_TLS_CA: ${REDIS_TLS_CA}
+    REDIS_TLS_SENTINEL_MODE: ${REDIS_TLS_SENTINEL_MODE}
+    REDIS_USERNAME: ${REDIS_USERNAME}
+    WORKFLOW_SCRIPT_TIMEOUT_IN_MS: ${WORKFLOW_SCRIPT_TIMEOUT_IN_MS}
 
 services:
-    haraka:
-        networks:
-          - uptime
-        restart: always
-        environment:
-            SMTP_PASSWORD: ${INTERNAL_SMTP_PASSWORD}
-            SMTP_EMAIL: ${INTERNAL_SMTP_EMAIL}
-            DKIM_SELECTOR: oneuptime
-            DOMAIN: ${INTERNAL_SMTP_SENDING_DOMAIN}
-            DKIM_PRIVATE_KEY: ${INTERNAL_SMTP_DKIM_PRIVATE_KEY_AS_BASE64}
-            DKIM_PUBLIC_KEY: ${INTERNAL_SMTP_DKIM_PUBLIC_KEY_AS_BASE64}
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    redis:
-        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/redis:7.0.12
-        restart: always
-        networks:
-          - uptime
-        command: redis-server --requirepass "${REDIS_PASSWORD}" --save "" --appendonly no
-        environment:
-            REDIS_PASSWORD: ${REDIS_PASSWORD}
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    clickhouse:
-        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/clickhouse/clickhouse-server:23.7
-        restart: always
-        environment:
-            CLICKHOUSE_USER: ${CLICKHOUSE_USER}
-            CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
-            CLICKHOUSE_DB: ${CLICKHOUSE_DATABASE}
-            CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
-        networks:
-          - uptime
-        volumes:
-            - clickhouse:/var/lib/clickhouse/
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    postgres:
-        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/postgres:15
-        restart: always
-        environment:
-            POSTGRES_USER: ${DATABASE_USERNAME}
-            POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-            POSTGRES_DB: ${DATABASE_NAME}
-        networks:
-          - uptime
-        volumes:
-            - postgres:/var/lib/postgresql/data
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
     accounts:
         networks:
           - uptime
@@ -157,22 +95,6 @@ services:
             <<: *common-ui-variables
             PORT: ${ACCOUNTS_PORT}
             DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_ACCOUNTS}
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    llm:
-        networks:
-          - uptime
-        restart: always
-        environment:
-            <<: *common-server-variables
-            PORT: 8547
-            HF_TOKEN: ${LLM_SERVER_HUGGINGFACE_TOKEN}
-            HF_MODEL_NAME: ${LLM_SERVER_HUGGINGFACE_MODEL_NAME}
-        volumes:
-            - ./LLM/Models:/app/Models
         logging:
             driver: "local"
             options:
@@ -191,40 +113,13 @@ services:
             options:
                 max-size: "1000m"
 
-    dashboard:
-        networks:
-          - uptime
-        restart: always
-        environment:
-            <<: *common-ui-variables
-            PORT: ${DASHBOARD_PORT}
-            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_DASHBOARD}
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    status-page:
-        networks:
-          - uptime
-        restart: always
-        environment:
-            <<: *common-ui-variables
-            PORT: ${STATUS_PAGE_PORT}
-            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_STATUS_PAGE}
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    test-server:
+    api-reference:
         networks:
           - uptime
         restart: always
         environment:
             <<: *common-server-variables
-            PORT: ${TEST_SERVER_PORT}
-            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_TEST_SERVER}
+            PORT: ${API_REFERENCE_PORT}
         logging:
             driver: "local"
             options:
@@ -250,25 +145,49 @@ services:
             options:
                 max-size: "1000m"
 
-    home:
-        networks:
-          - uptime
+    clickhouse:
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/clickhouse/clickhouse-server:23.7
         restart: always
         environment:
-            <<: *common-server-variables
-            PORT: ${HOME_PORT}
+            CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+            CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+            CLICKHOUSE_DB: ${CLICKHOUSE_DATABASE}
+            CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+        networks:
+          - uptime
+        volumes:
+            - clickhouse:/var/lib/clickhouse/
         logging:
             driver: "local"
             options:
                 max-size: "1000m"
 
-    worker:
+    copilot:
         networks:
           - uptime
         restart: always
         environment:
-            <<: *common-server-variables
-            PORT: ${WORKER_PORT}
+            ONEUPTIME_URL: ${COPILOT_ONEUPTIME_URL}
+            ONEUPTIME_REPOSITORY_SECRET_KEY: ${COPILOT_ONEUPTIME_REPOSITORY_SECRET_KEY}
+            CODE_REPOSITORY_PASSWORD: ${COPILOT_CODE_REPOSITORY_PASSWORD}
+            CODE_REPOSITORY_USERNAME: ${COPILOT_CODE_REPOSITORY_USERNAME}
+            ONEUPTIME_LLM_SERVER_URL: ${COPILOT_ONEUPTIME_LLM_SERVER_URL}
+            DISABLE_COPILOT: ${DISABLE_COPILOT}
+            OPENAI_API_KEY: ${COPILOT_OPENAI_API_KEY}
+            LOG_LEVEL: ${LOG_LEVEL}
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    dashboard:
+        networks:
+          - uptime
+        restart: always
+        environment:
+            <<: *common-ui-variables
+            PORT: ${DASHBOARD_PORT}
+            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_DASHBOARD}
         logging:
             driver: "local"
             options:
@@ -286,25 +205,138 @@ services:
             options:
                 max-size: "1000m"
 
-    api-reference:
-        networks:
-          - uptime
-        restart: always
+    e2e:
+        restart: "no"
+        network_mode: host
         environment:
-            <<: *common-server-variables
-            PORT: ${API_REFERENCE_PORT}
+            <<: *common-variables
+            E2E_TEST_IS_USER_REGISTERED: ${E2E_TEST_IS_USER_REGISTERED}
+            E2E_TEST_REGISTERED_USER_EMAIL: ${E2E_TEST_REGISTERED_USER_EMAIL}
+            E2E_TEST_REGISTERED_USER_PASSWORD: ${E2E_TEST_REGISTERED_USER_PASSWORD}
+            E2E_TEST_STATUS_PAGE_URL: ${E2E_TEST_STATUS_PAGE_URL}
+            E2E_TESTS_FAILED_WEBHOOK_URL: ${E2E_TESTS_FAILED_WEBHOOK_URL}
         logging:
             driver: "local"
             options:
                 max-size: "1000m"
 
-    workflow:
+    fluentd:
+        networks:
+          - uptime
+        restart: always
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    haraka:
+        networks:
+          - uptime
+        restart: always
+        environment:
+            SMTP_PASSWORD: ${INTERNAL_SMTP_PASSWORD}
+            SMTP_EMAIL: ${INTERNAL_SMTP_EMAIL}
+            DKIM_SELECTOR: oneuptime
+            DOMAIN: ${INTERNAL_SMTP_SENDING_DOMAIN}
+            DKIM_PRIVATE_KEY: ${INTERNAL_SMTP_DKIM_PRIVATE_KEY_AS_BASE64}
+            DKIM_PUBLIC_KEY: ${INTERNAL_SMTP_DKIM_PUBLIC_KEY_AS_BASE64}
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    home:
         networks:
           - uptime
         restart: always
         environment:
             <<: *common-server-variables
-            PORT: ${WORKFLOW_PORT}
+            PORT: ${HOME_PORT}
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    ingestor:
+        networks:
+          - uptime
+        restart: always
+        environment:
+            <<: *common-server-variables
+            PORT: ${INGESTOR_PORT}
+            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_INGESTOR}
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    isolated-vm:
+        networks:
+          - uptime
+        restart: always
+        environment:
+            PORT: ${ISOLATED_VM_PORT}
+            ONEUPTIME_SECRET: ${ONEUPTIME_SECRET}
+            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_ISOLATED_VM}
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    llm:
+        networks:
+          - uptime
+        restart: always
+        environment:
+            <<: *common-server-variables
+            PORT: 8547
+            HF_TOKEN: ${LLM_SERVER_HUGGINGFACE_TOKEN}
+            HF_MODEL_NAME: ${LLM_SERVER_HUGGINGFACE_MODEL_NAME}
+        volumes:
+            - ./LLM/Models:/app/Models
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    nginx:
+        restart: always
+        networks:
+          - uptime
+        environment:
+            <<: *common-server-variables
+            ONEUPTIME_HTTP_PORT: ${ONEUPTIME_HTTP_PORT}
+            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_INGRESS}
+        ports:
+            - '${ONEUPTIME_HTTP_PORT}:7849'
+            - '${STATUS_PAGE_HTTPS_PORT}:7850'
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    otel-collector:
+        networks:
+          - uptime
+        environment:
+            <<: *common-variables
+        restart: always
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    postgres:
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/postgres:15
+        restart: always
+        environment:
+            POSTGRES_USER: ${DATABASE_USERNAME}
+            POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+            POSTGRES_DB: ${DATABASE_NAME}
+        networks:
+          - uptime
+        volumes:
+            - postgres:/var/lib/postgresql/data
         logging:
             driver: "local"
             options:
@@ -352,96 +384,64 @@ services:
             options:
                 max-size: "1000m"
 
-    otel-collector:
+    redis:
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/redis:7.0.12
+        restart: always
         networks:
           - uptime
+        command: redis-server --requirepass "${REDIS_PASSWORD}" --save "" --appendonly no
         environment:
-            <<: *common-variables
-        restart: always
+            REDIS_PASSWORD: ${REDIS_PASSWORD}
         logging:
             driver: "local"
             options:
                 max-size: "1000m"
 
-    fluentd:
-        networks:
-          - uptime
-        restart: always
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    isolated-vm:
+    status-page:
         networks:
           - uptime
         restart: always
         environment:
-            PORT: ${ISOLATED_VM_PORT}
-            ONEUPTIME_SECRET: ${ONEUPTIME_SECRET}
-            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_ISOLATED_VM}
+            <<: *common-ui-variables
+            PORT: ${STATUS_PAGE_PORT}
+            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_STATUS_PAGE}
         logging:
             driver: "local"
             options:
                 max-size: "1000m"
 
-    ingestor:
+    test-server:
         networks:
           - uptime
         restart: always
         environment:
             <<: *common-server-variables
-            PORT: ${INGESTOR_PORT}
-            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_INGESTOR}
+            PORT: ${TEST_SERVER_PORT}
+            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_TEST_SERVER}
         logging:
             driver: "local"
             options:
                 max-size: "1000m"
 
-    copilot:
+    worker:
         networks:
           - uptime
         restart: always
-        environment:
-            ONEUPTIME_URL: ${COPILOT_ONEUPTIME_URL}
-            ONEUPTIME_REPOSITORY_SECRET_KEY: ${COPILOT_ONEUPTIME_REPOSITORY_SECRET_KEY}
-            CODE_REPOSITORY_PASSWORD: ${COPILOT_CODE_REPOSITORY_PASSWORD}
-            CODE_REPOSITORY_USERNAME: ${COPILOT_CODE_REPOSITORY_USERNAME}
-            ONEUPTIME_LLM_SERVER_URL: ${COPILOT_ONEUPTIME_LLM_SERVER_URL}
-            DISABLE_COPILOT: ${DISABLE_COPILOT}
-            OPENAI_API_KEY: ${COPILOT_OPENAI_API_KEY}
-            LOG_LEVEL: ${LOG_LEVEL}
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    e2e:
-        restart: "no"
-        network_mode: host
-        environment:
-            <<: *common-variables
-            E2E_TEST_IS_USER_REGISTERED: ${E2E_TEST_IS_USER_REGISTERED}
-            E2E_TEST_REGISTERED_USER_EMAIL: ${E2E_TEST_REGISTERED_USER_EMAIL}
-            E2E_TEST_REGISTERED_USER_PASSWORD: ${E2E_TEST_REGISTERED_USER_PASSWORD}
-            E2E_TEST_STATUS_PAGE_URL: ${E2E_TEST_STATUS_PAGE_URL}
-            E2E_TESTS_FAILED_WEBHOOK_URL: ${E2E_TESTS_FAILED_WEBHOOK_URL}
-        logging:
-            driver: "local"
-            options:
-                max-size: "1000m"
-
-    nginx:
-        restart: always
-        networks:
-          - uptime
         environment:
             <<: *common-server-variables
-            ONEUPTIME_HTTP_PORT: ${ONEUPTIME_HTTP_PORT}
-            DISABLE_TELEMETRY: ${DISABLE_TELEMETRY_FOR_INGRESS}
-        ports:
-            - '${ONEUPTIME_HTTP_PORT}:7849'
-            - '${STATUS_PAGE_HTTPS_PORT}:7850'
+            PORT: ${WORKER_PORT}
+        logging:
+            driver: "local"
+            options:
+                max-size: "1000m"
+
+    workflow:
+        networks:
+          - uptime
+        restart: always
+        environment:
+            <<: *common-server-variables
+            PORT: ${WORKFLOW_PORT}
         logging:
             driver: "local"
             options:

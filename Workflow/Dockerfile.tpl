@@ -22,13 +22,11 @@ RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 # Install bash.
 RUN apk add bash && apk add curl
 
-
 # Install python
 RUN apk update && apk add --no-cache --virtual .gyp python3 make g++
 
 #Use bash shell by default
 SHELL ["/bin/bash", "-c"]
-
 
 RUN mkdir /usr/src
 

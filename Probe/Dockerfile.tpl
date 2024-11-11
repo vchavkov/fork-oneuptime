@@ -10,7 +10,6 @@ RUN npm config set fetch-retries 5
 RUN npm config set fetch-retry-mintimeout 100000
 RUN npm config set fetch-retry-maxtimeout 600000
 
-
 ARG GIT_SHA
 ARG APP_VERSION
 
@@ -22,10 +21,8 @@ ENV NODE_OPTIONS="--use-openssl-ca"
 COPY ./SslCertificates /usr/local/share/ca-certificates
 RUN update-ca-certificates
 
-
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
-
 
 RUN apt-get update
 

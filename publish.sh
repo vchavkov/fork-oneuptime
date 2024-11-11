@@ -30,7 +30,6 @@ BUILD_DATE=$(date +%s)
 IMAGE_TAGS=(
 	"latest"
 	"$APP_TAG"
-	"release"
 )
 
 AWS_ACCOUNT=401376717990
@@ -46,7 +45,7 @@ done
 
 for IMAGE_NAME in ${IMAGE_ARRAY[@]}; do
 	for IMAGE_TAG in ${IMAGE_TAGS[@]}; do
-		CMD="docker tag \"${AWS_ECR_REGISTRY_COLLECTION_PREFIX}-${IMAGE_NAME}:latest\" \"${AWS_ECR_REGISTRY}${IMAGE_NAME}:${IMAGE_TAG}\""
+		CMD="docker tag \"${AWS_ECR_REGISTRY_COLLECTION_PREFIX}-${IMAGE_NAME}:$APP_TAG\" \"${AWS_ECR_REGISTRY}${IMAGE_NAME}:${IMAGE_TAG}\""
 		printf "\n$CMD\n"
 		eval "$CMD"
 	done
