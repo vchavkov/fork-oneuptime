@@ -82,6 +82,12 @@ services:
             file: ./docker-compose.build.yml
             service: isolated-vm
 
+    monitor:
+        image: ${IMAGE_PREFIX}/monitor:${APP_TAG}
+        extends:
+            file: ./docker-compose.build.yml
+            service: monitor
+
     llm:
         image: ${IMAGE_PREFIX}/llm:${APP_TAG}
         extends:

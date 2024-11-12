@@ -51,6 +51,7 @@ done
 ## push images
 for IMAGE_NAME in ${IMAGE_ARRAY[@]}; do
 	for IMAGE_TAG in ${IMAGE_TAGS[@]}; do
+		AWS_ECR_REGISTRY=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_ECR_REGISTRY_COLLECTION_PREFIX}/${IMAGE_NAME}${AWS_ECR_REGISTRY_SUFFIX}
 		CMD="docker push \"${AWS_ECR_REGISTRY}:${IMAGE_TAG}\""
 		printf "\n$CMD\n"
 		eval "$CMD"

@@ -121,6 +121,15 @@ services:
             context: .
             dockerfile: IsolatedVM/Dockerfile
 
+    monitor:
+        image: ${COMPOSE_PROJECT_NAME}-monitor:${APP_TAG}
+        extends:
+            file: ./docker-compose.base.yml
+            service: monitor
+        build:
+            context: .
+            dockerfile: Monitor/Dockerfile
+
     llm:
         image: ${COMPOSE_PROJECT_NAME}-llm:${APP_TAG}
         extends:
