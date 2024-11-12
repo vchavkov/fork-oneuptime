@@ -1,232 +1,366 @@
 services:
-    accounts:
-        # image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: accounts
-        build:
-            context: .
-            dockerfile: Accounts/Dockerfile
+  accounts:
+    extends:
+      file: ./docker-compose.base.yml
+      service: accounts
+    build:
+      network: host
+      context: .
+      dockerfile: ./Accounts/Dockerfile
+    ports:
+      - '${ACCOUNTS_PORT}:${ACCOUNTS_PORT}' # ws port for webpack
+    volumes:
+      - ./Accounts:/usr/src/app
+      - /usr/src/app/dev-env
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    admin-dashboard:
-        # image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: admin-dashboard
-        build:
-            context: .
-            dockerfile: AdminDashboard/Dockerfile
+  admin-dashboard:
+    extends:
+      file: ./docker-compose.base.yml
+      service: admin-dashboard
+    build:
+      network: host
+      context: .
+      dockerfile: AdminDashboard/Dockerfile
+    volumes:
+      - ./AdminDashboard:/usr/src/app
+      - /usr/src/app/dev-env
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    api-reference:
-        # image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: api-reference
-        build:
-            context: .
-            dockerfile: APIReference/Dockerfile
+  api-reference:
+    extends:
+      file: ./docker-compose.base.yml
+      service: api-reference
+    build:
+      network: host
+      context: .
+      dockerfile: APIReference/Dockerfile
+    ports:
+      - '8737:9229' # Debugging port.
+    volumes:
+      - ./APIReference:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    app:
-        # image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: app
-        build:
-            context: .
-            dockerfile: App/Dockerfile
+  app:
+    extends:
+      file: ./docker-compose.base.yml
+      service: app
+    build:
+      network: host
+      context: .
+      dockerfile: App/Dockerfile
+    ports:
+      - '9232:9229' # Debugging port.
+    volumes:
+      - ./App:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    clickhouse:
-        extends:
-            file: ./docker-compose.base.yml
-            service: clickhouse
+  clickhouse:
+    extends:
+      file: ./docker-compose.base.yml
+      service: clickhouse
+    ports:
+      - '9034:9000'
+      - '8189:8123'
 
-    copilot:
-        # image: ${COMPOSE_PROJECT_NAME}-copilot:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: copilot
-        build:
-            context: .
-            dockerfile: Copilot/Dockerfile
+  copilot:
+    extends:
+      file: ./docker-compose.base.yml
+      service: copilot
+    build:
+      network: host
+      context: .
+      dockerfile: Copilot/Dockerfile
+    ports:
+      - '9985:9229' # Debugging port.
+    volumes:
+      - ./Copilot:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    dashboard:
-        # image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: dashboard
-        build:
-            context: .
-            dockerfile: Dashboard/Dockerfile
+  dashboard:
+    extends:
+      file: ./docker-compose.base.yml
+      service: dashboard
+    build:
+      network: host
+      context: .
+      dockerfile: Dashboard/Dockerfile
+    volumes:
+      - ./Dashboard:/usr/src/app
+      - /usr/src/app/dev-env
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    docs:
-        # image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: docs
-        build:
-            context: .
-            dockerfile: Docs/Dockerfile
+  docs:
+    extends:
+      file: ./docker-compose.base.yml
+      service: docs
+    build:
+      network: host
+      context: .
+      dockerfile: Docs/Dockerfile
+    ports:
+      - '8738:9229' # Debugging port.
+    volumes:
+      - ./Docs:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    e2e:
-        # image: ${COMPOSE_PROJECT_NAME}-e2e:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: e2e
-        build:
-            context: .
-            dockerfile: E2E/Dockerfile
+  e2e:
+    extends:
+      file: ./docker-compose.base.yml
+      service: e2e
+    build:
+      network: host
+      context: .
+      dockerfile: E2E/Dockerfile
+    volumes:
+      - ./E2E/playwright-report:/usr/src/app/playwright-report
+      - ./E2E/test-results:/usr/src/app/test-results
 
-    fluentd:
-        # image: ${COMPOSE_PROJECT_NAME}-fluentd:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: fluentd
-        build:
-            context: .
-            dockerfile: Fluentd/Dockerfile
+  fluentd:
+    extends:
+      file: ./docker-compose.base.yml
+      service: fluentd
+    build:
+      network: host
+      context: .
+      dockerfile: Fluentd/Dockerfile
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
+      - 8888:8888
+    volumes:
+      - ./Fluentd/fluent.conf:/fluentd/etc/fluent.conf
 
-    haraka:
-        # image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: haraka
-        build:
-            context: .
-            dockerfile: Haraka/Dockerfile
+  haraka:
+    extends:
+      file: ./docker-compose.base.yml
+      service: haraka
+    build:
+      network: host
+      context: .
+      dockerfile: Haraka/Dockerfile
 
-    home:
-        # image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: home
-        build:
-            context: .
-            dockerfile: Home/Dockerfile
+  home:
+    extends:
+      file: ./docker-compose.base.yml
+      service: home
+    build:
+      network: host
+      context: .
+      dockerfile: Home/Dockerfile
+    ports:
+      - '9212:9229' # Debugging port.
+    volumes:
+      - ./Home:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    ingestor:
-        # image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: ingestor
-        build:
-            context: .
-            dockerfile: Ingestor/Dockerfile
+  ingestor:
+    extends:
+      file: ./docker-compose.base.yml
+      service: ingestor
+    build:
+      network: host
+      context: .
+      dockerfile: Ingestor/Dockerfile
+    ports:
+      - '9932:9229' # Debugging port.
+    volumes:
+      - ./Ingestor:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    isolated-vm:
-        # image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: isolated-vm
-        build:
-            context: .
-            dockerfile: IsolatedVM/Dockerfile
+  isolated-vm:
+    extends:
+      file: ./docker-compose.base.yml
+      service: isolated-vm
+    build:
+      network: host
+      context: .
+      dockerfile: IsolatedVM/Dockerfile
+    ports:
+      - '9974:9229' # Debugging port.
+    volumes:
+      - ./IsolatedVM:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    monitor:
-        # image: ${COMPOSE_PROJECT_NAME}-monitor:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: monitor
-        build:
-            context: .
-            dockerfile: Monitor/Dockerfile
+  llm:
+    extends:
+      file: ./docker-compose.base.yml
+      service: llm
+    build:
+      network: host
+      context: .
+      dockerfile: LLM/Dockerfile
 
-    llm:
-        # image: ${COMPOSE_PROJECT_NAME}-llm:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: llm
-        build:
-            context: .
-            dockerfile: LLM/Dockerfile
+  monitor:
+    extends:
+      file: ./docker-compose.base.yml
+      service: monitor
+    build:
+      network: host
+      context: .
+      dockerfile: Monitor/Dockerfile
+    ports:
+      - '3010:3010' # Debugging port.
+    volumes:
+      - ./Monitor:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    nginx:
-        # image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: nginx
-        build:
-            context: .
-            dockerfile: Nginx/Dockerfile
+  nginx:
+    extends:
+      file: ./docker-compose.base.yml
+      service: nginx
+    build:
+      network: host
+      context: .
+      dockerfile: Nginx/Dockerfile
 
-    otel-collector:
-        # image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: otel-collector
-        build:
-            context: .
-            dockerfile: OTelCollector/Dockerfile
+  otel-collector:
+    extends:
+      file: ./docker-compose.base.yml
+      service: otel-collector
+    build:
+      network: host
+      context: .
+      dockerfile: OTelCollector/Dockerfile
 
-    postgres:
-        ports:
-            - '5400:5432'
-        extends:
-            file: ./docker-compose.base.yml
-            service: postgres
+  postgres:
+    ports:
+      - '5400:5432'
+    extends:
+      file: ./docker-compose.base.yml
+      service: postgres
 
-    probe-1:
-        # image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: probe-1
-        build:
-            context: .
-            dockerfile: Probe/Dockerfile
+  probe-1:
+    extends:
+      file: ./docker-compose.base.yml
+      service: probe-1
+    build:
+      network: host
+      context: .
+      dockerfile: Probe/Dockerfile
+    ports:
+      - '9655:9229' # Debugging port.
+    volumes:
+      - ./Probe:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    probe-2:
-        # image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: probe-2
-        build:
-            context: .
-            dockerfile: Probe/Dockerfile
+  probe-2:
+    extends:
+      file: ./docker-compose.base.yml
+      service: probe-2
+    build:
+      network: host
+      context: .
+      dockerfile: Probe/Dockerfile
+    ports:
+      - '9656:9229' # Debugging port.
+    volumes:
+      - ./Probe:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    redis:
-        extends:
-            file: ./docker-compose.base.yml
-            service: redis
+  redis:
+    ports:
+      - '6310:6379'
+    extends:
+      file: ./docker-compose.base.yml
+      service: redis
 
-    status-page:
-        # image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: status-page
-        build:
-            context: .
-            dockerfile: StatusPage/Dockerfile
+  status-page:
+    extends:
+      file: ./docker-compose.base.yml
+      service: status-page
+    build:
+      network: host
+      context: .
+      dockerfile: StatusPage/Dockerfile
+    ports:
+      - '${STATUS_PAGE_PORT}:${STATUS_PAGE_PORT}' # ws port for webpack
+    volumes:
+      - ./StatusPage:/usr/src/app
+      - /usr/src/app/dev-env
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    test-server:
-        # image: ${COMPOSE_PROJECT_NAME}-test-server:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: test-server
-        build:
-            context: .
-            dockerfile: TestServer/Dockerfile
+  test-server:
+    extends:
+      file: ./docker-compose.base.yml
+      service: test-server
+    build:
+      network: host
+      context: .
+      dockerfile: TestServer/Dockerfile
+    ports:
+      - '9141:9229' # Debugging port.
+      - '3800:3800'
+    volumes:
+      - ./TestServer:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    worker:
-        # image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: worker
-        build:
-            context: .
-            dockerfile: Worker/Dockerfile
+  worker:
+    extends:
+      file: ./docker-compose.base.yml
+      service: worker
+    build:
+      network: host
+      context: .
+      dockerfile: Worker/Dockerfile
+    ports:
+      - '8734:9229' # Debugging port.
+    volumes:
+      - ./Worker:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
-    workflow:
-        # image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: workflow
-        build:
-            context: .
-            dockerfile: Workflow/Dockerfile
+  workflow:
+    extends:
+      file: ./docker-compose.base.yml
+      service: workflow
+    build:
+      network: host
+      context: .
+      dockerfile: Workflow/Dockerfile
+    ports:
+      - '8735:9229' # Debugging port.
+    volumes:
+      - ./Workflow:/usr/src/app
+      - /usr/src/app/node_modules/
+      - ./Common:/usr/src/Common
+      - /usr/src/Common/node_modules/
 
 volumes:
-    postgres:
-    clickhouse:
+  postgres:
+  clickhouse:
 
 networks:
-    uptime:
-        driver: bridge
+  uptime:
+    driver: bridge

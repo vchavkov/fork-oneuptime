@@ -1,127 +1,127 @@
 services:
-    accounts:
-        image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: accounts
+  accounts:
+    image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: accounts
 
-    admin-dashboard:
-        image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: admin-dashboard
+  admin-dashboard:
+    image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: admin-dashboard
 
-    api-reference:
-        image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: api-reference
+  api-reference:
+    image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: api-reference
 
-    app:
-        image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: app
+  app:
+    image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: app
 
-    clickhouse:
-        extends:
-            file: ./docker-compose.base.yml
-            service: clickhouse
+  clickhouse:
+    extends:
+      file: ./docker-compose.base.yml
+      service: clickhouse
 
-    dashboard:
-        image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: dashboard
+  dashboard:
+    image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: dashboard
 
-    docs:
-        image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: docs
+  docs:
+    image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: docs
 
-    haraka:
-        image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: haraka
+  haraka:
+    image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: haraka
 
-    home:
-        image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: home
+  home:
+    image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: home
 
-    ingestor:
-        image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: ingestor
+  ingestor:
+    image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: ingestor
 
-    isolated-vm:
-        image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: isolated-vm
+  isolated-vm:
+    image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: isolated-vm
 
-    nginx:
-        image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: nginx
+  nginx:
+    image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: nginx
 
-    otel-collector:
-        image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: otel-collector
+  otel-collector:
+    image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: otel-collector
 
-    postgres:
-        ports:
-            - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
-        extends:
-            file: ./docker-compose.base.yml
-            service: postgres
+  postgres:
+    ports:
+      - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
+    extends:
+      file: ./docker-compose.base.yml
+      service: postgres
 
-    probe-1:
-        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: probe-1
+  probe-1:
+    image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: probe-1
 
-    probe-2:
-        image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: probe-2
+  probe-2:
+    image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: probe-2
 
-    redis:
-        extends:
-            file: ./docker-compose.base.yml
-            service: redis
+  redis:
+    extends:
+      file: ./docker-compose.base.yml
+      service: redis
 
-    status-page:
-        image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: status-page
+  status-page:
+    image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: status-page
 
-    worker:
-        image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: worker
+  worker:
+    image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: worker
 
-    workflow:
-        image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: workflow
+  workflow:
+    image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: workflow
 
 volumes:
-    postgres:
-    clickhouse:
+  postgres:
+  clickhouse:
 
 networks:
-    uptime:
-        driver: bridge
+  uptime:
+    driver: bridge

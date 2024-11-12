@@ -42,7 +42,7 @@
         "deploy-prod": "kubectl config use-context oneuptime-prod && helm upgrade oneuptime ./HelmChart/Public/oneuptime -f ./HelmChart/Public/oneuptime/values.yaml  -f ./HelmChart/Values/prod.values.yaml",
         "deploy-test": "kubectl config use-context oneuptime-test && helm upgrade oneuptime ./HelmChart/Public/oneuptime -f ./HelmChart/Public/oneuptime/values.yaml  -f ./HelmChart/Values/test.values.yaml",
         "dep-check": "npm install -g depcheck && depcheck ./ --skip-missing=true",
-        "dev": "npm run config-to-dev && npm run prerun && export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.dev.yml up --remove-orphans -d $npm_config_services",
+        "dev": "npm run config-to-dev && npm run prerun && export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.base.yml -f docker-compose.dev.yml up --remove-orphans -d $npm_config_services",
         "dev-llm": "npm run prerun && export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.llm.yml up --remove-orphans -d $npm_config_services",
         "down": "npm run stop",
         "exec": "export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.yml exec -it",

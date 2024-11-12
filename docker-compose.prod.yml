@@ -24,6 +24,7 @@ services:
             service: app
 
     clickhouse:
+        image: ${IMAGE_PREFIX}/clickhouse:${APP_TAG}
         extends:
             file: ./docker-compose.build.yml
             service: clickhouse
@@ -126,6 +127,7 @@ services:
             service: probe-2
 
     redis:
+        image: ${IMAGE_PREFIX}/redis:${APP_TAG}
         extends:
             file: ./docker-compose.build.yml
             service: redis

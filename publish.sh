@@ -16,6 +16,7 @@ IMAGE_ARRAY=(
 	"home"
 	"ingestor"
 	"isolated-vm"
+	"monitor"
 	"nginx"
 	"otel-collector"
 	"probe"
