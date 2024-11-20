@@ -4,7 +4,7 @@ const NodeCache = require('node-cache');
 require('dotenv').config(); // Load environment variables
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4010;
 const cache = new NodeCache({ stdTTL: process.env.STD_TTL }); // Cache duration in seconds
 
 const url = 'https://checkmk-eu-central-1.cbsinternal.net/cbs_eu_central_1/check_mk/api/1.0///domain-types/bi_aggregation/actions/aggregation_state/invoke';

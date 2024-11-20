@@ -32,7 +32,7 @@
     "scripts": {
         "backup": "bash backup.sh",
         "build": "export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.base.yml -f docker-compose.build.yml build $npm_config_services",
-        "build-force": "npm run config-to-prod && export $(grep -v '^#' config.env | xargs) && npm run prerun && docker compose -f docker-compose.base.yml -f docker-compose.build.yml build --no-cache $npm_config_services",
+        "build-force": "npm run config-to-prod && export $(grep -v '^#' config.env | xargs) && npm run prerun && docker compose -f docker-compose.build.yml build --no-cache $npm_config_services",
         "build-llm": "npm run prerun && export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.llm.yml build $npm_config_services",
         "bump-version": "VER=0.0.1; BUILD_DATE=$(date +%s); sed -i \"s|APP_TAG=.*|APP_TAG=${VER}-${BUILD_DATE}|\" config.env;",
         "config-to-ci": "node ./Scripts/Install/ReplaceValueInConfig.js ENVIRONMENT ci",
@@ -59,7 +59,7 @@
         "prune": "docker system prune",
         "ps": "export $(grep -v '^#' config.env | xargs) &&  docker compose ps",
         "pull": "export $(grep -v '^#' config.env | xargs) && docker compose -f docker-compose.build.yml -f docker-compose.prod.yml pull",
-        "release": "npm run bump-version && npm run config-to-prod && export $(grep -v '^#' config.env | xargs) && npm run prerun && docker compose -f docker-compose.build.yml -f docker-compose.prod.yml build --no-cache $npm_config_services",
+        "release": "npm run bump-version && npm run config-to-prod && export $(grep -v '^#' config.env | xargs) && npm run prerun && docker compose -f docker-compose.prod.yml build --no-cache $npm_config_services",
         "release-preview": "export $(grep -v '^#' config.env | xargs) && npm run prerun && docker compose -f docker-compose.prod.yml build $npm_config_services",
         "remove-all-containers": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) || echo 'No running containers'",
         "run-probes": "export $(grep -v '^#' config.env | xargs) && docker compose up --remove-orphans -d probe-1 probe-2",

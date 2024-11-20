@@ -4,11 +4,11 @@ services:
       file: ./docker-compose.base.yml
       service: accounts
     build:
-      network: host
       context: .
       dockerfile: ./Accounts/Dockerfile
     ports:
-      - '${ACCOUNTS_PORT}:${ACCOUNTS_PORT}' # ws port for webpack
+      - '${ACCOUNTS_PORT}:${ACCOUNTS_PORT}'
+      - '9229:9229' # Debug port
     volumes:
       - ./Accounts:/usr/src/app
       - /usr/src/app/dev-env
@@ -21,9 +21,11 @@ services:
       file: ./docker-compose.base.yml
       service: admin-dashboard
     build:
-      network: host
       context: .
       dockerfile: AdminDashboard/Dockerfile
+    ports:
+      - '${ADMIN_DASHBOARD_PORT}:${ADMIN_DASHBOARD_PORT}'
+      - '9230:9229' # Debug port
     volumes:
       - ./AdminDashboard:/usr/src/app
       - /usr/src/app/dev-env
@@ -36,11 +38,11 @@ services:
       file: ./docker-compose.base.yml
       service: api-reference
     build:
-      network: host
       context: .
       dockerfile: APIReference/Dockerfile
     ports:
-      - '8737:9229' # Debugging port.
+      - '${API_REFERENCE_PORT}:${API_REFERENCE_PORT}'
+      - '8737:9229' # Debug port
     volumes:
       - ./APIReference:/usr/src/app
       - /usr/src/app/node_modules/
@@ -52,11 +54,11 @@ services:
       file: ./docker-compose.base.yml
       service: app
     build:
-      network: host
       context: .
       dockerfile: App/Dockerfile
     ports:
-      - '9232:9229' # Debugging port.
+      - '${APP_PORT}:${APP_PORT}'
+      - '9232:9229' # Debug port
     volumes:
       - ./App:/usr/src/app
       - /usr/src/app/node_modules/
@@ -76,11 +78,11 @@ services:
       file: ./docker-compose.base.yml
       service: copilot
     build:
-      network: host
       context: .
       dockerfile: Copilot/Dockerfile
     ports:
-      - '9985:9229' # Debugging port.
+      - '${COPILLOT_PORT}:${COPILLOT_PORT}'
+      - '9985:9229' # Debug port
     volumes:
       - ./Copilot:/usr/src/app
       - /usr/src/app/node_modules/
@@ -92,9 +94,11 @@ services:
       file: ./docker-compose.base.yml
       service: dashboard
     build:
-      network: host
       context: .
       dockerfile: Dashboard/Dockerfile
+    ports:
+      - '${DASHBOARD_PORT}:${DASHBOARD_PORT}'
+      - '9233:9229' # Debug port
     volumes:
       - ./Dashboard:/usr/src/app
       - /usr/src/app/dev-env
@@ -107,11 +111,11 @@ services:
       file: ./docker-compose.base.yml
       service: docs
     build:
-      network: host
       context: .
       dockerfile: Docs/Dockerfile
     ports:
-      - '8738:9229' # Debugging port.
+      - '${DOCS_PORT}:${DOCS_PORT}'
+      - '8738:9229' # Debug port
     volumes:
       - ./Docs:/usr/src/app
       - /usr/src/app/node_modules/
@@ -123,7 +127,6 @@ services:
       file: ./docker-compose.base.yml
       service: e2e
     build:
-      network: host
       context: .
       dockerfile: E2E/Dockerfile
     volumes:
@@ -135,13 +138,12 @@ services:
       file: ./docker-compose.base.yml
       service: fluentd
     build:
-      network: host
       context: .
       dockerfile: Fluentd/Dockerfile
     ports:
-      - 24224:24224
-      - 24224:24224/udp
-      - 8888:8888
+      - '24224:24224'
+      - '24224:24224/udp'
+      - '8888:8888'
     volumes:
       - ./Fluentd/fluent.conf:/fluentd/etc/fluent.conf
 
@@ -150,20 +152,21 @@ services:
       file: ./docker-compose.base.yml
       service: haraka
     build:
-      network: host
       context: .
       dockerfile: Haraka/Dockerfile
+    ports:
+      - '${HARAKA_PORT}:${HARAKA_PORT}'
 
   home:
     extends:
       file: ./docker-compose.base.yml
       service: home
     build:
-      network: host
       context: .
       dockerfile: Home/Dockerfile
     ports:
-      - '9212:9229' # Debugging port.
+      - '${HOME_PORT}:${HOME_PORT}'
+      - '9212:9229' # Debug port
     volumes:
       - ./Home:/usr/src/app
       - /usr/src/app/node_modules/
@@ -175,11 +178,11 @@ services:
       file: ./docker-compose.base.yml
       service: ingestor
     build:
-      network: host
       context: .
       dockerfile: Ingestor/Dockerfile
     ports:
-      - '9932:9229' # Debugging port.
+      - '${INGESTOR_PORT}:${INGESTOR_PORT}'
+      - '9932:9229' # Debug port
     volumes:
       - ./Ingestor:/usr/src/app
       - /usr/src/app/node_modules/
@@ -191,11 +194,11 @@ services:
       file: ./docker-compose.base.yml
       service: isolated-vm
     build:
-      network: host
       context: .
       dockerfile: IsolatedVM/Dockerfile
     ports:
-      - '9974:9229' # Debugging port.
+      - '${ISOLATED_VM_PORT}:${ISOLATED_VM_PORT}'
+      - '9974:9229' # Debug port
     volumes:
       - ./IsolatedVM:/usr/src/app
       - /usr/src/app/node_modules/
@@ -207,20 +210,20 @@ services:
       file: ./docker-compose.base.yml
       service: llm
     build:
-      network: host
       context: .
       dockerfile: LLM/Dockerfile
+    ports:
+      - '${LLM_PORT}:${LLM_PORT}'
 
   monitor:
     extends:
       file: ./docker-compose.base.yml
       service: monitor
     build:
-      network: host
       context: .
       dockerfile: Monitor/Dockerfile
     ports:
-      - '3010:3010' # Debugging port.
+      - '4010:4010'
     volumes:
       - ./Monitor:/usr/src/app
       - /usr/src/app/node_modules/
@@ -232,36 +235,38 @@ services:
       file: ./docker-compose.base.yml
       service: nginx
     build:
-      network: host
       context: .
       dockerfile: Nginx/Dockerfile
+    ports:
+      - '${NGINX_PORT}:${NGINX_PORT}'
 
   otel-collector:
     extends:
       file: ./docker-compose.base.yml
       service: otel-collector
     build:
-      network: host
       context: .
       dockerfile: OTelCollector/Dockerfile
+    ports:
+      - '${OTEL_COLLECTOR_PORT}:${OTEL_COLLECTOR_PORT}'
 
   postgres:
-    ports:
-      - '5400:5432'
     extends:
       file: ./docker-compose.base.yml
       service: postgres
+    ports:
+      - '5400:5432'
 
   probe-1:
     extends:
       file: ./docker-compose.base.yml
       service: probe-1
     build:
-      network: host
       context: .
       dockerfile: Probe/Dockerfile
     ports:
-      - '9655:9229' # Debugging port.
+      - '${PROBE_1_PORT}:${PROBE_1_PORT}'
+      - '9655:9229' # Debug port
     volumes:
       - ./Probe:/usr/src/app
       - /usr/src/app/node_modules/
@@ -273,11 +278,11 @@ services:
       file: ./docker-compose.base.yml
       service: probe-2
     build:
-      network: host
       context: .
       dockerfile: Probe/Dockerfile
     ports:
-      - '9656:9229' # Debugging port.
+      - '${PROBE_2_PORT}:${PROBE_2_PORT}'
+      - '9656:9229' # Debug port
     volumes:
       - ./Probe:/usr/src/app
       - /usr/src/app/node_modules/
@@ -285,22 +290,22 @@ services:
       - /usr/src/Common/node_modules/
 
   redis:
-    ports:
-      - '6310:6379'
     extends:
       file: ./docker-compose.base.yml
       service: redis
+    ports:
+      - '6310:6379'
 
   status-page:
     extends:
       file: ./docker-compose.base.yml
       service: status-page
     build:
-      network: host
       context: .
       dockerfile: StatusPage/Dockerfile
     ports:
       - '${STATUS_PAGE_PORT}:${STATUS_PAGE_PORT}' # ws port for webpack
+      - '9234:9229' # Debug port
     volumes:
       - ./StatusPage:/usr/src/app
       - /usr/src/app/dev-env
@@ -313,11 +318,11 @@ services:
       file: ./docker-compose.base.yml
       service: test-server
     build:
-      network: host
       context: .
       dockerfile: TestServer/Dockerfile
     ports:
-      - '9141:9229' # Debugging port.
+      - '${TEST_SERVER_PORT}:${TEST_SERVER_PORT}'
+      - '9141:9229' # Debug port
       - '3800:3800'
     volumes:
       - ./TestServer:/usr/src/app
@@ -330,11 +335,11 @@ services:
       file: ./docker-compose.base.yml
       service: worker
     build:
-      network: host
       context: .
       dockerfile: Worker/Dockerfile
     ports:
-      - '8734:9229' # Debugging port.
+      - '${WORKER_PORT}:${WORKER_PORT}'
+      - '8734:9229' # Debug port
     volumes:
       - ./Worker:/usr/src/app
       - /usr/src/app/node_modules/
@@ -346,11 +351,11 @@ services:
       file: ./docker-compose.base.yml
       service: workflow
     build:
-      network: host
       context: .
       dockerfile: Workflow/Dockerfile
     ports:
-      - '8735:9229' # Debugging port.
+      - '${WORKFLOW_PORT}:${WORKFLOW_PORT}'
+      - '8735:9229' # Debug port
     volumes:
       - ./Workflow:/usr/src/app
       - /usr/src/app/node_modules/

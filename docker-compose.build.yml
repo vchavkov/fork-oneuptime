@@ -1,41 +1,37 @@
 services:
   accounts:
-    image: ${COMPOSE_PROJECT_NAME}-accounts:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/accounts:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: accounts
     build:
-      network: host
       context: .
       dockerfile: Accounts/Dockerfile
 
   admin-dashboard:
-    image: ${COMPOSE_PROJECT_NAME}-admin-dashboard:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/admin-dashboard:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: admin-dashboard
     build:
-      network: host
       context: .
       dockerfile: AdminDashboard/Dockerfile
 
   api-reference:
-    image: ${COMPOSE_PROJECT_NAME}-api-reference:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/api-reference:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: api-reference
     build:
-      network: host
       context: .
       dockerfile: APIReference/Dockerfile
 
   app:
-    image: ${COMPOSE_PROJECT_NAME}-app:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/app:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: app
     build:
-      network: host
       context: .
       dockerfile: App/Dockerfile
 
@@ -45,132 +41,119 @@ services:
       service: clickhouse
 
   copilot:
-    image: ${COMPOSE_PROJECT_NAME}-copilot:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/copilot:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: copilot
     build:
-      network: host
       context: .
       dockerfile: Copilot/Dockerfile
 
   dashboard:
-    image: ${COMPOSE_PROJECT_NAME}-dashboard:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/dashboard:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: dashboard
     build:
-      network: host
       context: .
       dockerfile: Dashboard/Dockerfile
 
   docs:
-    image: ${COMPOSE_PROJECT_NAME}-docs:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/docs:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: docs
     build:
-      network: host
       context: .
       dockerfile: Docs/Dockerfile
 
   e2e:
-    image: ${COMPOSE_PROJECT_NAME}-e2e:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/e2e:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: e2e
     build:
-      network: host
       context: .
       dockerfile: E2E/Dockerfile
 
   fluentd:
-    image: ${COMPOSE_PROJECT_NAME}-fluentd:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/fluentd:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: fluentd
     build:
-      network: host
       context: .
       dockerfile: Fluentd/Dockerfile
 
   haraka:
-    image: ${COMPOSE_PROJECT_NAME}-haraka:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/haraka:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: haraka
     build:
-      network: host
       context: .
       dockerfile: Haraka/Dockerfile
 
   home:
-    image: ${COMPOSE_PROJECT_NAME}-home:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/home:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: home
     build:
-      network: host
       context: .
       dockerfile: Home/Dockerfile
 
   ingestor:
-    image: ${COMPOSE_PROJECT_NAME}-ingestor:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/ingestor:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: ingestor
     build:
-      network: host
       context: .
       dockerfile: Ingestor/Dockerfile
 
   isolated-vm:
-    image: ${COMPOSE_PROJECT_NAME}-isolated-vm:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/isolated-vm:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: isolated-vm
     build:
-      network: host
       context: .
       dockerfile: IsolatedVM/Dockerfile
 
-  monitor:
-    image: ${COMPOSE_PROJECT_NAME}-monitor:${APP_TAG}
-    extends:
-      file: ./docker-compose.base.yml
-      service: monitor
-    build:
-      network: host
-      context: .
-      dockerfile: Monitor/Dockerfile
-
   llm:
-    image: ${COMPOSE_PROJECT_NAME}-llm:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/llm:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: llm
     build:
-      network: host
       context: .
       dockerfile: LLM/Dockerfile
 
+  monitor:
+    image: ${IMAGE_PREFIX}/uptime/monitor:${APP_TAG}
+    extends:
+      file: ./docker-compose.base.yml
+      service: monitor
+    build:
+      context: .
+      dockerfile: Monitor/Dockerfile
+
   nginx:
-    image: ${COMPOSE_PROJECT_NAME}-nginx:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/nginx:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: nginx
     build:
-      network: host
       context: .
       dockerfile: Nginx/Dockerfile
 
   otel-collector:
-    image: ${COMPOSE_PROJECT_NAME}-otel-collector:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/otel-collector:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: otel-collector
     build:
-      network: host
       context: .
       dockerfile: OTelCollector/Dockerfile
 
@@ -182,22 +165,20 @@ services:
       service: postgres
 
   probe-1:
-    image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/probe:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: probe-1
     build:
-      network: host
       context: .
       dockerfile: Probe/Dockerfile
 
   probe-2:
-    image: ${COMPOSE_PROJECT_NAME}-probe:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/probe:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: probe-2
     build:
-      network: host
       context: .
       dockerfile: Probe/Dockerfile
 
@@ -207,49 +188,41 @@ services:
       service: redis
 
   status-page:
-    image: ${COMPOSE_PROJECT_NAME}-status-page:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/status-page:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: status-page
     build:
-      network: host
       context: .
       dockerfile: StatusPage/Dockerfile
 
   test-server:
-    image: ${COMPOSE_PROJECT_NAME}-test-server:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/test-server:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: test-server
     build:
-      network: host
       context: .
       dockerfile: TestServer/Dockerfile
 
   worker:
-    image: ${COMPOSE_PROJECT_NAME}-worker:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/worker:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: worker
     build:
-      network: host
       context: .
       dockerfile: Worker/Dockerfile
 
   workflow:
-    image: ${COMPOSE_PROJECT_NAME}-workflow:${APP_TAG}
+    image: ${IMAGE_PREFIX}/uptime/workflow:${APP_TAG}
     extends:
       file: ./docker-compose.base.yml
       service: workflow
     build:
-      network: host
       context: .
       dockerfile: Workflow/Dockerfile
 
 volumes:
   postgres:
   clickhouse:
-
-networks:
-  uptime:
-    driver: bridge
