@@ -3,7 +3,7 @@
 set -a
 
 # Talk to the user
-echo "Welcome to the CBSUptime 🟢 Runner"
+echo "Welcome to the CBS Uptime 🟢 Runner"
 echo ""
 echo ""
 echo ""
@@ -39,7 +39,7 @@ fi
 
 
 # clone oneuptime
-echo "Installing CBSUptime 🟢"
+echo "Installing CBS Uptime 🟢"
 if [[ ! $(which git) ]]; then
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
       DISTRIB=$(awk -F= '/^ID/{print $2}' /etc/os-release)
@@ -63,7 +63,7 @@ else
 
     if [[ $GIT_REPO_URL != *oneuptime* ]] # * is used for pattern matching
     then
-        git clone https://github.com/CBSUptime/oneuptime.git || true
+        git clone https://github.com/CBS Uptime/oneuptime.git || true
         cd oneuptime
     fi
 fi
@@ -122,7 +122,7 @@ fi
 # If docker still fails to install, then quit.
 if [[ ! $(which docker) && ! $(docker --version) ]]; then
   echo -e "Failed to install docker. Please install Docker manually here: https://docs.docker.com/install."
-  echo -e "Exiting the CBSUptime installer."
+  echo -e "Exiting the CBS Uptime installer."
   exit
 fi
 

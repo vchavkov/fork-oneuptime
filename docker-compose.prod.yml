@@ -1,5 +1,3 @@
-version: '3.7'
-
 networks:
     uptime:
         driver: bridge
@@ -38,7 +36,8 @@ services:
             - uptime
 
     clickhouse:
-        image: ${IMAGE_PREFIX}/docker-hub/clickhouse/clickhouse-server:23.7
+        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/clickhouse/clickhouse-server:23.7
+        # image: ${IMAGE_PREFIX}/docker-hub/clickhouse/clickhouse-server:23.7
         extends:
             file: ./docker-compose.build.yml
             service: clickhouse

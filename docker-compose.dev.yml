@@ -81,7 +81,7 @@ services:
       context: .
       dockerfile: Copilot/Dockerfile
     ports:
-      - '${COPILLOT_PORT}:${COPILLOT_PORT}'
+      - '${COPILOT_PORT}:${COPILOT_PORT}'
       - '9985:9229' # Debug port
     volumes:
       - ./Copilot:/usr/src/app

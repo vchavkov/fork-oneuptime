@@ -79,7 +79,7 @@
         "url": "git+https://github.com/oneuptime/oneuptime.git"
     },
     "keywords": [],
-    "author": "CBSUptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
+    "author": "CBS Uptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
     "license": "Apache-2.0",
     "bugs": {
         "url": "https://gitlab.com/oneuptime/app/issues"
