@@ -289,22 +289,6 @@ services:
       options:
         max-size: "1000m"
 
-  llm:
-    networks:
-      - uptime
-    restart: always
-    environment:
-      <<: *common-server-variables
-      PORT: 8547
-      HF_TOKEN: ${LLM_SERVER_HUGGINGFACE_TOKEN}
-      HF_MODEL_NAME: ${LLM_SERVER_HUGGINGFACE_MODEL_NAME}
-    volumes:
-      - ./LLM/Models:/app/Models
-    logging:
-      driver: "local"
-      options:
-        max-size: "1000m"
-
   monitor:
     networks:
       - uptime

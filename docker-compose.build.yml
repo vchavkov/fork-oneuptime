@@ -125,15 +125,6 @@ services:
       context: .
       dockerfile: IsolatedVM/Dockerfile
 
-  llm:
-    image: ${IMAGE_PREFIX}/uptime/llm:${APP_TAG}
-    extends:
-      file: ./docker-compose.base.yml
-      service: llm
-    build:
-      context: .
-      dockerfile: LLM/Dockerfile
-
   monitor:
     image: ${IMAGE_PREFIX}/uptime/monitor:${APP_TAG}
     extends:

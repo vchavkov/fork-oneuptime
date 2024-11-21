@@ -115,14 +115,6 @@ services:
         networks:
             - uptime
 
-    llm:
-        image: ${IMAGE_PREFIX}/uptime/llm:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: llm
-        networks:
-            - uptime
-
     monitor:
         image: ${IMAGE_PREFIX}/uptime/monitor:${APP_TAG}
         extends:
