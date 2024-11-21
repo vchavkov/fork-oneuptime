@@ -45,7 +45,7 @@ export class Service extends DatabaseService<Model> {
     if (NotificationWebhookOnCreateUser) {
       SlackUtil.sendMessageToChannel({
         url: URL.fromString(NotificationWebhookOnCreateUser),
-        text: `*New CBSUptime User:*
+        text: `*New CBS Uptime User:*
   *Email:* ${createdItem.email?.toString() || "N/A"}
   *Name:* ${createdItem.name?.toString() || "N/A"}
   *Phone:* ${createdItem.companyPhoneNumber?.toString() || "N/A"}

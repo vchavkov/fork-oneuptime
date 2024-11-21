@@ -18,7 +18,7 @@ export default class ServiceHandler {
 
     // Set page title and description
     pageTitle = "Pagination";
-    pageDescription = "Learn how to paginate requests with CBSUptime API";
+    pageDescription = "Learn how to paginate requests with CBS Uptime API";
 
     // Get response and request code from LocalCache or LocalFile
     pageData.responseCode = await LocalCache.getOrSetString(

@@ -1,6 +1,6 @@
 
 
-const  cacheName: string = 'CBSUptime-home';
+const  cacheName: string = 'CBS Uptime-home';
 const filesToCache = [];
 
 self.addEventListener('install', function (event) {

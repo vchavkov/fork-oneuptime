@@ -12,4 +12,4 @@ If the last successful deployment was from release:
 
 Run the deployment jobs manually in the pipeline which was last successful.
 
-Confirm the version number on the "About" modal on CBSUptime Dashboard.
+Confirm the version number on the "About" modal on CBS Uptime Dashboard.

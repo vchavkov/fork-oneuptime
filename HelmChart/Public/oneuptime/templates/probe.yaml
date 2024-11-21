@@ -86,7 +86,7 @@ spec:
 ---
 
 
-# CBSUptime probe autoscaler
+# CBS Uptime probe autoscaler
 {{- $probeAutoScalerArgs := dict "ServiceName" (printf "probe-%s" $key) "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $probeAutoScalerArgs }}
 ---

@@ -19,6 +19,6 @@
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4"
   },
-  "author": "CBSUptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
+  "author": "CBS Uptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0"
 }

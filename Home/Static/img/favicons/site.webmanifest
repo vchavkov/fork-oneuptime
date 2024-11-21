@@ -1,6 +1,6 @@
 {
-    "name": "CBSUptime Home",
-    "short_name": "CBSUptime",
+    "name": "CBS Uptime Home",
+    "short_name": "CBS Uptime",
     "icons": [
         {
             "src": "/dashboard/assets/img/favicons/android-chrome-36x36.png",

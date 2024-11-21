@@ -16,7 +16,7 @@ const StatusPageCustomFields: FunctionComponent<
     <Fragment>
       <CustomFieldsDetail
         title="Status Page Custom Fields"
-        description="Custom fields help you add new fields to your resources in CBSUptime."
+        description="Custom fields help you add new fields to your resources in CBS Uptime."
         modelType={StatusPage}
         customFieldType={StatusPageCustomField}
         name="Status Page Custom Fields"

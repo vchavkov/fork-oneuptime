@@ -56,7 +56,7 @@ import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
   singularName: "Project",
   pluralName: "Projects",
   icon: IconProp.Folder,
-  tableDescription: "CBSUptime Project, and everything happens inside it",
+  tableDescription: "CBS Uptime Project, and everything happens inside it",
 })
 @CrudApiEndpoint(new Route("/project"))
 @SlugifyColumn("name", "slug")
@@ -1047,7 +1047,7 @@ export default class Project extends TenantModel {
     required: false,
     canReadOnRelationQuery: true,
     title: "Reseller ID",
-    description: "ID of your CBSUptime Reseller in which this object belongs",
+    description: "ID of your CBS Uptime Reseller in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -1095,7 +1095,7 @@ export default class Project extends TenantModel {
     canReadOnRelationQuery: true,
     title: "Reseller Plan ID",
     description:
-      "ID of your CBSUptime Reseller Plan in which this object belongs",
+      "ID of your CBS Uptime Reseller Plan in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -1113,7 +1113,7 @@ export default class Project extends TenantModel {
     required: false,
     type: TableColumnType.ShortText,
     title: "License ID",
-    description: "License ID from a CBSUptime Reseller",
+    description: "License ID from a CBS Uptime Reseller",
     canReadOnRelationQuery: true,
   })
   @Column({
@@ -1157,7 +1157,7 @@ export default class Project extends TenantModel {
     type: TableColumnType.Boolean,
     title: "Let Customer Support Access Project",
     description:
-      "CBSUptime customer support can access this project. This is used for debugging purposes.",
+      "CBS Uptime customer support can access this project. This is used for debugging purposes.",
   })
   @Column({
     nullable: true,

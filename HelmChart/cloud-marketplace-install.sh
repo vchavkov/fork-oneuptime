@@ -1,4 +1,4 @@
-# This document is for launching CBSUptime VM's on Azure, GCP and AWS.
+# This document is for launching CBS Uptime VM's on Azure, GCP and AWS.
 # Follow the installation steps below.
 # Azure: https://docs.microsoft.com/en-us/azure/marketplace/partner-center-portal/azure-vm-create-offer#technical-configuration
 

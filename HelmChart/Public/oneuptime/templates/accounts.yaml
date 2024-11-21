@@ -1,17 +1,17 @@
-# CBSUptime accounts Deployment
+# CBS Uptime accounts Deployment
 {{- $accountsEnv := dict "OPENTELEMETRY_EXPORTER_OTLP_HEADERS" $.Values.openTelemetryExporter.headers "PORT" $.Values.port.accounts -}}
 {{- $accountsPorts := dict "port" $.Values.port.accounts -}}
 {{- $accountsDeploymentArgs :=dict "IsUI" true "ServiceName" "accounts" "Ports" $accountsPorts "Release" $.Release "Values" $.Values "Env" $accountsEnv -}}
 {{- include "oneuptime.deployment" $accountsDeploymentArgs }}
 ---
 
-# CBSUptime accounts Service
+# CBS Uptime accounts Service
 {{- $accountsPorts := dict "port" $.Values.port.accounts -}}
 {{- $accountsServiceArgs := dict "ServiceName" "accounts" "Ports" $accountsPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $accountsServiceArgs }}
 ---
 
-# CBSUptime accounts autoscaler
+# CBS Uptime accounts autoscaler
 {{- $accountsAutoScalerArgs := dict "ServiceName" "accounts" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $accountsAutoScalerArgs }}
 ---

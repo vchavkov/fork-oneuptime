@@ -27,7 +27,7 @@ export enum EmailServerType {
   singularName: "Global Config",
   pluralName: "Global Configs",
   icon: IconProp.Settings,
-  tableDescription: "Settings for CBSUptime Server",
+  tableDescription: "Settings for CBS Uptime Server",
 })
 @Entity({
   name: "GlobalConfig",
@@ -339,7 +339,7 @@ export default class GlobalConfig extends GlobalConfigModel {
     type: TableColumnType.ObjectID,
     title: "Master API Key",
     description:
-      "This API key has root access to all the resources in all the projects on CBSUptime.",
+      "This API key has root access to all the resources in all the projects on CBS Uptime.",
   })
   @Column({
     type: ColumnType.ObjectID,

@@ -12,7 +12,7 @@
     "debug-tests": "playwright test --debug"
   },
   "keywords": [],
-  "author": "CBSUptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
+  "author": "CBS Uptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^20.10.4"

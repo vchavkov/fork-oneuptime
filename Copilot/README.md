@@ -1,4 +1,4 @@
-# CBSUptime Copilot
+# CBS Uptime Copilot
 
 Copilot is a tool that helps you improve your codebase automatically.
 

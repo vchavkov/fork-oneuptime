@@ -1,6 +1,6 @@
-## CBSUptime Copilot
+## CBS Uptime Copilot
 
-CBSUptime Copilot is a tool that helps you improve your codebase automatically. Copilot can fix following issues automatically:
+CBS Uptime Copilot is a tool that helps you improve your codebase automatically. Copilot can fix following issues automatically:
 
 -   **Performance Issues**: Improve database queries, optimize code, reduce memory usage, decrease API response time, etc.
 -   **Security Issues**: Fix security vulnerabilities, prevent SQL injection, XSS, CSRF, etc.
@@ -15,15 +15,15 @@ Copilot can be installed as a CI/CD tool and can be run on every merge to master
 
 There are three services when running copilot:
 
-- **CBSUptime**: You need to deploy or use CBSUptime Cloud (https://uptime.cbsretail.net) to run Copilot. When you deploy CBSUptime, url should be publicily accessible.
+- **CBS Uptime**: You need to deploy or use CBS Uptime Cloud (https://uptime.cbsretail.net) to run Copilot. When you deploy CBS Uptime, url should be publicily accessible.
 - **Copilot**: Copilot is the main service that runs the Copilot engine. Copilot engine is responsible for analyzing the codebase and fixing issues.
-- **LLM Server** (Optional): Copilot sends your code to LLM Server to analyze and fix issues. The source-code and docker-image is [open-source](https://github.com/CBSUptime/oneuptime/tree/master/LLM) and can be found at [Docker Hub](https://hub.docker.com/r/oneuptime/llm). This can be self-deployed if you want to run Copilot on-premises or you can use the hosted version.
+- **LLM Server** (Optional): Copilot sends your code to LLM Server to analyze and fix issues. The source-code and docker-image is [open-source](https://github.com/CBS Uptime/oneuptime/tree/master/LLM) and can be found at [Docker Hub](https://hub.docker.com/r/oneuptime/llm). This can be self-deployed if you want to run Copilot on-premises or you can use the hosted version.
 
 ### FAQ
 
-**Is my code sent to CBSUptime?**
+**Is my code sent to CBS Uptime?**
 
-No, your code is not sent to CBSUptime. Copilot runs on your CI/CD pipeline and sends the code to LLM Server for analysis. LLM Server can be self-hosted.
+No, your code is not sent to CBS Uptime. Copilot runs on your CI/CD pipeline and sends the code to LLM Server for analysis. LLM Server can be self-hosted.
 
 **Is my code sent to Self-Hosted LLM Server?**
 
@@ -43,7 +43,7 @@ Yes, if you choose to use OpenAI by setting `OPENAI_API_KEY`. We recommend you t
 
 Before you install Copilot, you need to make sure you have the following:
 
-- **CBS Uptime account**: You need to have a CBS Uptime account to use Copilot. You can sign up for a free account at [CBSUptime](https://uptime.cbsretail.net). You can either use CBSUptime Cloud or deploy CBSUptime on your infrastructure.
+- **CBS Uptime account**: You need to have a CBS Uptime account to use Copilot. You can sign up for a free account at [CBS Uptime](https://uptime.cbsretail.net). You can either use CBS Uptime Cloud or deploy CBS Uptime on your infrastructure.
 - **GitHub Account**: You need to have a GitHub account to use Copilot. You can sign up for a free account at [GitHub](https://github.com). You can also use GitLab, Bitbucket, etc.
 
 You also need either of the following:
@@ -65,15 +65,15 @@ You need to set the following environment variables to run Copilot:
 
 **Required Environment Variables**:
 
-- **ONEUPTIME_REPOSITORY_SECRET_KEY**: The secret key of the repository. You can get this key from CBSUptime Dashboard -> Reliability Copilot -> View Repository. If you don't have a repository, you can create a new repository, then click on "View Repository" to get the secret key.
+- **ONEUPTIME_REPOSITORY_SECRET_KEY**: The secret key of the repository. You can get this key from CBS Uptime Dashboard -> Reliability Copilot -> View Repository. If you don't have a repository, you can create a new repository, then click on "View Repository" to get the secret key.
 
-- **CODE_REPOSITORY_USERNAME**: CBSUptime uses this username to commit and push changes to GitHub / GitLab / etc. This should be the username of the existing user on GitHub that has access to the repository.
+- **CODE_REPOSITORY_USERNAME**: CBS Uptime uses this username to commit and push changes to GitHub / GitLab / etc. This should be the username of the existing user on GitHub that has access to the repository.
 
-- **CODE_REPOSITORY_PASSWORD**: CBSUptime uses this password to commit and push changes to GitHub / GitLab / etc. This should be the password of the existing user on GitHub that has access to the repository. You can also use Personal Access Tokens instead of Password. Please make sure the token has write permissions to the repo.
+- **CODE_REPOSITORY_PASSWORD**: CBS Uptime uses this password to commit and push changes to GitHub / GitLab / etc. This should be the password of the existing user on GitHub that has access to the repository. You can also use Personal Access Tokens instead of Password. Please make sure the token has write permissions to the repo.
 
 **Optional Environment Variables**:
 
-- **ONEUPTIME_URL**: The URL of CBSUptime Cloud. If left empty, Copilot will default to `https://uptime.cbsretail.net`.
+- **ONEUPTIME_URL**: The URL of CBS Uptime Cloud. If left empty, Copilot will default to `https://uptime.cbsretail.net`.
 
 If you are using LLM Server, you need to set the following environment variables:
 
@@ -90,7 +90,7 @@ If you are using OpenAI, you need to set the following environment variables:
 You can use GitHub Actions to run Copilot on every merge to master / main branch.
 
 ```yaml
-name: "CBSUptime Reliability Copilot"
+name: "CBS Uptime Reliability Copilot"
 
 on:
   push:
@@ -113,9 +113,9 @@ jobs:
         docker run --rm  \
           -e CODE_REPOSITORY_PASSWORD='<YOUR_GITHUB_PASSWORD>' \ # Required. Please make sure to use GitHub secrets.
           -e CODE_REPOSITORY_USERNAME='<YOUR_GITHUB_USERNAME>' \ # Required.
-          -e ONEUPTIME_URL='https://uptime.cbsretail.net' \ # Optional. Leave empty to use CBSUptime Cloud.
+          -e ONEUPTIME_URL='https://uptime.cbsretail.net' \ # Optional. Leave empty to use CBS Uptime Cloud.
           -e ONEUPTIME_REPOSITORY_SECRET_KEY='<ONEUPTIME_REPOSITORY_SECRET_KEY>' \ # Required. Please make sure to use GitHub secrets.
-          -e ONEUPTIME_LLM_SERVER_URL='<YOUR_ONEUPTIME_LLM_SERVER>' \ # Optional. Leave empty to use CBSUptime LLM Server.
+          -e ONEUPTIME_LLM_SERVER_URL='<YOUR_ONEUPTIME_LLM_SERVER>' \ # Optional. Leave empty to use CBS Uptime LLM Server.
           -e OPENAI_API_KEY='<YOUR_OPENAI_API_KEY>' \ # Optional. Leave empty to not use OpenAI.
           --net=host oneuptime/copilot:release
 ```
@@ -128,9 +128,9 @@ You can also run Copilot using docker. You can run this in any CI/CD of your cho
 docker run --rm \
     -e CODE_REPOSITORY_PASSWORD='<YOUR_GITHUB_PASSWORD>' \ # Required. Please make sure to use GitHub secrets.
     -e CODE_REPOSITORY_USERNAME='<YOUR_GITHUB_USERNAME>' \ # Required.
-    -e ONEUPTIME_URL='https://uptime.cbsretail.net' \ # Optional. Leave empty to use CBSUptime Cloud.
+    -e ONEUPTIME_URL='https://uptime.cbsretail.net' \ # Optional. Leave empty to use CBS Uptime Cloud.
     -e ONEUPTIME_REPOSITORY_SECRET_KEY='<ONEUPTIME_REPOSITORY_SECRET_KEY>' \ # Required. Please make sure to use GitHub secrets.
-    -e ONEUPTIME_LLM_SERVER_URL='<YOUR_ONEUPTIME_LLM_SERVER>' \ # Optional. Leave empty to use CBSUptime LLM Server.
+    -e ONEUPTIME_LLM_SERVER_URL='<YOUR_ONEUPTIME_LLM_SERVER>' \ # Optional. Leave empty to use CBS Uptime LLM Server.
     -e OPENAI_API_KEY='<YOUR_OPENAI_API_KEY>' \ # Optional. Leave empty to not use OpenAI.
     --net=host oneuptime/copilot:release
 ```

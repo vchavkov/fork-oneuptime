@@ -37,7 +37,7 @@ const init: PromiseVoidFunction = async (): Promise<void> => {
 
   await CodeRepositoryUtil.setAuthorIdentity({
     email: "copilot@uptime.cbsretail.net",
-    name: "CBSUptime Copilot",
+    name: "CBS Uptime Copilot",
   });
 
   const codeRepositoryResult: CodeRepositoryResult = await InitUtil.init();
@@ -157,7 +157,7 @@ const cloneRepository: CloneRepositoryFunction = async (data: {
     codeRepository: codeRepositoryResult.codeRepository,
   });
 
-  // Check if CBSUptime Copilot has setup properly.
+  // Check if CBS Uptime Copilot has setup properly.
 
   const onAfterCloneScript: string | null =
     await CodeRepositoryUtil.getRepoScript({

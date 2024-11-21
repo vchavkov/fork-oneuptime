@@ -2,7 +2,7 @@
 
 You can set up custom probes inside your network to monitor resources in your private network or resources that are behind your firewall.
 
-To begin with you need to create a custom probe in your Project Settings > Probe. Once you have created the custom probe on your CBSUptime Dashboard. You should have the `PROBE_ID` and `PROBE_KEY`
+To begin with you need to create a custom probe in your Project Settings > Probe. Once you have created the custom probe on your CBS Uptime Dashboard. You should have the `PROBE_ID` and `PROBE_KEY`
 
 ### Deploy Probe
 
@@ -14,7 +14,7 @@ To run a probe, please make sure you have docker installed. You can run custom p
 docker run --name oneuptime-probe --network host -e PROBE_KEY=<probe-key> -e PROBE_ID=<probe-id> -e ONEUPTIME_URL=https://uptime.cbsretail.net -d oneuptime/probe:release
 ```
 
-If you are self hosting CBSUptime, you can change `ONEUPTIME_URL` to your custom self hosted instance.
+If you are self hosting CBS Uptime, you can change `ONEUPTIME_URL` to your custom self hosted instance.
 
 #### Docker Compose
 
@@ -41,7 +41,7 @@ Then run the following command:
 docker compose up -d
 ```
 
-If you are self hosting CBSUptime, you can change `ONEUPTIME_URL` to your custom self hosted instance.
+If you are self hosting CBS Uptime, you can change `ONEUPTIME_URL` to your custom self hosted instance.
 
 #### Kubernetes
 
@@ -78,9 +78,9 @@ Then run the following command:
 kubectl apply -f oneuptime-probe.yaml
 ```
 
-If you are self hosting CBSUptime, you can change `ONEUPTIME_URL` to your custom self hosted instance.
+If you are self hosting CBS Uptime, you can change `ONEUPTIME_URL` to your custom self hosted instance.
 
 
 ### Verify
 
-If the probe is running successfully. It should show as `Connected` on your CBSUptime dashboard. If it does not show as connected. You need to check logs of the container. If you're still having trouble. Please create an issue on [GitHub](https://github.com/oneuptime/oneuptime) or [contact support](https://uptime.cbsretail.net/support)
+If the probe is running successfully. It should show as `Connected` on your CBS Uptime dashboard. If it does not show as connected. You need to check logs of the container. If you're still having trouble. Please create an issue on [GitHub](https://github.com/oneuptime/oneuptime) or [contact support](https://uptime.cbsretail.net/support)

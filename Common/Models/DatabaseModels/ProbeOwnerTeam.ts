@@ -130,7 +130,7 @@ export default class ProbeOwnerTeam extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -197,7 +197,7 @@ export default class ProbeOwnerTeam extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Team ID",
-    description: "ID of your CBSUptime Team in which this object belongs",
+    description: "ID of your CBS Uptime Team in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -263,7 +263,7 @@ export default class ProbeOwnerTeam extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Probe ID",
-    description: "ID of your CBSUptime Probe in which this object belongs",
+    description: "ID of your CBS Uptime Probe in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

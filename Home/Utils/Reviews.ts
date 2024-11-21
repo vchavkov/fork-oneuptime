@@ -17,7 +17,7 @@ const reviews: Review[] = [
   },
   {
     name: "Ethan",
-    text: "CBSUptime's dashboard is very user-friendly and intuitive.",
+    text: "CBS Uptime's dashboard is very user-friendly and intuitive.",
     title: "User-friendly dashboard",
   },
   {
@@ -42,7 +42,7 @@ const reviews: Review[] = [
   },
   {
     name: "Jenna",
-    text: "CBSUptime has improved our incident response time dramatically.",
+    text: "CBS Uptime has improved our incident response time dramatically.",
     title: "Improved response time",
   },
   {
@@ -67,17 +67,17 @@ const reviews: Review[] = [
   },
   {
     name: "Anderson, GK2 Cloud",
-    text: "Thanks for building CBSUptime, it really is fantastic. We are getting more excited every day!",
-    title: "CBSUptime is fantastic!",
+    text: "Thanks for building CBS Uptime, it really is fantastic. We are getting more excited every day!",
+    title: "CBS Uptime is fantastic!",
   },
   {
     name: "Reg, Skillable",
-    text: "We use CBSUptime to reliably monitor endpoint availability globally, and it delivers.",
-    title: "CBSUptime delivers!",
+    text: "We use CBS Uptime to reliably monitor endpoint availability globally, and it delivers.",
+    title: "CBS Uptime delivers!",
   },
   {
     name: "Oscar",
-    text: "CBSUptime has made our monitoring process much more efficient.",
+    text: "CBS Uptime has made our monitoring process much more efficient.",
     title: "Efficient monitoring",
   },
   {
@@ -152,7 +152,7 @@ const reviews: Review[] = [
   },
   {
     name: "Daisy",
-    text: "CBSUptime has made our monitoring and management tasks much easier.",
+    text: "CBS Uptime has made our monitoring and management tasks much easier.",
     title: "Easier management",
   },
   {
@@ -187,7 +187,7 @@ const reviews: Review[] = [
   },
   {
     name: "Kyle",
-    text: "CBSUptime has made our monitoring process much more streamlined.",
+    text: "CBS Uptime has made our monitoring process much more streamlined.",
     title: "Streamlined monitoring",
   },
   {
@@ -222,7 +222,7 @@ const reviews: Review[] = [
   },
   {
     name: "Riley",
-    text: "CBSUptime has made our incident management process much smoother.",
+    text: "CBS Uptime has made our incident management process much smoother.",
     title: "Smoother process",
   },
   {

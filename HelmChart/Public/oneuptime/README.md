@@ -1,12 +1,12 @@
 <!-- markdownlint-disable MD033 -->
-<h1 align="center"><img alt="oneuptime logo" width=50% src="https://raw.githubusercontent.com/CBSUptime/oneuptime/master/Home/Static/img/OneUptimePNG/7.png"/></h1>
+<h1 align="center"><img alt="oneuptime logo" width=50% src="https://raw.githubusercontent.com/CBS Uptime/oneuptime/master/Home/Static/img/OneUptimePNG/7.png"/></h1>
 <!-- markdownlint-enable MD033 -->
 
-# CBSUptime Helm Chart
+# CBS Uptime Helm Chart
 
-CBSUptime is a comprehensive solution for monitoring and managing your online services. Whether you need to check the availability of your website, dashboard, API, or any other online resource, CBSUptime can alert your team when downtime happens and keep your customers informed with a status page. CBSUptime also helps you handle incidents, set up on-call rotations, run tests, secure your services, analyze logs, track performance, and debug errors.
+CBS Uptime is a comprehensive solution for monitoring and managing your online services. Whether you need to check the availability of your website, dashboard, API, or any other online resource, CBS Uptime can alert your team when downtime happens and keep your customers informed with a status page. CBS Uptime also helps you handle incidents, set up on-call rotations, run tests, secure your services, analyze logs, track performance, and debug errors.
 
-[Overview of CBSUptime](http://www.uptime.cbsretail.net)
+[Overview of CBS Uptime](http://www.uptime.cbsretail.net)
 
 
 ## Yotube Tutorial
@@ -70,7 +70,7 @@ helm uninstall my-oneuptime
 
 ## Configuration
 
-The following table lists the configurable parameters of the CBSUptime chart and their default values.
+The following table lists the configurable parameters of the CBS Uptime chart and their default values.
 
 | Parameter | Description | Default | Change Required |
 | --------- | ----------- | ------- | --------------- |
@@ -125,13 +125,13 @@ The following table lists the configurable parameters of the CBSUptime chart and
 
 ## Setting up TLS/SSL Certificates
 
-CBSUptime **does not** support setting up SSL/TLS certificates. You need to set up SSL/TLS certificates on your own.
+CBS Uptime **does not** support setting up SSL/TLS certificates. You need to set up SSL/TLS certificates on your own.
 
 If you need to use SSL/TLS certificates, follow these steps:
 
 1. Use a reverse proxy like Nginx or Caddy.
 2. Use Let's Encrypt to provision the certificates.
-3. Point the reverse proxy to the CBSUptime server.
+3. Point the reverse proxy to the CBS Uptime server.
 4. Update the following settings:
    - Set `HTTP_PROTOCOL` env var to `https`.
    - Change `HOST` env var to the domain name of the server where the reverse proxy is hosted.
@@ -272,11 +272,11 @@ Once you have added the custom domain, you can access your status page using the
 
 ## Production Readiness Checklist
 
-Please go through the following checklist to make sure your CBSUptime installation is production ready.
+Please go through the following checklist to make sure your CBS Uptime installation is production ready.
 
 - [ ] Please pin CBS Uptime Version to a specific version. This will prevent any breaking changes from affecting your installation.
 
-When you install, you can check the latest version from the github releases page https://github.com/CBSUptime/oneuptime/releases. You can pin the version in your values.yaml file.
+When you install, you can check the latest version from the github releases page https://github.com/CBS Uptime/oneuptime/releases. You can pin the version in your values.yaml file.
 
 ```
 image:
@@ -311,7 +311,7 @@ Please do the same for Redis and Clickhouse.
 - [ ] Please make sure you have static passwords for your database passswords (for redis, clickhouse and postgres). You can refer to Bitnami documentation on how to set static passwords for these databases.
 - [ ] Please set `oneuptimeSecret` and `encryptionSecret` (or setup in `externalSecrets` section) to a long random string. You can use a password generator to generate these strings.
 - [ ] Please set `probes.<key>.key` to a long random string. This is used to secure your probes.
-- [ ] Please regularly update CBSUptime. We release updates every day. We recommend you to update the software aleast once a week if you're running CBSUptime production.
+- [ ] Please regularly update CBS Uptime. We release updates every day. We recommend you to update the software aleast once a week if you're running CBS Uptime production.
 
 ## Releases
 
@@ -330,4 +330,4 @@ We use these charts as dependencies. You dont need to install them separately. P
 ## Contributing
 
 We <3 contributions big and small.
-https://github.com/CBSUptime/helm-chart is the read only release repository. Please direct your contributions here: https://github.com/CBSUptime/oneuptime
+https://github.com/CBS Uptime/helm-chart is the read only release repository. Please direct your contributions here: https://github.com/CBS Uptime/oneuptime

@@ -1,5 +1,5 @@
 
-# CBSUptime nginx Deployment
+# CBS Uptime nginx Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -146,7 +146,7 @@ spec:
   {{- end}}
 ---
 
-# CBSUptime nginx autoscaler
+# CBS Uptime nginx autoscaler
 {{- $nginxAutoScalerArgs := dict "ServiceName" "nginx" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $nginxAutoScalerArgs }}
 ---

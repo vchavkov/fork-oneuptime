@@ -11,7 +11,7 @@ const MonitorPage: FunctionComponent<PageComponentProps> = (): ReactElement => {
       <Banner
         openInNewTab={true}
         title="Monitoring Demo"
-        description="Watch this video which will help monitor any resource you have with CBSUptime"
+        description="Watch this video which will help monitor any resource you have with CBS Uptime"
         link={URL.fromString("https://youtu.be/_fQ_F4EisBQ")}
       />
       <MonitorTable

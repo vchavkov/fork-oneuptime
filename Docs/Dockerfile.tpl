@@ -1,5 +1,5 @@
 #
-# CBSUptime-App Dockerfile
+# CBS Uptime-App Dockerfile
 #
 
 # Pull base image nodejs image.
@@ -52,7 +52,7 @@ COPY ./Docs /usr/src/app
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/app/package.json
 
 # Expose ports.
-#   - 3600: CBSUptime-docs
+#   - 3600: CBS Uptime-docs
 EXPOSE 3600
 
 # Start the app

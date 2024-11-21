@@ -58,7 +58,7 @@ import TelemetryService from "./TelemetryService";
   pluralName: "Exceptions",
   icon: IconProp.Error,
   tableDescription:
-    "List of all Telemetry Exceptions created for the telemetry service for this CBSUptime project and it's status.",
+    "List of all Telemetry Exceptions created for the telemetry service for this CBS Uptime project and it's status.",
 })
 @Entity({
   name: "TelemetryException",
@@ -119,7 +119,7 @@ export default class TelemetryException extends DatabaseBaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

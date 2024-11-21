@@ -1,5 +1,5 @@
 #
-# CBSUptime-test-server-api Dockerfile
+# CBS Uptime-test-server-api Dockerfile
 #
 
 # Pull base image nodejs image.
@@ -46,7 +46,7 @@ COPY ./TestServer/package*.json /usr/src/app/
 RUN npm install
 
 # Expose ports.
-#   - 3800: CBSUptime-test-server-api
+#   - 3800: CBS Uptime-test-server-api
 EXPOSE 3800
 
 {{ if eq .Env.ENVIRONMENT "development" }}

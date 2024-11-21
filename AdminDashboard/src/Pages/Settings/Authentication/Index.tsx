@@ -40,7 +40,7 @@ const Settings: FunctionComponent = (): ReactElement => {
         cardProps={{
           title: "Authentication Settings",
           description:
-            "Authentication Settings for this CBSUptime Server instance.",
+            "Authentication Settings for this CBS Uptime Server instance.",
         }}
         isEditable={true}
         editButtonText="Edit Settings"
@@ -52,7 +52,7 @@ const Settings: FunctionComponent = (): ReactElement => {
             title: "Disable Sign Up",
             fieldType: FormFieldSchemaType.Toggle,
             required: false,
-            description: "Should we disable sign up of new users to CBSUptime?",
+            description: "Should we disable sign up of new users to CBS Uptime?",
           },
         ]}
         modelDetailProps={{
@@ -67,7 +67,7 @@ const Settings: FunctionComponent = (): ReactElement => {
               title: "Disable Sign Up",
               placeholder: "No",
               description:
-                "Should we disable sign up of new users to CBSUptime?",
+                "Should we disable sign up of new users to CBS Uptime?",
             },
           ],
           modelId: ObjectID.getZeroObjectID(),

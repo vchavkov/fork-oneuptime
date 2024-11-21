@@ -85,7 +85,7 @@ const ServiceCopilotCodeRepositoryPage: FunctionComponent<
             defaultValue: 5,
             required: true,
             description:
-              "CBSUptime will not create a new pull request if the number of open pull requests for this service is more than the limit specified here.",
+              "CBS Uptime will not create a new pull request if the number of open pull requests for this service is more than the limit specified here.",
             placeholder: "/",
           },
           {
@@ -97,7 +97,7 @@ const ServiceCopilotCodeRepositoryPage: FunctionComponent<
             defaultValue: true,
             required: false,
             description:
-              "If enabled, CBSUptime will create pull requests for this service and automatically improve code.",
+              "If enabled, CBS Uptime will create pull requests for this service and automatically improve code.",
           },
         ]}
         showRefreshButton={true}

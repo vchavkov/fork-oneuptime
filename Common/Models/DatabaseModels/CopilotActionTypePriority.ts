@@ -114,7 +114,7 @@ export default class CopilotActionTypePriority extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -172,7 +172,7 @@ export default class CopilotActionTypePriority extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Code Repository ID",
     description:
-      "ID of your CBSUptime Code Repository in which this object belongs",
+      "ID of your CBS Uptime Code Repository in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

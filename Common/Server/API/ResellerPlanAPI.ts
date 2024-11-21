@@ -105,7 +105,7 @@ export default class ResellerPlanAPI extends BaseAPI<
           const userEmail: Email = new Email(req.body.activation_email);
 
           if (action === "activate") {
-            // generate a coupon code. Billing is handled by the reseller so CBSUptime will have 100% discount on its plans.
+            // generate a coupon code. Billing is handled by the reseller so CBS Uptime will have 100% discount on its plans.
 
             const couponcode: string = await BillingService.generateCouponCode({
               name: resellerId,

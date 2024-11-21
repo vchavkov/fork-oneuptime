@@ -3,11 +3,11 @@ global:
   clusterDomain: &global-cluster-domain cluster.local
 
 
-# Please change this to the domain name / IP where CBSUptime server is hosted on.
+# Please change this to the domain name / IP where CBS Uptime server is hosted on.
 host: localhost
 httpProtocol: http
 
-# Important: You do need to set this to a long random values if you're using CBSUptime in production.
+# Important: You do need to set this to a long random values if you're using CBS Uptime in production.
 oneuptimeSecret:
 encryptionSecret:
 

@@ -46,7 +46,7 @@ const CustomFieldsPageBase: (
         cardProps={{
           title: props.title,
           description:
-            "Custom fields help you add new fields to your resources in CBSUptime.",
+            "Custom fields help you add new fields to your resources in CBS Uptime.",
         }}
         noItemsMessage={"No custom fields found."}
         viewPageRoute={Navigation.getCurrentRoute()}

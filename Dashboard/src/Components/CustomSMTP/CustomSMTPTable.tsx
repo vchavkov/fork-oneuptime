@@ -69,7 +69,7 @@ const CustomSMTPTable: FunctionComponent = (): ReactElement => {
         cardProps={{
           title: "Custom SMTP Configs",
           description:
-            "If you need CBSUptime to send emails through your SMTP Server, please enter the server details here.",
+            "If you need CBS Uptime to send emails through your SMTP Server, please enter the server details here.",
         }}
         formSteps={[
           {
@@ -189,7 +189,7 @@ const CustomSMTPTable: FunctionComponent = (): ReactElement => {
             fieldType: FormFieldSchemaType.Text,
             required: true,
             description:
-              "This is the display name your team and customers see, when they receive emails from CBSUptime.",
+              "This is the display name your team and customers see, when they receive emails from CBS Uptime.",
             placeholder: "Company, Inc.",
           },
         ]}

@@ -45,7 +45,7 @@ RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/app/
 RUN npm install
 
 # Expose ports.
-#   - 3002: CBSUptime-backend
+#   - 3002: CBS Uptime-backend
 EXPOSE 3002
 
 {{ if eq .Env.ENVIRONMENT "development" }}

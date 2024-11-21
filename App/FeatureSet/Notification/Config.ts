@@ -27,7 +27,7 @@ export const InternalSmtpEmail: Email = new Email(
 );
 
 export const InternalSmtpFromName: string =
-  process.env["INTERNAL_SMTP_FROM_NAME"] || "CBSUptime";
+  process.env["INTERNAL_SMTP_FROM_NAME"] || "CBS Uptime";
 
 type GetGlobalSMTPConfig = () => Promise<EmailServer | null>;
 
@@ -109,7 +109,7 @@ export const getGlobalSMTPConfig: GetGlobalSMTPConfig =
       password: globalConfig.smtpPassword || undefined, // these can be optional. If not set, they will be undefined
       secure: globalConfig.isSMTPSecure || false,
       fromEmail: globalConfig.smtpFromEmail,
-      fromName: globalConfig.smtpFromName || "CBSUptime",
+      fromName: globalConfig.smtpFromName || "CBS Uptime",
     };
   };
 

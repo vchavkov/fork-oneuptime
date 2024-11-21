@@ -1,4 +1,4 @@
-# CBSUptime api-reference Deployment
+# CBS Uptime api-reference Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -75,13 +75,13 @@ spec:
 
 ---
 
-# CBSUptime app Service
+# CBS Uptime app Service
 {{- $apiReferencePorts := dict "port" $.Values.port.apiReference -}}
 {{- $apiReferenceServiceArgs := dict "ServiceName" "api-reference" "Ports" $apiReferencePorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $apiReferenceServiceArgs }}
 ---
 
-# CBSUptime app autoscaler
+# CBS Uptime app autoscaler
 {{- $apiReferenceAutoScalerArgs := dict "ServiceName" "api-reference" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $apiReferenceAutoScalerArgs }}
 ---

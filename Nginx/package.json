@@ -9,7 +9,7 @@
     "compile": "tsc",
     "dep-check": "npm install -g depcheck && depcheck ./ --skip-missing=true"
   },
-  "author": "CBSUptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
+  "author": "CBS Uptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0",
   "dependencies": {
     "Common": "file:../Common",

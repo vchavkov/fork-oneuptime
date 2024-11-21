@@ -1,6 +1,6 @@
-# Helm Chart for CBSUptime
+# Helm Chart for CBS Uptime
 
-This repository is used to host all the helm-charts for CBSUptime.
+This repository is used to host all the helm-charts for CBS Uptime.
 
 ### Helm Packages
 

@@ -116,7 +116,7 @@ router.post("/test", async (req: ExpressRequest, res: ExpressResponse) => {
     const testCallRequest: CallRequest = {
       data: [
         {
-          sayMessage: "This is a test call from CBSUptime.",
+          sayMessage: "This is a test call from CBS Uptime.",
         },
       ],
       to: toPhone,

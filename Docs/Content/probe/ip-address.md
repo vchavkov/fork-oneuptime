@@ -1,4 +1,4 @@
-# IP Address of Probes in CBSUptime.com
+# IP Address of Probes in CBS Uptime.com
 
 Please whitelist the following IP's in your firewall to allow our probes to monitor your resources.
 

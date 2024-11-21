@@ -40,7 +40,7 @@ const Settings: FunctionComponent = (): ReactElement => {
         cardProps={{
           title: "Master API Key Settings",
           description:
-            "This API key has root access to all the resources in all the projects on CBSUptime.",
+            "This API key has root access to all the resources in all the projects on CBS Uptime.",
         }}
         isEditable={true}
         editButtonText="Edit API Key Settings"
@@ -72,7 +72,7 @@ const Settings: FunctionComponent = (): ReactElement => {
               },
               title: "Master API Key",
               description:
-                "This API key has root access to all the resources in all the projects on CBSUptime.",
+                "This API key has root access to all the resources in all the projects on CBS Uptime.",
               fieldType: FieldType.HiddenText,
               opts: {
                 isCopyable: true,

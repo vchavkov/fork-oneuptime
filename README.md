@@ -1,12 +1,12 @@
 <!-- markdownlint-disable MD033 -->
-<h1 align="center"><img alt="oneuptime logo" width=50% src="https://raw.githubusercontent.com/CBSUptime/oneuptime/master/Home/Static/img/OneUptimePNG/7.png"/></h1>
+<h1 align="center"><img alt="oneuptime logo" width=50% src="https://raw.githubusercontent.com/CBS Uptime/oneuptime/master/Home/Static/img/OneUptimePNG/7.png"/></h1>
 <!-- markdownlint-enable MD033 -->
 
-### CBSUptime: The Complete Open-Source Observability Platform
+### CBS Uptime: The Complete Open-Source Observability Platform
 
-CBSUptime is a comprehensive solution for monitoring and managing your online services. Whether you need to check the availability of your website, dashboard, API, or any other online resource, CBSUptime can alert your team when downtime happens and keep your customers informed with a status page. CBSUptime also helps you handle incidents, set up on-call rotations, run tests, secure your services, analyze logs, track performance, and debug errors.
+CBS Uptime is a comprehensive solution for monitoring and managing your online services. Whether you need to check the availability of your website, dashboard, API, or any other online resource, CBS Uptime can alert your team when downtime happens and keep your customers informed with a status page. CBS Uptime also helps you handle incidents, set up on-call rotations, run tests, secure your services, analyze logs, track performance, and debug errors.
 
-CBSUptime replaces multiple tools with one integrated platform:
+CBS Uptime replaces multiple tools with one integrated platform:
 
 
 #### Uptime Monitoring
@@ -40,7 +40,7 @@ Collect, store, and analyze logs from your online services. Search, filter, and 
 
 #### Workflows
 
-Integrate CBSUptime with your existing tools and automate your workflows. Integrate with tools like Slack, Jira, GitHub, and 5000+ more.
+Integrate CBS Uptime with your existing tools and automate your workflows. Integrate with tools like Slack, Jira, GitHub, and 5000+ more.
 
 ![Workflows](/Home/Static/img/readme/workflows.png?raw=true)
 
@@ -57,13 +57,13 @@ Measure and optimize the performance of your online apps and services. Track key
 
 All under one platform.
 
-## Get Started for Free with CBSUptime Cloud
+## Get Started for Free with CBS Uptime Cloud
 
-CBSUptime Cloud is the easiest and fastest way to monitor your website uptime and performance. You can sign up for free to [CBSUptime Cloud](https://uptime.cbsretail.net) and enjoy the full benefits of CBSUptime without any installation or maintenance hassle.
+CBS Uptime Cloud is the easiest and fastest way to monitor your website uptime and performance. You can sign up for free to [CBS Uptime Cloud](https://uptime.cbsretail.net) and enjoy the full benefits of CBS Uptime without any installation or maintenance hassle.
 
-By using CBSUptime Cloud, you also support the development of CBSUptime open source project, which is a powerful and flexible tool for website monitoring. You can find more information about CBSUptime open source project on [GitHub](##Philosophy). The code of CBSUptime is completely open source, which means you can access, modify, and distribute it freely. You can also contribute to the project by reporting issues, suggesting features, or submitting pull requests.
+By using CBS Uptime Cloud, you also support the development of CBS Uptime open source project, which is a powerful and flexible tool for website monitoring. You can find more information about CBS Uptime open source project on [GitHub](##Philosophy). The code of CBS Uptime is completely open source, which means you can access, modify, and distribute it freely. You can also contribute to the project by reporting issues, suggesting features, or submitting pull requests.
 
-If you need advanced features, such as API Access, Advanced Workflows, or Advanced Access Control, you can upgrade to a paid plan anytime. You can compare the different plans and pricing on [CBSUptime Pricing](https://uptime.cbsretail.net/pricing) page.
+If you need advanced features, such as API Access, Advanced Workflows, or Advanced Access Control, you can upgrade to a paid plan anytime. You can compare the different plans and pricing on [CBS Uptime Pricing](https://uptime.cbsretail.net/pricing) page.
 
 
 ## Installation
@@ -82,10 +82,10 @@ We <3 contributions big and small. In priority order (although everything is app
 
 - Give us feedback in our [Customer Slack community](https://join.slack.com/t/oneuptimesupport/shared_invite/zt-2pz5p1uhe-Fpmc7bv5ZE5xRMe7qJnwmA)
 - Talk to developers in our [Developer Slack community](https://join.slack.com/t/oneuptimedev/shared_invite/zt-17r8o7gkz-nITGan_PS9JYJV6WMm_TsQ)
-- Write tests for some of our codebase. [See issues here](https://github.com/CBSUptime/oneuptime/issues?q=is%3Aopen+is%3Aissue+label%3A%22write+tests%22)
-- Work on any issue you like. [See issues here](https://github.com/CBSUptime/oneuptime/issues)
-- Open new issues and create new feature requests that you would like to see. [Open issues here](https://github.com/CBSUptime/oneuptime/issues)
+- Write tests for some of our codebase. [See issues here](https://github.com/CBS Uptime/oneuptime/issues?q=is%3Aopen+is%3Aissue+label%3A%22write+tests%22)
+- Work on any issue you like. [See issues here](https://github.com/CBS Uptime/oneuptime/issues)
+- Open new issues and create new feature requests that you would like to see. [Open issues here](https://github.com/CBS Uptime/oneuptime/issues)
 
 ## Donate
 
-If you like the project, please consider a small donation. Every single dollar will be used to ship new features or maintain existing ones. 100% of the work we do is open-source. [Please donate here](https://github.com/sponsors/CBSUptime)
+If you like the project, please consider a small donation. Every single dollar will be used to ship new features or maintain existing ones. 100% of the work we do is open-source. [Please donate here](https://github.com/sponsors/CBS Uptime)

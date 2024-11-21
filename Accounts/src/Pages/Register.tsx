@@ -198,7 +198,7 @@ const RegisterPage: () => JSX.Element = () => {
           Create your CBS Uptime account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Join thousands of business that use CBSUptime to help them stay online
+          Join thousands of business that use CBS Uptime to help them stay online
           all the time.
         </p>
         <p className="mt-2 text-center text-sm text-gray-600">

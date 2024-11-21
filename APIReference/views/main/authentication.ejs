@@ -1,8 +1,8 @@
 <main class="py-16">
    <article class="prose">
       <h1>Authentication</h1>
-      <p class="lead">You'll need to authenticate your requests to access any of the endpoints in the CBSUptime API. In
-         this guide, we'll look at how authentication works. CBSUptime offers one way to authenticate your API requests
+      <p class="lead">You'll need to authenticate your requests to access any of the endpoints in the CBS Uptime API. In
+         this guide, we'll look at how authentication works. CBS Uptime offers one way to authenticate your API requests
          - by using an API Key.</p>
 
 
@@ -29,11 +29,11 @@
       <h2 id="basic-authentication">
          Authentication with API Key
       </h2>
-      <p>You can use CBSUptime API Key on Request Header when you're making a request. You can use <code
+      <p>You can use CBS Uptime API Key on Request Header when you're making a request. You can use <code
             class="rounded p-0.5 px-1 text-sm text-gray-500 bg-gray-100 border-2 border-gray-200">Authorization</code>
          header with your API Key when you make a request.</p>
       <%- include('../partials/code', {title: "Example request with API Key" , requestUrl: "" , requestType: "" , code: "curl --header \"ApiKey: {secret-api-key}\" --header \"ProjectID: {project-id}\" https://uptime.cbsretail.net/api/\<path\>" }) -%>
-         <p class="text-sm">Please don't commit your CBSUptime API Key to GitHub, or on any other source control
+         <p class="text-sm">Please don't commit your CBS Uptime API Key to GitHub, or on any other source control
             project. Please regenerate a new API Key, if your API Key is committed by mistake.</p>
    </article>
 </main>

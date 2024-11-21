@@ -65,7 +65,7 @@ router.post("/test", async (req: ExpressRequest, res: ExpressResponse) => {
   const mail: EmailMessage = {
     templateType: EmailTemplateType.SMTPTest,
     toEmail: new Email(body["toEmail"] as string),
-    subject: "Test Email from CBSUptime",
+    subject: "Test Email from CBS Uptime",
     vars: {},
     body: "",
   };

@@ -8,7 +8,7 @@ You need to make sure you have:
 
 ```
 # Clone this repo and cd into it.
-git clone https://github.com/CBSUptime/oneuptime.git
+git clone https://github.com/CBS Uptime/oneuptime.git
 cd oneuptime
 
 # Copy config.example.env to config.env

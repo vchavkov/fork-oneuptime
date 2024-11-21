@@ -722,13 +722,13 @@ export class Service extends DatabaseService<Model> {
       };
 
       const sms: SMSMessage = {
-        message: `This is a message from CBSUptime. Probes for monitor ${monitor.name} is ${enabledStatus}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard.`,
+        message: `This is a message from CBS Uptime. Probes for monitor ${monitor.name} is ${enabledStatus}. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard.`,
       };
 
       const callMessage: CallRequestMessage = {
         data: [
           {
-            sayMessage: `This is a message from CBSUptime. Probes for monitor ${monitor.name} is ${enabledStatus}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard. Good bye.`,
+            sayMessage: `This is a message from CBS Uptime. Probes for monitor ${monitor.name} is ${enabledStatus}. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard. Good bye.`,
           },
         ],
       };
@@ -820,13 +820,13 @@ export class Service extends DatabaseService<Model> {
       };
 
       const sms: SMSMessage = {
-        message: `This is a message from CBSUptime. Probes for monitor ${monitor.name} is ${status}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard.`,
+        message: `This is a message from CBS Uptime. Probes for monitor ${monitor.name} is ${status}. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard.`,
       };
 
       const callMessage: CallRequestMessage = {
         data: [
           {
-            sayMessage: `This is a message from CBSUptime. New monitor was created ${monitor.name}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard. Good bye.`,
+            sayMessage: `This is a message from CBS Uptime. New monitor was created ${monitor.name}. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard. Good bye.`,
           },
         ],
       };

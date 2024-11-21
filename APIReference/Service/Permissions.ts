@@ -20,7 +20,7 @@ export default class ServiceHandler {
 
     // Set page title and description
     pageTitle = "Permissions";
-    pageDescription = "Learn how permissions work with CBSUptime";
+    pageDescription = "Learn how permissions work with CBS Uptime";
 
     // Filter permissions to only include those assignable to tenants
     pageData.permissions = PermissionHelper.getAllPermissionProps().filter(

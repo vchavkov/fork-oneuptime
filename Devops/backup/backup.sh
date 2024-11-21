@@ -30,7 +30,7 @@ SIX_MONTHS_AGO=$(date -d "-180 days" +"%Y-%m-%d")
 
 function HELP() {
   echo ""
-  echo "CBSUptime DB backup command line documentation."
+  echo "CBS Uptime DB backup command line documentation."
   echo ""
   echo "all arguments are optional and have a default value when not set"
   echo ""

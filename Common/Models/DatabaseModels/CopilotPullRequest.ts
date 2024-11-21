@@ -101,7 +101,7 @@ export default class CopilotPullRequest extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -159,7 +159,7 @@ export default class CopilotPullRequest extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Code Repository ID",
     description:
-      "ID of your CBSUptime Code Repository in which this object belongs",
+      "ID of your CBS Uptime Code Repository in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -328,7 +328,7 @@ export default class CopilotPullRequest extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Service Catalog ID",
     description:
-      "ID of your CBSUptime ServiceCatalog in which this object belongs",
+      "ID of your CBS Uptime ServiceCatalog in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -387,7 +387,7 @@ export default class CopilotPullRequest extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Service Repository ID",
     description:
-      "ID of your CBSUptime Service Repository in which this object belongs",
+      "ID of your CBS Uptime Service Repository in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

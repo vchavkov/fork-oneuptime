@@ -1,5 +1,5 @@
 
-# CBSUptime app Deployment
+# CBS Uptime app Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -62,14 +62,14 @@ spec:
 
 ---
 
-# CBSUptime isolatedVM Service
+# CBS Uptime isolatedVM Service
 {{- $isolatedVMPorts := dict "port" $.Values.port.isolatedVM -}}
 {{- $isolatedVMServiceArgs := dict "ServiceName" "isolated-vm" "Ports" $isolatedVMPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $isolatedVMServiceArgs }}
 ---
 
 
-# CBSUptime isolatedVM autoscaler
+# CBS Uptime isolatedVM autoscaler
 {{- $isolatedVMAutoScalerArgs := dict "ServiceName" "isolated-vm" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $isolatedVMAutoScalerArgs }}
 ---

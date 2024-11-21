@@ -414,7 +414,7 @@ export class Service extends DatabaseService<Model> {
       to: to,
       data: [
         {
-          sayMessage: "This is a call from CBSUptime",
+          sayMessage: "This is a call from CBS Uptime",
         },
         {
           sayMessage: "A new incident has been created",
@@ -472,7 +472,7 @@ export class Service extends DatabaseService<Model> {
 
     const sms: SMS = {
       to,
-      message: `This is a message from CBSUptime. A new incident has been created. ${
+      message: `This is a message from CBS Uptime. A new incident has been created. ${
         incident.title
       }. To acknowledge this incident, please click on the following link ${url.toString()}`,
     };

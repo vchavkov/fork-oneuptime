@@ -138,7 +138,7 @@ export default class UserOnCallLogTimeline extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -186,7 +186,7 @@ export default class UserOnCallLogTimeline extends BaseModel {
     canReadOnRelationQuery: true,
     title: "User Notification Log ID",
     description:
-      "ID of your CBSUptime User Notification Log in which this object belongs",
+      "ID of your CBS Uptime User Notification Log in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -234,7 +234,7 @@ export default class UserOnCallLogTimeline extends BaseModel {
     canReadOnRelationQuery: true,
     title: "User Notification Rule ID",
     description:
-      "ID of your CBSUptime User Notification Rule in which this object belongs",
+      "ID of your CBS Uptime User Notification Rule in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -282,7 +282,7 @@ export default class UserOnCallLogTimeline extends BaseModel {
     canReadOnRelationQuery: true,
     title: "OnCallDutyPolicy ID",
     description:
-      "ID of your CBSUptime on-call duty policy in which this object belongs",
+      "ID of your CBS Uptime on-call duty policy in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -328,7 +328,7 @@ export default class UserOnCallLogTimeline extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Incident ID",
-    description: "ID of your CBSUptime Incident in which this object belongs",
+    description: "ID of your CBS Uptime Incident in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

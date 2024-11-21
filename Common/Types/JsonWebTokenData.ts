@@ -10,5 +10,5 @@ export default interface JSONWebTokenData extends JSONObject {
   isMasterAdmin: boolean;
   statusPageId?: ObjectID | undefined; // for status page logins.
   projectId?: ObjectID | undefined; // for SSO logins.
-  isGlobalLogin: boolean; // If this is CBSUptime username and password login. This is true, if this is SSO login. Then, this is false.
+  isGlobalLogin: boolean; // If this is CBS Uptime username and password login. This is true, if this is SSO login. Then, this is false.
 }

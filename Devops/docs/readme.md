@@ -1,4 +1,4 @@
-# CBSUptime Database Backup/Restore
+# CBS Uptime Database Backup/Restore
 
 ## Backing up the database
 

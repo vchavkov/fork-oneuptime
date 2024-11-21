@@ -137,7 +137,7 @@ export default class ServiceCatalogMonitor extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -207,7 +207,7 @@ export default class ServiceCatalogMonitor extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Service Catalog ID",
     description:
-      "ID of your CBSUptime Service Catalog in which this object belongs",
+      "ID of your CBS Uptime Service Catalog in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

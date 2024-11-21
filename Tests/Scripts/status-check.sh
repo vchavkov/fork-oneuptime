@@ -10,7 +10,7 @@ fi
 
 echo "We will need to wait ~5-10 minutes for things to settle down, migrations to finish, and TLS certs to be issued"
 echo ""
-echo "⏳ Waiting for CBSUptime to boot (this will take a few minutes)"
+echo "⏳ Waiting for CBS Uptime to boot (this will take a few minutes)"
 echo ""
 echo ""
 
@@ -49,12 +49,12 @@ bash $scriptDir/endpoint-status.sh "Ingestor (Ready Check)" $HOST_TO_CHECK/inges
 
 bash $scriptDir/endpoint-status.sh "Ingestor (Status Check)" $HOST_TO_CHECK/ingestor/status
 
-echo "🚀 CBSUptime is up! 🚀"
+echo "🚀 CBS Uptime is up! 🚀"
 echo ""
 echo "🎉🎉🎉  Done! 🎉🎉🎉"
 
 echo "We would like to hear your feedback to make this product better for you and for other users, please email us at hello@uptime.cbsretail.net."
 echo " - If you notice a bug, we will fix it for you."
 echo " - If you need a feature, we will add that to the roadmap and let you know the estimated time to ship."
-echo "- If you are an enterprise customer, we offer dedicated engineering support to build oneuptime features you need to integrate CBSUptime for your organization. Please contact us at sales@uptime.cbsretail.net"
+echo "- If you are an enterprise customer, we offer dedicated engineering support to build oneuptime features you need to integrate CBS Uptime for your organization. Please contact us at sales@uptime.cbsretail.net"
 echo "We would love to hear your feedback. Email: hello@uptime.cbsretail.net"

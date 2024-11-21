@@ -20,4 +20,4 @@ Syntax:
 
 Example:
 
-`sudo kubectl cp fi-mongodb-0:/bitnami/mongodb/oneuptimedata.archive /Volumes/DataDrive/Projects/CBSUptime/app/backup.archive`
+`sudo kubectl cp fi-mongodb-0:/bitnami/mongodb/oneuptimedata.archive /Volumes/DataDrive/Projects/CBS Uptime/app/backup.archive`

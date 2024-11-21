@@ -45,26 +45,26 @@ export default (product: string): Product => {
       productDescription:
         "For 10 users alerts and on-call schedule. PagerDuty is an on-call scheduling solution.",
       oneUptimeDescription:
-        "You can get alerts, on-call rotation and schedules for free with CBSUptime and oa whole lot more.",
+        "You can get alerts, on-call rotation and schedules for free with CBS Uptime and oa whole lot more.",
       description:
         "Check out how we compare with PagerDuty. We do most of what PagerDuty does and a whole lot more.",
       descriptionLine2:
         "If you're a startup, we're a lot cheaper than PagerDuty which saves you a hundreds today, thousands as you grow.",
       faq: [
         {
-          question: "How does CBSUptime compare with PagerDuty?",
+          question: "How does CBS Uptime compare with PagerDuty?",
           answer:
-            "PagerDuty is an incident management and on-call tool whereas CBSUptime is a complete Observability platform. CBSUptime offers mostly everything that PagerDuty offers, but a lot more like monitoring, StatusPage, security, performance-monitoring and more. Please check detailed comparision above for more info.",
+            "PagerDuty is an incident management and on-call tool whereas CBS Uptime is a complete Observability platform. CBS Uptime offers mostly everything that PagerDuty offers, but a lot more like monitoring, StatusPage, security, performance-monitoring and more. Please check detailed comparision above for more info.",
         },
         {
           question:
             "Do I need to buy a monitoring solution to monitor my resources?",
           answer:
-            "PagerDuty needs a separate monitoring solution that you need to buy which then sends data to PagerDuty for on-call and incident management. CBSUptime has a built in monitoring solution as well. You use one product, your team has one dashboard, save time, simplify ops.",
+            "PagerDuty needs a separate monitoring solution that you need to buy which then sends data to PagerDuty for on-call and incident management. CBS Uptime has a built in monitoring solution as well. You use one product, your team has one dashboard, save time, simplify ops.",
         },
         {
           question:
-            "I have already bought an external monitoring solution. Will CBSUptime work with it?",
+            "I have already bought an external monitoring solution. Will CBS Uptime work with it?",
           answer:
             "Yes! We integrate with every single monitoring solution in the market - like Incident.io, UptimeRobot, DataDog, Site 24x7 and more.",
         },
@@ -176,7 +176,7 @@ export default (product: string): Product => {
           data: [
             {
               title: "Integrations",
-              description: "Integrate CBSUptime with more than 2000+ apps.",
+              description: "Integrate CBS Uptime with more than 2000+ apps.",
               productColumn: "Integrates with 350+ apps",
               oneuptimeColumn: "Integrates with 2000+ apps",
             },
@@ -198,26 +198,26 @@ export default (product: string): Product => {
       oneuptimePrice: "$0",
       productDescription: "For their status pages with 1000 subscribers. ",
       oneUptimeDescription:
-        "CBSUptime offers unlimited status pages with unlimited subscribers for free.",
+        "CBS Uptime offers unlimited status pages with unlimited subscribers for free.",
       description:
         "Check out how we compare with StatusPage.io. We do most of what StatusPage.io does and a whole lot more.",
       descriptionLine2:
         "If you're a startup, we're a lot cheaper than StatusPage.io which saves you a hundreds today, thousands as you grow.",
       faq: [
         {
-          question: "How does CBSUptime compare with StatusPage.io?",
+          question: "How does CBS Uptime compare with StatusPage.io?",
           answer:
-            "StatusPage.io is a status page tool whereas CBSUptime is a complete Observability platform. CBSUptime offers mostly everything that StatusPage.io offers, but a lot more like monitoring, incident management, on-call scheduling, security, performance-monitoring and more. Please check detailed comparision above for more info.",
+            "StatusPage.io is a status page tool whereas CBS Uptime is a complete Observability platform. CBS Uptime offers mostly everything that StatusPage.io offers, but a lot more like monitoring, incident management, on-call scheduling, security, performance-monitoring and more. Please check detailed comparision above for more info.",
         },
         {
           question:
             "Do I need to buy a monitoring solution to monitor my resources?",
           answer:
-            "StatusPage.io needs a separate monitoring solution that you need to buy which then sends data to StatusPage.io. CBSUptime has a built in monitoring solution as well. You use one product, your team has one dashboard, save time, simplify ops.",
+            "StatusPage.io needs a separate monitoring solution that you need to buy which then sends data to StatusPage.io. CBS Uptime has a built in monitoring solution as well. You use one product, your team has one dashboard, save time, simplify ops.",
         },
         {
           question:
-            "I have already bought an external monitoring solution. Will CBSUptime work with it?",
+            "I have already bought an external monitoring solution. Will CBS Uptime work with it?",
           answer:
             "Yes! We integrate with every single monitoring solution in the market - like Pingdom, UptimeRobot, DataDog, Site 24x7 and more.",
         },
@@ -331,7 +331,7 @@ export default (product: string): Product => {
           data: [
             {
               title: "Integrations",
-              description: "Integrate CBSUptime with more than 2000+ apps.",
+              description: "Integrate CBS Uptime with more than 2000+ apps.",
               productColumn: "Integrates with 80+ apps",
               oneuptimeColumn: "Integrates with 2000+ apps",
             },
@@ -352,7 +352,7 @@ export default (product: string): Product => {
       price: "$49",
       productDescription: "Pingdom charges you $49/mo for 50 uptime monitors.",
       oneUptimeDescription:
-        "CBSUptime offers unlimited monitoring with unlimited alerts for free.",
+        "CBS Uptime offers unlimited monitoring with unlimited alerts for free.",
       oneuptimePrice: "$0",
       description:
         "Check out how we compare with Pingdom. We do most of what Pingdom does and a whole lot more.",
@@ -360,19 +360,19 @@ export default (product: string): Product => {
         "If you're a startup, we're a lot cheaper than Pingdom which saves you a hundreds today, thousands as you grow.",
       faq: [
         {
-          question: "How does CBSUptime compare with Pingdom?",
+          question: "How does CBS Uptime compare with Pingdom?",
           answer:
-            "Pingdom is an monitoring tool whereas CBSUptime is a complete Observability platform. CBSUptime offers mostly everything that Pingdom offers, but a lot more like monitoring, StatusPage, security, performance-monitoring and more. Please check detailed comparision above for more info.",
+            "Pingdom is an monitoring tool whereas CBS Uptime is a complete Observability platform. CBS Uptime offers mostly everything that Pingdom offers, but a lot more like monitoring, StatusPage, security, performance-monitoring and more. Please check detailed comparision above for more info.",
         },
         {
           question:
             "Do I need to buy an incident management and on-call solution for alerts?",
           answer:
-            "Pingdom is a monitoring solution and you need to buy an on-call solution and incident management solution which Pingdom sends data to. CBSUptime has a built in monitoring, on-call and incident management. You use one product, your team has one dashboard, save time, simplify ops.",
+            "Pingdom is a monitoring solution and you need to buy an on-call solution and incident management solution which Pingdom sends data to. CBS Uptime has a built in monitoring, on-call and incident management. You use one product, your team has one dashboard, save time, simplify ops.",
         },
         {
           question:
-            "I have already bought an external on-call and incident management solution. Will CBSUptime work with it?",
+            "I have already bought an external on-call and incident management solution. Will CBS Uptime work with it?",
           answer:
             "Yes! We integrate with every single on-call and incident management solution in the market - like PagerDuty, OpsGenie and more.",
         },
@@ -481,7 +481,7 @@ export default (product: string): Product => {
           data: [
             {
               title: "Integrations",
-              description: "Integrate CBSUptime with more than 2000+ apps.",
+              description: "Integrate CBS Uptime with more than 2000+ apps.",
               productColumn: "Integrates with 100+ apps",
               oneuptimeColumn: "Integrates with 2000+ apps",
             },
@@ -503,7 +503,7 @@ export default (product: string): Product => {
       productDescription:
         "For 10 teammates on the platform, responding to incidents.",
       oneUptimeDescription:
-        "CBSUptime offers unlimited monitoring and alerting. Post incidents directly on Status Page (included).",
+        "CBS Uptime offers unlimited monitoring and alerting. Post incidents directly on Status Page (included).",
       oneuptimePrice: "$0",
       description:
         "Check out how we compare with Incident.io. We do most of what Incident.io does and a whole lot more.",
@@ -511,19 +511,19 @@ export default (product: string): Product => {
         "If you're a startup, we're a lot cheaper than Incident.io which saves you a hundreds today, thousands as you grow.",
       faq: [
         {
-          question: "How does CBSUptime compare with Incident.io?",
+          question: "How does CBS Uptime compare with Incident.io?",
           answer:
-            "Incident.io is just an incident management platform  whereas CBSUptime is a complete Observability platform. CBSUptime offers mostly everything that Incident.io offers, but a lot more like monitoring, status-page, security, performance-monitoring and more. Please check detailed comparision above for more info.",
+            "Incident.io is just an incident management platform  whereas CBS Uptime is a complete Observability platform. CBS Uptime offers mostly everything that Incident.io offers, but a lot more like monitoring, status-page, security, performance-monitoring and more. Please check detailed comparision above for more info.",
         },
         {
           question:
             "Do I need to buy an incident management and on-call solution for alerts?",
           answer:
-            "Incident.io is a incident management solution and you need to buy an on-call solution and monitoring solution which Incident.io receives data from. CBSUptime has a built in monitoring, on-call and incident management. You use one product, your team has one dashboard, save time, simplify ops.",
+            "Incident.io is a incident management solution and you need to buy an on-call solution and monitoring solution which Incident.io receives data from. CBS Uptime has a built in monitoring, on-call and incident management. You use one product, your team has one dashboard, save time, simplify ops.",
         },
         {
           question:
-            "I have already bought an external on-call and monitoring solution. Will CBSUptime work with it?",
+            "I have already bought an external on-call and monitoring solution. Will CBS Uptime work with it?",
           answer:
             "Yes! We integrate with every single on-call and monitoring solution in the market - like PagerDuty, Pingdom and more.",
         },
@@ -632,7 +632,7 @@ export default (product: string): Product => {
           data: [
             {
               title: "Integrations",
-              description: "Integrate CBSUptime with more than 2000+ apps.",
+              description: "Integrate CBS Uptime with more than 2000+ apps.",
               productColumn: "tick",
               oneuptimeColumn: "tick",
             },

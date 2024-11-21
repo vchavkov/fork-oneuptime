@@ -13,18 +13,18 @@ sudo microk8s enable dashboard
 sudo microk8s enable dns
 sudo microk8s enable hostpath-storage
 
-echo "MicroK8s is ready. Installing CBSUptime"
+echo "MicroK8s is ready. Installing CBS Uptime"
 # Get pods
 sudo microk8s kubectl get pods
 
-# Install CBSUptime
+# Install CBS Uptime
 sudo microk8s helm install oneuptime ../../HelmChart/Public/oneuptime -f ../../HelmChart/Public/oneuptime/values.yaml -f ./ci-values.yaml
 
 
-# echo "CBSUptime is installed. Waiting for it to be ready. Checking status in 20 mins once things settle down..."
+# echo "CBS Uptime is installed. Waiting for it to be ready. Checking status in 20 mins once things settle down..."
 # sleep 20m
 
-# # Wait for CBSUptime to be ready
+# # Wait for CBS Uptime to be ready
 # timeout 30m bash -c '
 #     endtime=$((SECONDS+600))
 #     while [ $SECONDS -lt $endtime ]; do

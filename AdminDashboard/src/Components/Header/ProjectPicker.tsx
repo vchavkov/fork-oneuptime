@@ -226,7 +226,7 @@ const DashboardProjectPicker: FunctionComponent<ComponentProps> = (
           modelType={Project}
           name="Create New Project"
           title="Create New Project"
-          description="Please create a new CBSUptime project to get started."
+          description="Please create a new CBS Uptime project to get started."
           onClose={() => {
             setShowModal(false);
             props.onProjectModalClose();

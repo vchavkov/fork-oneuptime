@@ -255,12 +255,12 @@ const Delete: FunctionComponent<PageComponentProps> = (): ReactElement => {
         <Banner
           openInNewTab={true}
           title="Need help with building workflows?"
-          description="Watch this 10 minute video which will help you connect Slack with CBSUptime using workflows"
+          description="Watch this 10 minute video which will help you connect Slack with CBS Uptime using workflows"
           link={URL.fromString("https://youtu.be/k1-reCQTZnM")}
         />
         <Card
           title={"Workflow Builder"}
-          description={"Workflow builder for CBSUptime"}
+          description={"Workflow builder for CBS Uptime"}
           rightElement={
             <div className="flex">
               <p className="text-sm text-gray-400 mr-3 mt-2">{saveStatus}</p>

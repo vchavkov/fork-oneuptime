@@ -126,19 +126,19 @@ RunCron(
         };
 
         const sms: SMSMessage = {
-          message: `This is a message from CBSUptime. ${
+          message: `This is a message from CBS Uptime. ${
             monitor.name || "Monitor"
           } status changed to ${monitorStatus!
-            .name!}. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard.`,
+            .name!}. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard.`,
         };
 
         const callMessage: CallRequestMessage = {
           data: [
             {
-              sayMessage: `This is a message from CBSUptime. ${
+              sayMessage: `This is a message from CBS Uptime. ${
                 monitor.name || "Monitor"
               } status changed to ${monitorStatus!
-                .name!}.  To unsubscribe from this notification go to User Settings in CBSUptime Dashboard. Good bye.`,
+                .name!}.  To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard. Good bye.`,
             },
           ],
         };

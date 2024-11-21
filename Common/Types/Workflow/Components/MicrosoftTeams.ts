@@ -29,7 +29,7 @@ const components: Array<ComponentMetadata> = [
         description: "Message to send to Teams.",
         type: ComponentInputType.LongText,
         required: true,
-        placeholder: "Test teams message from CBSUptime",
+        placeholder: "Test teams message from CBS Uptime",
       },
     ],
     returnValues: [

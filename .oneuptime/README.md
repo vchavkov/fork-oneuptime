@@ -1,6 +1,6 @@
-## CBSUptime Copilot
+## CBS Uptime Copilot
 
-This folder contains the configuration files for the CBSUptime Copilot. The Copilot is a tool that automatically improves your code. It can fix issues, improve code quality, and help you ship faster.
+This folder contains the configuration files for the CBS Uptime Copilot. The Copilot is a tool that automatically improves your code. It can fix issues, improve code quality, and help you ship faster.
 
 This folder has the following structure:
 

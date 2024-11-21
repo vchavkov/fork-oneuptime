@@ -29,7 +29,7 @@ import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
   pluralName: "Reseller Plans",
   icon: IconProp.Billing,
   tableDescription:
-    "List of Reseller Plans that reseller use to sell CBSUptime.",
+    "List of Reseller Plans that reseller use to sell CBS Uptime.",
 })
 @Entity({
   name: "ResellerPlan",
@@ -72,7 +72,7 @@ export default class ResellerPlan extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Reseller ID",
-    description: "ID of your CBSUptime Reseller in which this object belongs",
+    description: "ID of your CBS Uptime Reseller in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -92,7 +92,7 @@ export default class ResellerPlan extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Plan ID",
     description:
-      "ID of the plan. This is shared by the Reseller and CBSUptime.",
+      "ID of the plan. This is shared by the Reseller and CBS Uptime.",
   })
   @Column({
     nullable: false,
@@ -168,7 +168,7 @@ export default class ResellerPlan extends BaseModel {
     type: TableColumnType.Number,
     canReadOnRelationQuery: true,
     title: "Monitor Limit",
-    description: "Monitor Limit of the CBSUptime Project.",
+    description: "Monitor Limit of the CBS Uptime Project.",
   })
   @Column({
     nullable: true,
@@ -186,7 +186,7 @@ export default class ResellerPlan extends BaseModel {
     type: TableColumnType.Number,
     canReadOnRelationQuery: true,
     title: "Team Member Limit",
-    description: "Team Member Limit of the CBSUptime Project.",
+    description: "Team Member Limit of the CBS Uptime Project.",
   })
   @Column({
     nullable: true,

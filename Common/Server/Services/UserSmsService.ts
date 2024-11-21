@@ -154,7 +154,7 @@ export class Service extends DatabaseService<Model> {
       {
         to: item.phone!,
         message:
-          "This message is from CBSUptime. Your verification code is " +
+          "This message is from CBS Uptime. Your verification code is " +
           item.verificationCode,
       },
       {

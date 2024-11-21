@@ -129,7 +129,7 @@ export default class MonitorOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -196,7 +196,7 @@ export default class MonitorOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "User ID",
-    description: "ID of your CBSUptime User in which this object belongs",
+    description: "ID of your CBS Uptime User in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -262,7 +262,7 @@ export default class MonitorOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Monitor ID",
-    description: "ID of your CBSUptime Monitor in which this object belongs",
+    description: "ID of your CBS Uptime Monitor in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

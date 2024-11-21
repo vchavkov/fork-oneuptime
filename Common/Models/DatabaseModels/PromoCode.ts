@@ -31,7 +31,7 @@ import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
   singularName: "Promo Code",
   pluralName: "Promo Codes",
   icon: IconProp.Billing,
-  tableDescription: "List of Promo Codes that customers can use in CBSUptime.",
+  tableDescription: "List of Promo Codes that customers can use in CBS Uptime.",
 })
 @Entity({
   name: "PromoCode",
@@ -47,7 +47,7 @@ export default class PromoCode extends BaseModel {
     type: TableColumnType.ShortText,
     canReadOnRelationQuery: true,
     title: "Resller ID",
-    description: "ID that is shared between resller and CBSUptime.",
+    description: "ID that is shared between resller and CBS Uptime.",
   })
   @Column({
     nullable: false,
@@ -252,7 +252,7 @@ export default class PromoCode extends BaseModel {
     required: false,
     canReadOnRelationQuery: true,
     title: "Reseller ID",
-    description: "ID of your CBSUptime Reseller in which this object belongs",
+    description: "ID of your CBS Uptime Reseller in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -300,7 +300,7 @@ export default class PromoCode extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Reseller Plan ID",
     description:
-      "ID of your CBSUptime Reseller Plan in which this object belongs",
+      "ID of your CBS Uptime Reseller Plan in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -329,7 +329,7 @@ export default class PromoCode extends BaseModel {
     required: false,
     type: TableColumnType.ShortText,
     title: "License ID",
-    description: "License ID from a CBSUptime Reseller",
+    description: "License ID from a CBS Uptime Reseller",
     canReadOnRelationQuery: true,
   })
   @Column({

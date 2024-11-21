@@ -30,7 +30,7 @@ import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
   pluralName: "Short Links",
   icon: IconProp.Link,
   tableDescription:
-    "Short links are used to redirect users to a specific long link in CBSUptime.",
+    "Short links are used to redirect users to a specific long link in CBS Uptime.",
 })
 export default class ShortLink extends BaseModel {
   @ColumnAccessControl({

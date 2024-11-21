@@ -126,7 +126,7 @@ export default class StatusPageDomain extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -595,7 +595,7 @@ export default class StatusPageDomain extends BaseModel {
   })
   public customCertificateKey?: string = undefined;
 
-  // If this is true, then the certificate is custom and not managed by CBSUptime (LetsEncrypt)
+  // If this is true, then the certificate is custom and not managed by CBS Uptime (LetsEncrypt)
   @ColumnAccessControl({
     create: [
       Permission.ProjectOwner,

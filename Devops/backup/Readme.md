@@ -1,4 +1,4 @@
-# Backup CBSUptime Database
+# Backup CBS Uptime Database
 
 ## Setting up Backup Service
 
@@ -58,7 +58,7 @@ Run:
 bash backup.sh
 ```
 
-# Restore CBSUptime Database
+# Restore CBS Uptime Database
 
 **Step 1**: Copy restore.sh to root directory.
 

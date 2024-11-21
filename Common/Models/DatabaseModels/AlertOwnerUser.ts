@@ -121,7 +121,7 @@ export default class AlertOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -188,7 +188,7 @@ export default class AlertOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "User ID",
-    description: "ID of your CBSUptime User in which this object belongs",
+    description: "ID of your CBS Uptime User in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -254,7 +254,7 @@ export default class AlertOwnerUser extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Alert ID",
-    description: "ID of your CBSUptime Alert in which this object belongs",
+    description: "ID of your CBS Uptime Alert in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

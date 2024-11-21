@@ -1,6 +1,6 @@
 # Important:
-# This script will setup MicroK8s and install CBSUptime on it.
-# This is used to install CBSUptime on a standalone VM
+# This script will setup MicroK8s and install CBS Uptime on it.
+# This is used to install CBS Uptime on a standalone VM
 # This is usally used for CI/CD testing, and to update VM's on GCP, Azure and AWS.
 
 # If this is the first install, then helm wont be found.
@@ -165,13 +165,13 @@ then
 fi
 
 # Install cluster with Helm.
-sudo helm repo add oneuptime https://uptime.cbsretail.net/chart || echo "CBSUptime already added"
+sudo helm repo add oneuptime https://uptime.cbsretail.net/chart || echo "CBS Uptime already added"
 sudo helm repo update
 
 
 function updateinstallation {
     sudo k delete job oneuptime-InitScript || echo "InitScript already deleted"
-    sudo helm upgrade --reuse-values fi oneuptime/CBSUptime \
+    sudo helm upgrade --reuse-values fi oneuptime/CBS Uptime \
         --set image.tag=$AVAILABLE_VERSION
 }
 
@@ -188,7 +188,7 @@ then
 
             # Chart not deployed. Create a new deployment. Set service of type nodeport for VM's.
             # Add Admin Email and Password on AWS.
-            sudo helm install fi oneuptime/CBSUptime \
+            sudo helm install fi oneuptime/CBS Uptime \
             --set isThirdPartyBilling=true \
             --set nginx-ingress-controller.service.type=NodePort \
             --set nginx-ingress-controller.hostNetwork=true \
@@ -199,7 +199,7 @@ then
 
         else
             # Chart not deployed. Create a new deployment. Set service of type nodeport for VM's. This is used for Azure and AWS.
-            sudo helm install fi oneuptime/CBSUptime \
+            sudo helm install fi oneuptime/CBS Uptime \
             --set isThirdPartyBilling=true \
             --set nginx-ingress-controller.service.type=NodePort \
             --set nginx-ingress-controller.hostNetwork=true \
@@ -235,7 +235,7 @@ else
     if [[ $DEPLOYED_VERSION_BUILD -eq 0 ]]
     then
         # set service of type nodeport for VM's.
-        sudo helm install fi oneuptime/CBSUptime \
+        sudo helm install fi oneuptime/CBS Uptime \
         --set nginx-ingress-controller.service.type=NodePort \
         --set nginx-ingress-controller.hostNetwork=true \
         --set image.tag=$AVAILABLE_VERSION \

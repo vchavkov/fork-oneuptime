@@ -105,7 +105,7 @@ const MonitorCriteria: FunctionComponent<
           }
           description={
             <>
-              This is a incoming request / heartbeat monitor. Since CBSUptime
+              This is a incoming request / heartbeat monitor. Since CBS Uptime
               does not send an outbound request, we do not need monitoring
               interval. You can have monitoring interval on other monitor types.{" "}
             </>

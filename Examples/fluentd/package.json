@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "CBSUptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
+  "author": "CBS Uptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0",
   "dependencies": {
     "@fluent-org/logger": "^1.0.10",

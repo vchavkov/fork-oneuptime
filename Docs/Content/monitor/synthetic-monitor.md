@@ -45,7 +45,7 @@ We use Playwright to simulate user interactions. You can use Playwright `page` o
 
 ### Screenshots
 
-You can take screenshots of the page at any point in the script. You can take multiple screenshots and return them in the screenshots array. These screenshots will be available in the CBSUptime Dashboard for that specific monitor.
+You can take screenshots of the page at any point in the script. You can take multiple screenshots and return them in the screenshots array. These screenshots will be available in the CBS Uptime Dashboard for that specific monitor.
 
 ```javascript
 

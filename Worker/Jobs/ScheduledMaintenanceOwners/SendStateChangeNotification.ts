@@ -126,19 +126,19 @@ RunCron(
         };
 
         const sms: SMSMessage = {
-          message: `This is a message from CBSUptime. Scheduled maintenance event - ${
+          message: `This is a message from CBS Uptime. Scheduled maintenance event - ${
             scheduledMaintenance.title
           }, state changed to ${scheduledMaintenanceState!
-            .name!}. To view this event, go to CBSUptime Dashboard. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard.`,
+            .name!}. To view this event, go to CBS Uptime Dashboard. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard.`,
         };
 
         const callMessage: CallRequestMessage = {
           data: [
             {
-              sayMessage: `This is a message from CBSUptime. Scheduled maintenance event ${
+              sayMessage: `This is a message from CBS Uptime. Scheduled maintenance event ${
                 scheduledMaintenance.title
               } state changed to ${scheduledMaintenanceState!
-                .name!}. To view this event, go to CBSUptime Dashboard. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard. Good bye.`,
+                .name!}. To view this event, go to CBS Uptime Dashboard. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard. Good bye.`,
             },
           ],
         };

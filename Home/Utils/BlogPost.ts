@@ -380,7 +380,7 @@ export default class BlogPostUtil {
         .find((line: string) => {
           return line.startsWith("#");
         })
-        ?.replace("#", "") || "CBSUptime Blog";
+        ?.replace("#", "") || "CBS Uptime Blog";
 
     return titleLine;
   }

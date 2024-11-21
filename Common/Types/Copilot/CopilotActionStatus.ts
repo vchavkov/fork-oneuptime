@@ -2,7 +2,7 @@ enum CopilotActionStatus {
   // Processed States.
   PR_CREATED = "Pull Request Created", // PR created and waiting for review
   NO_ACTION_REQUIRED = "No Action Required", // Code is all good. No action required. No PR created.
-  CANNOT_FIX = "Cannot Fix", // CBSUptime Copilot tried to fix the issue but failed.
+  CANNOT_FIX = "Cannot Fix", // CBS Uptime Copilot tried to fix the issue but failed.
 
   // Processing States
   PROCESSING = "Processing", // Action is being processed.

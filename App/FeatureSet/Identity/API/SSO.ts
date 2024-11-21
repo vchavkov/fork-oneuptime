@@ -40,7 +40,7 @@ import xml2js from "xml2js";
 const router: ExpressRouter = Express.getRouter();
 
 // This route is used to get the SSO config for the user.
-// when the user logs in from CBSUptime and not from the IDP.
+// when the user logs in from CBS Uptime and not from the IDP.
 
 router.get(
   "/service-provider-login",

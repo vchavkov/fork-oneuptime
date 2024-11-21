@@ -1,17 +1,17 @@
-# CBSUptime otel-collector Deployment
+# CBS Uptime otel-collector Deployment
 {{- $otelCollectorEnv := dict "PORT"  $.Values.port.otelCollectorGrpc -}}
 {{- $otelCollectorPorts := dict "grpc" $.Values.port.otelCollectorGrpc "http" $.Values.port.otelCollectorHttp -}}
 {{- $identityDeploymentArgs :=dict "IsServer" true "Ports" $otelCollectorPorts "ServiceName" "otel-collector"  "Release" $.Release "Values" $.Values "Env" $otelCollectorEnv -}}
 {{- include "oneuptime.deployment" $identityDeploymentArgs }}
 ---
 
-# CBSUptime otel-collector Service
+# CBS Uptime otel-collector Service
 {{- $otelCollectorPorts := dict "grpc" $.Values.port.otelCollectorGrpc "http" $.Values.port.otelCollectorHttp -}}
 {{- $identityServiceArgs := dict "ServiceName" "otel-collector" "Ports" $otelCollectorPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $identityServiceArgs }}
 ---
 
-# CBSUptime otel-collector autoscaler
+# CBS Uptime otel-collector autoscaler
 {{- $identityAutoScalerArgs := dict "ServiceName" "otel-collector" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $identityAutoScalerArgs }}
 ---

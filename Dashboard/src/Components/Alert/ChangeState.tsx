@@ -74,7 +74,7 @@ const ChangeAlertState: FunctionComponent<ComponentProps> = (
         {!alertTimeline.createdByUser && (
           <p>
             {props.alertType === AlertType.Ack ? "Acknowledged" : "Resolved"} by
-            CBSUptime
+            CBS Uptime
           </p>
         )}
         {OneUptimeDate.getDateAsLocalFormattedString(alertTimeline.createdAt)}

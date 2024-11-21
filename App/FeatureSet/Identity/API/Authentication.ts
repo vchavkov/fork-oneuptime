@@ -54,7 +54,7 @@ router.post(
           req,
           res,
           new BadRequestException(
-            "Sign up is disabled on this CBSUptime Server. Please contact your server admin to enable it.",
+            "Sign up is disabled on this CBS Uptime Server. Please contact your server admin to enable it.",
           ),
         );
       }
@@ -163,7 +163,7 @@ router.post(
 
       MailService.sendMail({
         toEmail: partialUser.email as Email,
-        subject: "Welcome to CBSUptime. Please verify your email.",
+        subject: "Welcome to CBS Uptime. Please verify your email.",
         templateType: EmailTemplateType.SignupWelcomeEmail,
         vars: {
           name: (partialUser.name! as Name).toString(),
@@ -263,7 +263,7 @@ router.post(
 
         MailService.sendMail({
           toEmail: user.email!,
-          subject: "Password Reset Request for CBSUptime",
+          subject: "Password Reset Request for CBS Uptime",
           templateType: EmailTemplateType.ForgotPassword,
           vars: {
             homeURL: new URL(httpProtocol, host).toString(),
@@ -646,7 +646,7 @@ const login: LoginFunction = async (options: {
 
         if (!twoFactorAuthList || twoFactorAuthList.length === 0) {
           const errorMessage: string = IsBillingEnabled
-            ? "Two Factor Authentication is enabled but no two factor auth is setup. Please contact CBSUptime support for help."
+            ? "Two Factor Authentication is enabled but no two factor auth is setup. Please contact CBS Uptime support for help."
             : "Two Factor Authentication is enabled but no two factor auth is setup. Please contact your server admin to disable two factor auth for this account.";
 
           return Response.sendErrorResponse(

@@ -199,13 +199,13 @@ RunCron(
         };
 
         const sms: SMSMessage = {
-          message: `This is a message from CBSUptime. You have been added as the owner of the scheduled maintenance event - ${scheduledMaintenance.title}. To view this event, go to CBSUptime Dashboard. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard.`,
+          message: `This is a message from CBS Uptime. You have been added as the owner of the scheduled maintenance event - ${scheduledMaintenance.title}. To view this event, go to CBS Uptime Dashboard. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard.`,
         };
 
         const callMessage: CallRequestMessage = {
           data: [
             {
-              sayMessage: `This is a message from CBSUptime.You have been added as the owner of the scheduled maintenance event ${scheduledMaintenance.title}. To view this event, go to CBSUptime Dashboard. To unsubscribe from this notification go to User Settings in CBSUptime Dashboard. Good bye.`,
+              sayMessage: `This is a message from CBS Uptime.You have been added as the owner of the scheduled maintenance event ${scheduledMaintenance.title}. To view this event, go to CBS Uptime Dashboard. To unsubscribe from this notification go to User Settings in CBS Uptime Dashboard. Good bye.`,
             },
           ],
         };

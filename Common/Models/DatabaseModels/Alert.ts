@@ -147,7 +147,7 @@ export default class Alert extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -935,7 +935,7 @@ export default class Alert extends BaseModel {
     type: TableColumnType.Boolean,
     title: "Is created automatically?",
     description:
-      "Is this alert created by CBSUptime Probe or Workers automatically (and not created manually by a user)?",
+      "Is this alert created by CBS Uptime Probe or Workers automatically (and not created manually by a user)?",
   })
   @Column({
     type: ColumnType.Boolean,

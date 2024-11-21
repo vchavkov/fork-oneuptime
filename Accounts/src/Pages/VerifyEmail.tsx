@@ -82,7 +82,7 @@ const VerifyEmail: () => JSX.Element = () => {
                         <h5 className="mb-0">Your email is verified.</h5>
                         <p className="text-muted mt-2 mb-0">
                           Thank you for verifying your email. You can now log in
-                          to CBSUptime.{" "}
+                          to CBS Uptime.{" "}
                         </p>
                       </div>
                     )}

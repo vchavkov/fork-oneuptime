@@ -360,7 +360,7 @@ export default class MailService {
         const msg: MailDataRequired = {
           to: mail.toEmail.toString(),
           from: `${
-            sendgridConfig.fromName || "CBSUptime"
+            sendgridConfig.fromName || "CBS Uptime"
           } <${sendgridConfig.fromEmail.toString()}>`,
           subject: mail.subject,
           html: mail.body,

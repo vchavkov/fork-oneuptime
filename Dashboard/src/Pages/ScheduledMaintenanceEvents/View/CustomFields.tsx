@@ -16,7 +16,7 @@ const ScheduledMaintenanceCustomFields: FunctionComponent<
     <Fragment>
       <CustomFieldsDetail
         title="Scheduled Maintenance Custom Fields"
-        description="Custom fields help you add new fields to your resources in CBSUptime."
+        description="Custom fields help you add new fields to your resources in CBS Uptime."
         modelType={ScheduledMaintenance}
         customFieldType={ScheduledMaintenanceCustomField}
         name="Scheduled Maintenance Custom Fields"

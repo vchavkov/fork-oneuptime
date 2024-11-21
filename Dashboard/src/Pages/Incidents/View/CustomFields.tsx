@@ -15,7 +15,7 @@ const IncidentCustomFields: FunctionComponent<
   return (
     <CustomFieldsDetail
       title="Incident Custom Fields"
-      description="Custom fields help you add new fields to your resources in CBSUptime."
+      description="Custom fields help you add new fields to your resources in CBS Uptime."
       modelType={Incident}
       customFieldType={IncidentCustomField}
       name="Incident Custom Fields"

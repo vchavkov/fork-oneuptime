@@ -43,12 +43,12 @@ export const Categories: Array<ComponentCategory> = [
   },
   {
     name: "Slack",
-    description: "Integrate CBSUptime with your Slack team.",
+    description: "Integrate CBS Uptime with your Slack team.",
     icon: IconProp.SendMessage,
   },
   {
     name: "Microsoft Teams",
-    description: "Integrate CBSUptime with your Microsoft Teams.",
+    description: "Integrate CBS Uptime with your Microsoft Teams.",
     icon: IconProp.SendMessage,
   },
   {

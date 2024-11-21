@@ -1,1 +1,1 @@
-This project is for Automatic Acme Certificate verification or renewal for the CBSUptime server.
+This project is for Automatic Acme Certificate verification or renewal for the CBS Uptime server.

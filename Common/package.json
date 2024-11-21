@@ -13,7 +13,7 @@
         "debug:test": "cd .. && export $(grep -v '^#' config.env | xargs) && cd Common && node --inspect node_modules/.bin/jest --runInBand ./Tests --detectOpenHandles",
         "debug:test-file": "cd .. && export $(grep -v '^#' config.env | xargs) && cd Common && node --inspect node_modules/.bin/jest --runInBand $1 --detectOpenHandles"
     },
-    "author": "CBSUptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
+    "author": "CBS Uptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
     "license": "Apache-2.0",
     "devDependencies": {
         "@faker-js/faker": "^8.0.2",

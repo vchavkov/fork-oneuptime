@@ -308,7 +308,7 @@ export default class UserMiddleware {
     if (!isGlobalLogin) {
       if (!UserMiddleware.doesSsoTokenForProjectExist(req, tenantId, userId)) {
         throw new NotAuthenticatedException(
-          "This project requires CBSUptime authentication. Please login to access this project.",
+          "This project requires CBS Uptime authentication. Please login to access this project.",
         );
       }
     }

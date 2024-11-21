@@ -29,12 +29,12 @@ const TelemetryDocumentation: FunctionComponent = (): ReactElement => {
     <Card
       title={"Documentation"}
       description={
-        "Learn how to integrate CBSUptime with your application or resources to collect logs, metrics and traces data."
+        "Learn how to integrate CBS Uptime with your application or resources to collect logs, metrics and traces data."
       }
     >
       <ImageTiles
         title="Integrate with OpenTelemetry"
-        description="CBSUptime supports a native integration with OpenTelemetry. OpenTelemetry is a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis in order to understand your software performance and behavior."
+        description="CBS Uptime supports a native integration with OpenTelemetry. OpenTelemetry is a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis in order to understand your software performance and behavior."
         tiles={[
           {
             image: JavaScriptImage,
@@ -86,7 +86,7 @@ const TelemetryDocumentation: FunctionComponent = (): ReactElement => {
 
       <ImageTiles
         title="Integrate with Fluentd"
-        description="CBSUptime supports a native integration with Fluentd. Fluentd is an open source data collector for unified logging layer. Fluentd allows you to unify data collection and consumption for a better use and understanding of data."
+        description="CBS Uptime supports a native integration with Fluentd. Fluentd is an open source data collector for unified logging layer. Fluentd allows you to unify data collection and consumption for a better use and understanding of data."
         tiles={[
           {
             image: DockerImage,

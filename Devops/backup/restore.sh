@@ -24,7 +24,7 @@ ENVIRONMENT='Staging'
 
 function HELP() {
 	echo ""
-	echo "CBSUptime DB restore command line documentation."
+	echo "CBS Uptime DB restore command line documentation."
 	echo ""
 	echo "all arguments are optional and have a default value when not set"
 	echo ""

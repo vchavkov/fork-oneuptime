@@ -1,5 +1,5 @@
 #
-# CBSUptime-E2E Dockerfile
+# CBS Uptime-E2E Dockerfile
 # This file is used to build the E2E docker image which is used to run the E2E tests.
 #
 

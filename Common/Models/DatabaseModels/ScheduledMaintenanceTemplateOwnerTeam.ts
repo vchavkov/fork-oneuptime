@@ -123,7 +123,7 @@ export default class ScheduledMaintenanceTemplateOwnerTeam extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -190,7 +190,7 @@ export default class ScheduledMaintenanceTemplateOwnerTeam extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Team ID",
-    description: "ID of your CBSUptime Team in which this object belongs",
+    description: "ID of your CBS Uptime Team in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -259,7 +259,7 @@ export default class ScheduledMaintenanceTemplateOwnerTeam extends BaseModel {
     canReadOnRelationQuery: true,
     title: "Scheduled Maintenance Template ID",
     description:
-      "ID of your CBSUptime Scheduled Maintenance Template in which this object belongs",
+      "ID of your CBS Uptime Scheduled Maintenance Template in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,

@@ -1,7 +1,7 @@
 apiVersion: v2
 name: oneuptime
 description: The Complete Open-Source Observability Platform
-icon: https://raw.githubusercontent.com/CBSUptime/oneuptime/master/Home/Static/img/OneUptimePNG/1.png
+icon: https://raw.githubusercontent.com/CBS Uptime/oneuptime/master/Home/Static/img/OneUptimePNG/1.png
 
 # A chart can be either an 'application' or a 'library' chart.
 #

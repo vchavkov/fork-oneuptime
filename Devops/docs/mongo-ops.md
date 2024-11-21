@@ -14,7 +14,7 @@ db.createUser(
 ```
 
 
-## Create CBSUptime User
+## Create CBS Uptime User
 
 ```
 use admin
@@ -142,7 +142,7 @@ Syntax:
 
 Example:
 
-`sudo kubectl cp fi-mongodb-0:/bitnami/mongodb/oneuptimedata.archive /Volumes/DataDrive/Projects/CBSUptime/app/backup.archive`
+`sudo kubectl cp fi-mongodb-0:/bitnami/mongodb/oneuptimedata.archive /Volumes/DataDrive/Projects/CBS Uptime/app/backup.archive`
 
 ## Restore
 
@@ -157,7 +157,7 @@ Syntax:
 `sudo kubectl cp <localfilePath> <pod>:<filepath>`
 
 Example:
-`sudo kubectl cp /Volumes/DataDrive/Projects/CBSUptime/app/backup.archive fi-mongodb-0:/bitnami/mongodb/oneuptimedata.archive`
+`sudo kubectl cp /Volumes/DataDrive/Projects/CBS Uptime/app/backup.archive fi-mongodb-0:/bitnami/mongodb/oneuptimedata.archive`
 
 **Step 2**: Mongorestore on the container.
 
@@ -197,7 +197,7 @@ db.changeUserPassword("<USER-PASSWORD>", "<NEW-PASSWORD>")
 exit                                            # This is important.
 ```
 
-## Set a member as master admin of CBSUptime.
+## Set a member as master admin of CBS Uptime.
 
 ```
 kubectl exec -it fi-mongodb-0 mongo

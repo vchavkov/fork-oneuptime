@@ -83,7 +83,7 @@ import {
   pluralName: "Code Repositories",
   icon: IconProp.SquareStack,
   tableDescription:
-    "A Code Repository is a place where you can store your code and collaborate with others. You can connect your Git Repository to CBSUptime and we will improve your code automatically for you.",
+    "A Code Repository is a place where you can store your code and collaborate with others. You can connect your Git Repository to CBS Uptime and we will improve your code automatically for you.",
 })
 @Entity({
   name: "CopilotCodeRepository",
@@ -148,7 +148,7 @@ export default class CopilotCodeRepository extends BaseModel {
     required: true,
     canReadOnRelationQuery: true,
     title: "Project ID",
-    description: "ID of your CBSUptime Project in which this object belongs",
+    description: "ID of your CBS Uptime Project in which this object belongs",
   })
   @Column({
     type: ColumnType.ObjectID,
@@ -451,7 +451,7 @@ export default class CopilotCodeRepository extends BaseModel {
     isDefaultValueColumn: false,
     title: "Secret Token",
     description:
-      "Secret Token for this code repository. This is used to connect this code repository to CBSUptime.",
+      "Secret Token for this code repository. This is used to connect this code repository to CBS Uptime.",
   })
   @Column({
     type: ColumnType.ObjectID,

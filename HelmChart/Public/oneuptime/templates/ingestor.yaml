@@ -1,4 +1,4 @@
-# CBSUptime ingestor Deployment
+# CBS Uptime ingestor Deployment
 
 apiVersion: apps/v1
 kind: Deployment
@@ -86,13 +86,13 @@ spec:
 
 ---
 
-# CBSUptime ingestor Service
+# CBS Uptime ingestor Service
 {{- $ingestorPorts := dict "port" $.Values.port.ingestor -}}
 {{- $ingestorServiceArgs := dict "ServiceName" "ingestor" "Ports" $ingestorPorts "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.service" $ingestorServiceArgs }}
 ---
 
-# CBSUptime ingestor autoscaler
+# CBS Uptime ingestor autoscaler
 {{- $ingestorAutoScalerArgs := dict "ServiceName" "ingestor" "Release" $.Release "Values" $.Values -}}
 {{- include "oneuptime.autoscaler" $ingestorAutoScalerArgs }}
 ---

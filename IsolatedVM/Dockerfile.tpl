@@ -1,5 +1,5 @@
 #
-# CBSUptime-IsolatedVM Dockerfile
+# CBS Uptime-IsolatedVM Dockerfile
 #
 
 # Pull base image nodejs image.
@@ -62,7 +62,7 @@ COPY ./IsolatedVM/package*.json /usr/src/app/
 RUN npm install
 
 # Expose ports.
-#   - 4572: CBSUptime-IsolatedVM
+#   - 4572: CBS Uptime-IsolatedVM
 EXPOSE 4572
 
 {{ if eq .Env.ENVIRONMENT "development" }}

@@ -1,5 +1,5 @@
 #
-# CBSUptime-copilot Dockerfile
+# CBS Uptime-copilot Dockerfile
 #
 
 # Pull base image nodejs image.

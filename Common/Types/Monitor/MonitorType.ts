@@ -43,7 +43,7 @@ export class MonitorTypeHelper {
         monitorType: MonitorType.Manual,
         title: "Manual",
         description:
-          "This monitor is a static monitor and will not actually monitor anything. It will however help you to integrate CBSUptime with external monitoring tools and utilities.",
+          "This monitor is a static monitor and will not actually monitor anything. It will however help you to integrate CBS Uptime with external monitoring tools and utilities.",
       },
       {
         monitorType: MonitorType.Website,
@@ -73,7 +73,7 @@ export class MonitorTypeHelper {
         monitorType: MonitorType.IncomingRequest,
         title: "Incoming Request",
         description:
-          "This monitor type lets you ping CBSUptime from any external device or service with a custom payload.",
+          "This monitor type lets you ping CBS Uptime from any external device or service with a custom payload.",
       },
       {
         monitorType: MonitorType.Port,

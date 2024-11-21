@@ -1,5 +1,5 @@
 #
-# CBSUptime-App Dockerfile
+# CBS Uptime-App Dockerfile
 #
 
 # Pull base image nodejs image.
@@ -54,7 +54,7 @@ RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/app/
 RUN npm install
 
 # Expose ports.
-#   - 1446: CBSUptime-api-reference
+#   - 1446: CBS Uptime-api-reference
 EXPOSE 1446
 
 {{ if eq .Env.ENVIRONMENT "development" }}

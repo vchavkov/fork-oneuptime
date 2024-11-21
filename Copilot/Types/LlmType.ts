@@ -1,5 +1,5 @@
 enum LlmType {
-  ONEUPTIME_LLM = "CBSUptime LLM Server", // CBSUptime custom LLM Server
+  ONEUPTIME_LLM = "CBS Uptime LLM Server", // CBS Uptime custom LLM Server
   OpenAI = "OpenAI",
 }
 

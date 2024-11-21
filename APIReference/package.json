@@ -13,7 +13,7 @@
     "test": "rm -rf build && jest --detectOpenHandles --passWithNoTests",
     "coverage": "jest --detectOpenHandles --coverage"
   },
-  "author": "CBSUptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
+  "author": "CBS Uptime <hello@uptime.cbsretail.net> (https://uptime.cbsretail.net/)",
   "license": "Apache-2.0",
   "dependencies": {
     "Common": "file:../Common",

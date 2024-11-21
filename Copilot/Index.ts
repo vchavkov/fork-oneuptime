@@ -9,7 +9,7 @@ const APP_NAME: string = "copilot";
 
 dotenv.config();
 
-logger.info("CBSUptime Copilot is starting...");
+logger.info("CBS Uptime Copilot is starting...");
 
 // Initialize telemetry
 Telemetry.init({
@@ -31,7 +31,7 @@ Init()
       // do nothing.
     }
 
-    logger.error("Error in starting CBSUptime Copilot: ");
+    logger.error("Error in starting CBS Uptime Copilot: ");
 
     if (error instanceof HTTPErrorResponse) {
       logger.error(error.message);

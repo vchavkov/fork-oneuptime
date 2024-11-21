@@ -16,7 +16,7 @@ const OnCallDutyPolicyCustomFields: FunctionComponent<
     <Fragment>
       <CustomFieldsDetail
         title="Custom Fields"
-        description="Custom fields help you add new fields to your resources in CBSUptime."
+        description="Custom fields help you add new fields to your resources in CBS Uptime."
         modelType={OnCallDutyPolicy}
         customFieldType={OnCallDutyPolicyCustomField}
         name="Custom Fields"

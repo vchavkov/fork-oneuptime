@@ -173,7 +173,7 @@ export default class CodeRepositoryUtil {
     // commit the changes.
 
     await this.commitChanges({
-      message: "CBSUptime Copilot Setup",
+      message: "CBS Uptime Copilot Setup",
     });
 
     // push changes to the repo.
@@ -186,8 +186,8 @@ export default class CodeRepositoryUtil {
 
     const pullRequest: PullRequest = await this.createPullRequest({
       branchName: branchName,
-      title: "CBSUptime Copilot Setup",
-      body: "This pull request is created by CBSUptime Copilot to setup the repository.",
+      title: "CBS Uptime Copilot Setup",
+      body: "This pull request is created by CBS Uptime Copilot to setup the repository.",
     });
 
     // save this to the database.
@@ -751,7 +751,7 @@ export default class CodeRepositoryUtil {
 
     if (!servicesRepository || servicesRepository.length === 0) {
       throw new BadDataException(
-        "No services attached to this repository. Please attach services to this repository on CBSUptime Dashboard.",
+        "No services attached to this repository. Please attach services to this repository on CBS Uptime Dashboard.",
       );
     }
 

@@ -5,7 +5,7 @@ const Footer: () => JSX.Element = () => {
   return (
     <div className="footer">
       <p>
-        <Link to="/">&copy; CBSUptime</Link>
+        <Link to="/">&copy; CBS Uptime</Link>
       </p>
       <p>
         <Link to="/">Contact</Link>

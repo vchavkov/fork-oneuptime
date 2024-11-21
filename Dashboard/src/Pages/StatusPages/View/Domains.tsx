@@ -347,7 +347,7 @@ const StatusPageDelete: FunctionComponent<PageComponentProps> = (
               ) : (
                 <div>
                   <span>
-                    Custom Domains not enabled for this CBSUptime installation.
+                    Custom Domains not enabled for this CBS Uptime installation.
                     Please contact your server admin to enable this feature.
                   </span>
                 </div>
@@ -407,7 +407,7 @@ const StatusPageDelete: FunctionComponent<PageComponentProps> = (
               ) : (
                 <div>
                   <span>
-                    Custom Domains not enabled for this CBSUptime installation.
+                    Custom Domains not enabled for this CBS Uptime installation.
                     Please contact your server admin to enable this feature.
                   </span>
                 </div>
