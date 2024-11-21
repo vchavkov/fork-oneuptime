@@ -4,7 +4,6 @@
 #
 
 # Pull base image nodejs image.
-
 # Note: Alpine Images doesnt work with Playwright.
 FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/node:22
 RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
@@ -12,7 +11,6 @@ RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm co
 RUN npm config set fetch-retries 5
 RUN npm config set fetch-retry-mintimeout 100000
 RUN npm config set fetch-retry-maxtimeout 600000
-
 
 ARG GIT_SHA
 ARG APP_VERSION

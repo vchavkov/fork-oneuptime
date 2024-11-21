@@ -1,3 +1,9 @@
+version: '3.7'
+
+networks:
+  uptime:
+    driver: bridge
+
 x-common-variables: &common-variables
   ALLOWED_ACTIVE_MONITOR_COUNT_IN_FREE_PLAN: ${ALLOWED_ACTIVE_MONITOR_COUNT_IN_FREE_PLAN}
   ANALYTICS_HOST: ${ANALYTICS_HOST}
@@ -464,7 +470,3 @@ services:
 volumes:
   postgres:
   clickhouse:
-
-networks:
-  uptime:
-    driver: bridge

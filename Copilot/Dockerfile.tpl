@@ -10,17 +10,14 @@ RUN npm config set fetch-retries 5
 RUN npm config set fetch-retry-mintimeout 100000
 RUN npm config set fetch-retry-maxtimeout 600000
 
-
 ARG GIT_SHA
 ARG APP_VERSION
 
 ENV GIT_SHA=${GIT_SHA}
 ENV APP_VERSION=${APP_VERSION}
 
-
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
-
 
 # Install bash.
 RUN apt-get install bash -y && apt-get install curl -y
@@ -31,7 +28,6 @@ RUN apt-get update && apt-get install -y .gyp python3 make g++
 # Use bash shell by default
 SHELL ["/bin/bash", "-c"]
 
-
 RUN mkdir -p /usr/src
 
 WORKDIR /usr/src/Common
@@ -41,15 +37,6 @@ RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/Comm
 RUN npm install
 COPY ./Common /usr/src/Common
 
-
-
-
-
-
-
-
-
-
 ENV PRODUCTION=true
 
 WORKDIR /usr/src/app
@@ -57,7 +44,6 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY ./Copilot/package*.json /usr/src/app/
 RUN npm install
-
 
 # Create /repository/ directory where the app will store the repository
 RUN mkdir -p /repository

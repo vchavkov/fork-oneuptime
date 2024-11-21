@@ -1,3 +1,9 @@
+version: '3.7'
+
+networks:
+  uptime:
+    driver: bridge
+
 services:
   accounts:
     image: ${IMAGE_PREFIX}/uptime/accounts:${APP_TAG}
