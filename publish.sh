@@ -2,12 +2,13 @@
 
 export $(grep -v '^#' config.env | xargs)
 
+# "copilot"
+
 IMAGE_ARRAY=(
 	"accounts"
 	"admin-dashboard"
 	"api-reference"
 	"app"
-	"copilot"
 	"dashboard"
 	"docs"
 	"e2e"
