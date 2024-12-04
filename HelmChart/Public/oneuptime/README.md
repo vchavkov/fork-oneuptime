@@ -276,7 +276,7 @@ Please go through the following checklist to make sure your CBS Uptime installat
 
 - [ ] Please pin CBS Uptime Version to a specific version. This will prevent any breaking changes from affecting your installation.
 
-When you install, you can check the latest version from the github releases page https://github.com/CBS Uptime/oneuptime/releases. You can pin the version in your values.yaml file.
+When you install, you can check the latest version from the github releases page https://github.com/vchavkov/fork-oneuptime/releases. You can pin the version in your values.yaml file.
 
 ```
 image:

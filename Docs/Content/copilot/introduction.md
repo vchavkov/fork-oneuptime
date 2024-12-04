@@ -17,7 +17,7 @@ There are three services when running copilot:
 
 - **CBS Uptime**: You need to deploy or use CBS Uptime Cloud (https://uptime.cbsretail.net) to run Copilot. When you deploy CBS Uptime, url should be publicily accessible.
 - **Copilot**: Copilot is the main service that runs the Copilot engine. Copilot engine is responsible for analyzing the codebase and fixing issues.
-- **LLM Server** (Optional): Copilot sends your code to LLM Server to analyze and fix issues. The source-code and docker-image is [open-source](https://github.com/CBS Uptime/oneuptime/tree/master/LLM) and can be found at [Docker Hub](https://hub.docker.com/r/oneuptime/llm). This can be self-deployed if you want to run Copilot on-premises or you can use the hosted version.
+- **LLM Server** (Optional): Copilot sends your code to LLM Server to analyze and fix issues. The source-code and docker-image is [open-source](https://github.com/vchavkov/fork-oneuptime/tree/master/LLM) and can be found at [Docker Hub](https://hub.docker.com/r/oneuptime/llm). This can be self-deployed if you want to run Copilot on-premises or you can use the hosted version.
 
 ### FAQ
 

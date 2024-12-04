@@ -82,9 +82,9 @@ We <3 contributions big and small. In priority order (although everything is app
 
 - Give us feedback in our [Customer Slack community](https://join.slack.com/t/oneuptimesupport/shared_invite/zt-2pz5p1uhe-Fpmc7bv5ZE5xRMe7qJnwmA)
 - Talk to developers in our [Developer Slack community](https://join.slack.com/t/oneuptimedev/shared_invite/zt-17r8o7gkz-nITGan_PS9JYJV6WMm_TsQ)
-- Write tests for some of our codebase. [See issues here](https://github.com/CBS Uptime/oneuptime/issues?q=is%3Aopen+is%3Aissue+label%3A%22write+tests%22)
-- Work on any issue you like. [See issues here](https://github.com/CBS Uptime/oneuptime/issues)
-- Open new issues and create new feature requests that you would like to see. [Open issues here](https://github.com/CBS Uptime/oneuptime/issues)
+- Write tests for some of our codebase. [See issues here](https://github.com/vchavkov/fork-oneuptime/issues?q=is%3Aopen+is%3Aissue+label%3A%22write+tests%22)
+- Work on any issue you like. [See issues here](https://github.com/vchavkov/fork-oneuptime/issues)
+- Open new issues and create new feature requests that you would like to see. [Open issues here](https://github.com/vchavkov/fork-oneuptime/issues)
 
 ## Donate
 

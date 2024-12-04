@@ -155,7 +155,7 @@ const DashboardNavbar: FunctionComponent<ComponentProps> = (
                 description:
                   "We embrace open source! Please report any issue you find and make feature requests on GitHub.",
                 link: URL.fromString(
-                  "https://github.com/CBS Uptime/oneuptime/issues/new/choose",
+                  "https://github.com/vchavkov/fork-oneuptime/issues/new/choose",
                 ),
               }}
             >

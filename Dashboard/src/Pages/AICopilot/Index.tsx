@@ -40,7 +40,7 @@ const CodeRepositoryPage: FunctionComponent<
         title="Beta Software"
         description="Reliability Copilot is a beta software. Please let us know your feedback and report any bugs on GitHub."
         openInNewTab={true}
-        link={URL.fromString("https://github.com/CBS Uptime/oneuptime/issues")}
+        link={URL.fromString("https://github.com/vchavkov/fork-oneuptime/issues")}
       />
       <ModelTable<CodeRepository>
         modelType={CodeRepository}
