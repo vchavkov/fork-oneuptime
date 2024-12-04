@@ -1,211 +1,210 @@
-networks:
-    uptime:
-        driver: bridge
-
 services:
-    accounts:
-        image: ${IMAGE_PREFIX}/uptime/accounts:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: accounts
-        networks:
-            - uptime
+  accounts:
+    extends:
+      file: ./docker-compose.yml
+      service: accounts
+    image: ${IMAGE_PREFIX}/uptime/accounts:${APP_TAG}
+    networks:
+      - uptime
 
-    admin-dashboard:
-        image: ${IMAGE_PREFIX}/uptime/admin-dashboard:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: admin-dashboard
-        networks:
-            - uptime
+  admin-dashboard:
+    extends:
+      file: ./docker-compose.yml
+      service: admin-dashboard
+    image: ${IMAGE_PREFIX}/uptime/admin-dashboard:${APP_TAG}
+    networks:
+      - uptime
 
-    api-reference:
-        image: ${IMAGE_PREFIX}/uptime/api-reference:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: api-reference
-        networks:
-            - uptime
+  api-reference:
+    extends:
+      file: ./docker-compose.yml
+      service: api-reference
+    image: ${IMAGE_PREFIX}/uptime/api-reference:${APP_TAG}
+    networks:
+      - uptime
 
-    app:
-        image: ${IMAGE_PREFIX}/uptime/app:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: app
-        networks:
-            - uptime
+  app:
+    extends:
+      file: ./docker-compose.yml
+      service: app
+    image: ${IMAGE_PREFIX}/uptime/app:${APP_TAG}
+    networks:
+      - uptime
 
-    clickhouse:
-        image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/clickhouse/clickhouse-server:23.7
-        # image: ${IMAGE_PREFIX}/docker-hub/clickhouse/clickhouse-server:23.7
-        extends:
-            file: ./docker-compose.build.yml
-            service: clickhouse
-        networks:
-            - uptime
+  clickhouse:
+    extends:
+      file: ./docker-compose.yml
+      service: clickhouse
+    image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/clickhouse/clickhouse-server:23.7
+    networks:
+      - uptime
 
-    copilot:
-        image: ${IMAGE_PREFIX}/uptime/copilot:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: copilot
-        networks:
-            - uptime
+  # copilot:
+  #   extends:
+  #     file: ./docker-compose.yml
+  #     service: copilot
+  #   image: ${IMAGE_PREFIX}/uptime/copilot:${APP_TAG}
+  #   networks:
+  #     - uptime
 
-    dashboard:
-        image: ${IMAGE_PREFIX}/uptime/dashboard:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: dashboard
-        networks:
-            - uptime
+  dashboard:
+    extends:
+      file: ./docker-compose.yml
+      service: dashboard
+    image: ${IMAGE_PREFIX}/uptime/dashboard:${APP_TAG}
+    networks:
+      - uptime
 
-    docs:
-        image: ${IMAGE_PREFIX}/uptime/docs:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: docs
-        networks:
-            - uptime
+  docs:
+    extends:
+      file: ./docker-compose.yml
+      service: docs
+    image: ${IMAGE_PREFIX}/uptime/docs:${APP_TAG}
+    networks:
+      - uptime
 
-    e2e:
-        image: ${IMAGE_PREFIX}/uptime/e2e:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: e2e
-        network_mode: host
+  e2e:
+    extends:
+      file: ./docker-compose.yml
+      service: e2e
+    image: ${IMAGE_PREFIX}/uptime/e2e:${APP_TAG}
+    network_mode: host
 
-    fluentd:
-        image: ${IMAGE_PREFIX}/uptime/fluentd:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: fluentd
-        networks:
-            - uptime
+  fluentd:
+    extends:
+      file: ./docker-compose.yml
+      service: fluentd
+    image: ${IMAGE_PREFIX}/uptime/fluentd:${APP_TAG}
+    networks:
+      - uptime
 
-    haraka:
-        image: ${IMAGE_PREFIX}/uptime/haraka:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: haraka
-        networks:
-            - uptime
+  haraka:
+    extends:
+      file: ./docker-compose.yml
+      service: haraka
+    image: ${IMAGE_PREFIX}/uptime/haraka:${APP_TAG}
+    networks:
+      - uptime
 
-    home:
-        image: ${IMAGE_PREFIX}/uptime/home:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: home
-        networks:
-            - uptime
+  home:
+    extends:
+      file: ./docker-compose.yml
+      service: home
+    image: ${IMAGE_PREFIX}/uptime/home:${APP_TAG}
+    networks:
+      - uptime
 
-    ingestor:
-        image: ${IMAGE_PREFIX}/uptime/ingestor:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: ingestor
-        networks:
-            - uptime
+  ingestor:
+    extends:
+      file: ./docker-compose.yml
+      service: ingestor
+    image: ${IMAGE_PREFIX}/uptime/ingestor:${APP_TAG}
+    networks:
+      - uptime
 
-    isolated-vm:
-        image: ${IMAGE_PREFIX}/uptime/isolated-vm:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: isolated-vm
-        networks:
-            - uptime
+  isolated-vm:
+    extends:
+      file: ./docker-compose.yml
+      service: isolated-vm
+    image: ${IMAGE_PREFIX}/uptime/isolated-vm:${APP_TAG}
+    networks:
+      - uptime
 
-    monitor:
-        image: ${IMAGE_PREFIX}/uptime/monitor:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: monitor
-        networks:
-            - uptime
+  monitor:
+    extends:
+      file: ./docker-compose.yml
+      service: monitor
+    image: ${IMAGE_PREFIX}/uptime/monitor:${APP_TAG}
+    networks:
+      - uptime
 
-    nginx:
-        image: ${IMAGE_PREFIX}/uptime/nginx:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: nginx
-        networks:
-            - uptime
+  nginx:
+    extends:
+      file: ./docker-compose.yml
+      service: nginx
+    image: ${IMAGE_PREFIX}/uptime/nginx:${APP_TAG}
+    networks:
+      - uptime
 
-    otel-collector:
-        image: ${IMAGE_PREFIX}/uptime/otel-collector:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: otel-collector
-        networks:
-            - uptime
+  otel-collector:
+    extends:
+      file: ./docker-compose.yml
+      service: otel-collector
+    image: ${IMAGE_PREFIX}/uptime/otel-collector:${APP_TAG}
+    networks:
+      - uptime
 
-    postgres:
-        ports:
-            - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
-        extends:
-            file: ./docker-compose.build.yml
-            service: postgres
-        networks:
-            - uptime
+  postgres:
+    extends:
+      file: ./docker-compose.yml
+      service: postgres
+    networks:
+      - uptime
+    ports:
+      - "5400:5432"
 
-    probe-1:
-        image: ${IMAGE_PREFIX}/uptime/probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: probe-1
-        networks:
-            - uptime
+  probe-1:
+    extends:
+      file: ./docker-compose.yml
+      service: probe-1
+    image: ${IMAGE_PREFIX}/uptime/probe:${APP_TAG}
+    networks:
+      - uptime
 
-    probe-2:
-        image: ${IMAGE_PREFIX}/uptime/probe:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: probe-2
-        networks:
-            - uptime
+  probe-2:
+    extends:
+      file: ./docker-compose.yml
+      service: probe-2
+    image: ${IMAGE_PREFIX}/uptime/probe:${APP_TAG}
+    networks:
+      - uptime
 
-    redis:
-        image: ${IMAGE_PREFIX}/docker-hub/library/redis:7.0.12
-        extends:
-            file: ./docker-compose.build.yml
-            service: redis
-        ports:
-            - '6310:6379'
-        networks:
-            - uptime
+  redis:
+    extends:
+      file: ./docker-compose.yml
+      service: redis
+    image: ${IMAGE_PREFIX}/docker-hub/library/redis:7.0.12
+    networks:
+      - uptime
+    ports:
+      - '6310:6379'
 
-    status-page:
-        image: ${IMAGE_PREFIX}/uptime/status-page:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: status-page
-        networks:
-            - uptime
+  status-page:
+    extends:
+      file: ./docker-compose.yml
+      service: status-page
+    image: ${IMAGE_PREFIX}/uptime/status-page:${APP_TAG}
+    networks:
+      - uptime
 
-    test-server:
-        image: ${IMAGE_PREFIX}/uptime/test-server:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: test-server
-        networks:
-            - uptime
+  test-server:
+    extends:
+      file: ./docker-compose.yml
+      service: test-server
+    image: ${IMAGE_PREFIX}/uptime/test-server:${APP_TAG}
+    networks:
+      - uptime
 
-    worker:
-        image: ${IMAGE_PREFIX}/uptime/worker:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: worker
-        networks:
-            - uptime
+  worker:
+    extends:
+      file: ./docker-compose.yml
+      service: worker
+    image: ${IMAGE_PREFIX}/uptime/worker:${APP_TAG}
+    networks:
+      - uptime
 
-    workflow:
-        image: ${IMAGE_PREFIX}/uptime/workflow:${APP_TAG}
-        extends:
-            file: ./docker-compose.build.yml
-            service: workflow
-        networks:
-            - uptime
+  workflow:
+    extends:
+      file: ./docker-compose.yml
+      service: workflow
+    image: ${IMAGE_PREFIX}/uptime/workflow:${APP_TAG}
+    networks:
+      - uptime
+
+networks:
+  uptime:
+    driver: bridge
 
 volumes:
-    postgres:
-    clickhouse:
+  clickhouse:
+  postgres:

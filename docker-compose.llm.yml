@@ -5,15 +5,10 @@ services:
       service: redis
 
   llm:
-    extends:
-      file: ./docker-compose.base.yml
-      service: llm
-    ports:
-      - '8547:8547'
     build:
+      context: .
+      dockerfile: LLM/Dockerfile
       network: host
-      context: ./LLM
-      dockerfile: ./Dockerfile
     deploy:
       resources:
         reservations:
@@ -21,6 +16,11 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+    extends:
+      file: ./docker-compose.base.yml
+      service: llm
+    ports:
+      - '8547:8547'
 
 networks:
   uptime:

@@ -73,21 +73,21 @@ services:
       - '9034:9000'
       - '8189:8123'
 
-  copilot:
-    extends:
-      file: ./docker-compose.base.yml
-      service: copilot
-    build:
-      context: .
-      dockerfile: Copilot/Dockerfile
-    ports:
-      - '${COPILOT_PORT}:${COPILOT_PORT}'
-      - '9985:9229' # Debug port
-    volumes:
-      - ./Copilot:/usr/src/app
-      - /usr/src/app/node_modules/
-      - ./Common:/usr/src/Common
-      - /usr/src/Common/node_modules/
+  # copilot:
+  #   extends:
+  #     file: ./docker-compose.base.yml
+  #     service: copilot
+  #   build:
+  #     context: .
+  #     dockerfile: Copilot/Dockerfile
+  #   ports:
+  #     - '${COPILOT_PORT}:${COPILOT_PORT}'
+  #     - '9985:9229' # Debug port
+  #   volumes:
+  #     - ./Copilot:/usr/src/app
+  #     - /usr/src/app/node_modules/
+  #     - ./Common:/usr/src/Common
+  #     - /usr/src/Common/node_modules/
 
   dashboard:
     extends:
@@ -205,15 +205,15 @@ services:
       - ./Common:/usr/src/Common
       - /usr/src/Common/node_modules/
 
-  llm:
-    extends:
-      file: ./docker-compose.base.yml
-      service: llm
-    build:
-      context: .
-      dockerfile: LLM/Dockerfile
-    ports:
-      - '${LLM_PORT}:${LLM_PORT}'
+  # llm:
+  #   extends:
+  #     file: ./docker-compose.base.yml
+  #     service: llm
+  #   build:
+  #     context: .
+  #     dockerfile: LLM/Dockerfile
+  #   ports:
+  #     - '${LLM_PORT}:${LLM_PORT}'
 
   monitor:
     extends:
@@ -237,8 +237,8 @@ services:
     build:
       context: .
       dockerfile: Nginx/Dockerfile
-    ports:
-      - '${NGINX_PORT}:${NGINX_PORT}'
+    # ports:
+    #   - '${NGINX_PORT}:${NGINX_PORT}'
 
   otel-collector:
     extends:
