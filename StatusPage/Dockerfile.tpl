@@ -1,19 +1,16 @@
 #
 # CBS Uptime-App Dockerfile
 #
-# Pull base image nodejs image.
 FROM node:22-alpine
 
 # Update APK repositories
-RUN cat /etc/apk/repositories | sed -e s#https://.*.alpinelinux.org#http://apt.assistance.bg:3142# | tee /etc/apk/repositories
+RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /etc/apk/repositories
 
-RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
+# RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
-RUN npm config set fetch-retries 5
-RUN npm config set fetch-retry-mintimeout 100000
-RUN npm config set fetch-retry-maxtimeout 600000
-
-
+# RUN npm config set fetch-retries 5
+# RUN npm config set fetch-retry-mintimeout 100000
+# RUN npm config set fetch-retry-maxtimeout 600000
 
 ARG GIT_SHA
 ARG APP_VERSION
@@ -21,10 +18,8 @@ ARG APP_VERSION
 ENV GIT_SHA=${GIT_SHA}
 ENV APP_VERSION=${APP_VERSION}
 
-
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
-
 
 # Install bash.
 RUN apk add bash && apk add curl

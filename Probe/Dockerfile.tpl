@@ -2,19 +2,18 @@
 # CBS Uptime-Probe Dockerfile
 #
 
-# Pull base image nodejs image.
 FROM node:22
 
 # Update APT repositories to use the specified proxy
 RUN echo 'Acquire::http { Proxy "http://apt.assistance.bg:3142/"; };' > /etc/apt/apt.conf.d/02proxy
 
 # Install npm packages
-RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
+# RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 # Set npm config
-RUN npm config set fetch-retries 5
-RUN npm config set fetch-retry-mintimeout 100000
-RUN npm config set fetch-retry-maxtimeout 600000
+# RUN npm config set fetch-retries 5
+# RUN npm config set fetch-retry-mintimeout 100000
+# RUN npm config set fetch-retry-maxtimeout 600000
 
 ARG GIT_SHA
 ARG APP_VERSION
@@ -23,14 +22,15 @@ ENV GIT_SHA=${GIT_SHA}
 ENV APP_VERSION=${APP_VERSION}
 ENV NODE_OPTIONS="--use-openssl-ca"
 
+RUN apt-get update
+
 ## Add Intermediate Certs
 COPY ./SslCertificates /usr/local/share/ca-certificates
+
 RUN update-ca-certificates
 
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
-
-RUN apt-get update
 
 # Install bash.
 RUN apt-get install bash -y && apt-get install curl -y && apt-get install iputils-ping -y
