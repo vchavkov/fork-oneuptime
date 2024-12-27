@@ -7,10 +7,16 @@
 # Note: Alpine Images doesnt work with Playwright.
 FROM node:22
 
+# Update APK repositories to use the specified proxy
+RUN cat /etc/apk/repositories | sed -e s#https://.*.alpinelinux.org#http://apt.assistance.bg:3142# | tee /etc/apk/repositories
+
+# Update APT repositories to use the specified proxy
 RUN echo 'Acquire::http { Proxy "http://apt.assistance.bg:3142/"; };' > /etc/apt/apt.conf.d/02proxy
 
+# Install npm packages
 RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
+# Set npm config
 RUN npm config set fetch-retries 5
 RUN npm config set fetch-retry-mintimeout 100000
 RUN npm config set fetch-retry-maxtimeout 600000

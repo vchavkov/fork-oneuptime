@@ -5,10 +5,13 @@
 # Pull base image nodejs image.
 FROM node:22
 
+# Update APT repositories to use the specified proxy
 RUN echo 'Acquire::http { Proxy "http://apt.assistance.bg:3142/"; };' > /etc/apt/apt.conf.d/02proxy
 
+# Install npm packages
 RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
+# Set npm config
 RUN npm config set fetch-retries 5
 RUN npm config set fetch-retry-mintimeout 100000
 RUN npm config set fetch-retry-maxtimeout 600000
@@ -52,16 +55,6 @@ COPY ./Common/package*.json /usr/src/Common/
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/Common/package.json
 RUN npm install
 COPY ./Common /usr/src/Common
-
-
-
-
-
-
-
-
-
-
 
 ENV PRODUCTION=true
 

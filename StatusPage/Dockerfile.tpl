@@ -4,6 +4,10 @@
 
 # Pull base image nodejs image.
 FROM node:22-alpine
+
+# Update APK repositories
+RUN cat /etc/apk/repositories | sed -e s#https://.*.alpinelinux.org#http://apt.assistance.bg:3142# | tee /etc/apk/repositories
+
 RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 RUN npm config set fetch-retries 5
@@ -25,7 +29,6 @@ RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 
 # Install bash.
 RUN apk add bash && apk add curl
-
 # Use bash shell by default
 SHELL ["/bin/bash", "-c"]
 
