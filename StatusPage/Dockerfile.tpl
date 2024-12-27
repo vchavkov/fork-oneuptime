@@ -1,6 +1,7 @@
 #
 # CBS Uptime-App Dockerfile
 #
+
 FROM node:22-alpine
 
 # Update APK repositories
@@ -31,10 +32,13 @@ RUN npm install http-server -g
 RUN mkdir /usr/src
 
 WORKDIR /usr/src/Common
+
 COPY ./Common/package*.json /usr/src/Common/
+
 # Set version in ./Common/package.json to the APP_VERSION
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/Common/package.json
 RUN npm install
+
 COPY ./Common /usr/src/Common
 
 

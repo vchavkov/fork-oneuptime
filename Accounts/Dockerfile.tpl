@@ -1,4 +1,3 @@
-FROM node:22-alpine
 #
 # Accounts Dockerfile
 #

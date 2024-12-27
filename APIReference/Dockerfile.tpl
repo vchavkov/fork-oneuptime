@@ -4,8 +4,6 @@
 # Pull base image nodejs image.
 FROM node:22-alpine
 
-FROM node:22-alpine
-
 # Update APK repositories to use the specified proxy
 RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /etc/apk/repositories
 

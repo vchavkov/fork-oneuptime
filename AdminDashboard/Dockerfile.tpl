@@ -36,28 +36,39 @@ WORKDIR /usr/src/Common
 
 # Copy package.json
 COPY ./Common/package*.json /usr/src/Common/
+
 # Set version in ./Common/package.json to the APP_VERSION
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/Common/package.json
+
 # Install dependencies
 RUN npm install
+
 # Copy Common directory
 COPY ./Common /usr/src/Common
+
 # Set environment variables
 ENV PRODUCTION=true
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
 # Change working directory to app
 WORKDIR /usr/src/app
+
 # Install app dependencies
 COPY ./AdminDashboard/package*.json /usr/src/app/
+
 # Set version in ./App/package.json to the APP_VERSION
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/app/package.json
+
 # Install dependencies
 RUN npm install
+
 # Expose ports.
 #   - 3158:  AdminDashboard
 EXPOSE 3158
+
 # Install webpack-cli
 RUN npm i -D webpack-cli
+
 # Run the app
 {{ if eq .Env.ENVIRONMENT "development" }}
 RUN mkdir /usr/src/app/dev-env

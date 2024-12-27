@@ -48,6 +48,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY ./Workflow/package*.json /usr/src/app/
+
 # Set version in ./App/package.json to the APP_VERSION
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/app/package.json
 RUN npm install
