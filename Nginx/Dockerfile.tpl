@@ -1,4 +1,4 @@
-FROM 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/nginx:1.26.1-alpine
+FROM nginx:1.26.1-alpine
 
 ARG GIT_SHA
 ARG APP_VERSION

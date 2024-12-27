@@ -35,7 +35,7 @@ services:
     extends:
       file: ./docker-compose.yml
       service: clickhouse
-    image: 401376717990.dkr.ecr.us-east-1.amazonaws.com/docker-hub/clickhouse/clickhouse-server:23.7
+    image: clickhouse/clickhouse-server:23.7
     networks:
       - uptime
 
