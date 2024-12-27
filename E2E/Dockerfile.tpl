@@ -1,11 +1,9 @@
+FROM node:22
+
 #
 # CBS Uptime-E2E Dockerfile
 # This file is used to build the E2E docker image which is used to run the E2E tests.
 #
-
-# Pull base image nodejs image.
-# Note: Alpine Images doesnt work with Playwright.
-FROM node:22
 
 # Update APK repositories to use the specified proxy
 RUN cat /etc/apk/repositories | sed -e s#https://.*.alpinelinux.org#http://apt.assistance.bg:3142# | tee /etc/apk/repositories

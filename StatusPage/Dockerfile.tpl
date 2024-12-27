@@ -1,7 +1,6 @@
 #
-# StatusPage Dockerfile
+# CBS Uptime-App Dockerfile
 #
-
 # Pull base image nodejs image.
 FROM node:22-alpine
 
