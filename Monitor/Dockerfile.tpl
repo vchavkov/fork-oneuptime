@@ -1,6 +1,7 @@
 #
 # Monitor Dockerfile
 #
+
 FROM node:22-alpine
 
 # Update APK repositories to use the specified proxy
@@ -27,13 +28,14 @@ RUN apk add bash && apk add curl
 
 # Use bash shell by default
 SHELL ["/bin/bash", "-c"]
+
 RUN mkdir /usr/src
 
 WORKDIR /usr/src/Common
 
 COPY ./Common/package*.json /usr/src/Common/
-# Set version in ./Common/package.json to the APP_VERSION
 
+# Set version in ./Common/package.json to the APP_VERSION
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/Common/package.json
 
 RUN npm install
@@ -55,8 +57,12 @@ EXPOSE 3010
 RUN npm i -D nodemon
 
 {{ if eq .Env.ENVIRONMENT "development" }}
+
 CMD [ "npm", "run", "dev" ]
+
 {{ else }}
+
 COPY ./Monitor /usr/src/app
 CMD [ "npm", "start" ]
+
 {{ end }}
