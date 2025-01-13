@@ -35,6 +35,10 @@ services:
       context: .
       dockerfile: App/Dockerfile
 
+  clickhouse:
+    extends:
+      file: ./docker-compose.base.yml
+      service: clickhouse
 
   # copilot:
   #   image: ${IMAGE_PREFIX}/uptime/copilot:${APP_TAG}
@@ -144,11 +148,12 @@ services:
       context: .
       dockerfile: OTelCollector/Dockerfile
 
-    app:
-        image: ${COMPOSE_PROJECT_NAME}/app:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: app
+  postgres:
+    ports:
+      - "5400:5432" # for access to postgres for backups. If you don't need backup, you can comment this line out to make it more secure.
+    extends:
+      file: ./docker-compose.base.yml
+      service: postgres
 
   probe-1:
     image: ${IMAGE_PREFIX}/uptime/probe:${APP_TAG}
@@ -168,11 +173,10 @@ services:
       context: .
       dockerfile: Probe/Dockerfile
 
-    api-reference:
-        image: ${COMPOSE_PROJECT_NAME}/api-reference:${APP_TAG}
-        extends:
-            file: ./docker-compose.base.yml
-            service: api-reference
+  redis:
+    extends:
+      file: ./docker-compose.base.yml
+      service: redis
 
   status-page:
     image: ${IMAGE_PREFIX}/uptime/status-page:${APP_TAG}
