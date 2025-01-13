@@ -163,7 +163,7 @@ services:
     extends:
       file: ./docker-compose.yml
       service: redis
-    image: ${IMAGE_PREFIX}/docker-hub/library/redis:7.0.12
+    image: redis:7.0.12
     networks:
       - uptime
     ports:
