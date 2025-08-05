@@ -59,7 +59,7 @@
         "prod": "npm run config-to-prod && ./export.sh &&npm run prerun && docker compose -f docker-compose.prod.yml up --remove-orphans -d $npm_config_services && npm run status-check",
         "prune": "docker system prune",
         "ps": "./export.sh && docker compose ps",
-        "pull": "./export.sh && docker compose -f docker-compose.build.yml -f docker-compose.prod.yml pull",
+        "pull": "./export.sh && docker compose -f docker-compose.yml -f docker-compose.prod.yml pull",
         "release": "npm run bump-version && npm run config-to-prod && ./export.sh &&npm run prerun && docker compose -f docker-compose.prod.yml build --no-cache $npm_config_services",
         "release-preview": "./export.sh && npm run prerun && docker compose -f docker-compose.prod.yml build $npm_config_services",
         "remove-all-containers": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) || echo 'No running containers'",
