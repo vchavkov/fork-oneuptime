@@ -2,6 +2,8 @@
 
 export $(grep -v '^#' config.env | xargs)
 
+DOCKER_CMD=$(which docker)
+
 # "copilot"
 
 IMAGE_ARRAY=(
