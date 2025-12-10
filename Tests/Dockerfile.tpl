@@ -4,8 +4,6 @@
 
 FROM node:22-alpine
 
-# Update APK repositories to use the specified proxy
-RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /etc/apk/repositories
 
 # Install npm packages
 # RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
@@ -15,8 +13,8 @@ RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /
 # RUN npm config set fetch-retry-mintimeout 100000
 # RUN npm config set fetch-retry-maxtimeout 600000
 
-# Install bash.
-RUN apk add bash && apk add curl
+# Install bash and curl.
+RUN apk add --no-cache bash curl
 
 ARG GIT_SHA
 ARG APP_VERSION
@@ -27,7 +25,7 @@ ENV APP_VERSION=${APP_VERSION}
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 
-RUN apk add bash
+RUN apk add --no-cache bash
 
 COPY ./Tests .
 

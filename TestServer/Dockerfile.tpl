@@ -19,8 +19,8 @@ ENV APP_VERSION=${APP_VERSION}
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 
-# Install bash.
-RUN apk add bash && apk add curl
+# Install bash and curl.
+RUN apk add --no-cache bash curl
 
 # Install python
 RUN apk update && apk add --no-cache --virtual .gyp python3 make g++

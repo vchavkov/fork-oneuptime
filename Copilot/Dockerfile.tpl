@@ -5,7 +5,7 @@
 # Pull base image nodejs image.
 FROM node:22
 
-RUN echo 'Acquire::http { Proxy "http://apt.assistance.bg:3142/"; };' > /etc/apt/apt.conf.d/02proxy
+
 
 # RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 

@@ -5,7 +5,7 @@
 FROM node:22
 
 # Update APT repositories to use the specified proxy
-RUN echo 'Acquire::http { Proxy "http://apt.assistance.bg:3142/"; };' > /etc/apt/apt.conf.d/02proxy
+
 
 # Install npm packages
 # RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
@@ -33,7 +33,7 @@ RUN update-ca-certificates
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 
 # Install bash.
-RUN apt-get install bash -y && apt-get install curl -y && apt-get install iputils-ping -y
+RUN apt-get install bash -y && apt-get install curl -y && apt-get install inetutils-ping -y
 
 # Install python
 RUN apt-get update && apt-get install -y .gyp python3 make g++

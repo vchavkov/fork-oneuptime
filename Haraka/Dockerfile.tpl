@@ -1,7 +1,5 @@
 FROM node:20-alpine
 
-# Update APK repositories to use the specified proxy
-RUN sed -i 's|https://.*.alpinelinux.org|http://apt-proxy.assistance.bg:3142|' /etc/apk/repositories
 
 # RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
@@ -18,14 +16,13 @@ ENV APP_VERSION=${APP_VERSION}
 # IF APP_VERSION is not set, set it to 1.0.0
 RUN if [ -z "$APP_VERSION" ]; then export APP_VERSION=1.0.0; fi
 
-RUN apk add bash
+RUN apk add --no-cache bash
 
 # install dependence
 RUN apk upgrade --update && \
     apk add --no-cache -t .fetch-deps \
     autoconf \
     g++ \
-    bash \
     curl \
     gcc \
     make \
