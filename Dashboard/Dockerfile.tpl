@@ -4,7 +4,6 @@
 
 FROM node:22-alpine
 
-
 # RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 # RUN npm config set fetch-retries 5

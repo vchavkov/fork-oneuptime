@@ -1,6 +1,5 @@
 FROM nginx:1.26.1-alpine
 
-
 ARG GIT_SHA
 ARG APP_VERSION
 

@@ -4,7 +4,6 @@
 
 FROM node:22-alpine
 
-
 # RUN mkdir /tmp/npm &&  chmod 2777 /tmp/npm && chown 1000:1000 /tmp/npm && npm config set cache /tmp/npm --global
 
 # RUN npm config set fetch-retries 5
@@ -37,16 +36,6 @@ COPY ./Common/package*.json /usr/src/Common/
 RUN sed -i "s/\"version\": \".*\"/\"version\": \"$APP_VERSION\"/g" /usr/src/Common/package.json
 RUN npm install
 COPY ./Common /usr/src/Common
-
-
-
-
-
-
-
-
-
-
 
 ENV PRODUCTION=true
 
